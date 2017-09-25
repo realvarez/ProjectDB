@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrganizacionUsuarioTable extends Migration
+class CreateDepositoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,23 @@ class CreateOrganizacionUsuarioTable extends Migration
      */
     public function up()
     {
-        Schema::create('organization_users', function (Blueprint $table) {
+        Schema::create('depositos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('organization_id');
             $table->integer('user_id');
-            $table->integer('rol');
+            $table->integer('medida_id');
+            $table->integer('rut');
+            $table->integer('cantidad');
+            $table->date('fechaDeposito');
+            $table->string('documento');
             $table->timestamps();
 
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-
-            $table->foreign('organization_id')
+            $table->foreign('medida_id')
                 ->references('id')
-                ->on('organizations')
+                ->on('apoyos')
                 ->onDelete('cascade');
         });
     }
@@ -39,6 +41,6 @@ class CreateOrganizacionUsuarioTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('organization_users');
+        Schema::dropIfExists('depositos');
     }
 }
