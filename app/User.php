@@ -39,4 +39,9 @@ class User extends Authenticatable
         return $this -> hasOne('app\Organization_user');
     }
 
+    public function catastrofes(){
+        return $this -> hasMany('App\catastrofe');
+    }
+
+    
 }
