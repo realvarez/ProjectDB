@@ -13,7 +13,7 @@ class CreateRnvTable extends Migration
      */
     public function up()
     {
-        Schema::create('rnv', function (Blueprint $table) {
+        Schema::create('rnvs', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('ultima_medida');
@@ -21,7 +21,7 @@ class CreateRnvTable extends Migration
             $table->string('nombre');
             $table->string('correo');
             $table->timestamps();
-            
+
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
@@ -36,6 +36,6 @@ class CreateRnvTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rnv');
+        Schema::dropIfExists('rnvs');
     }
 }
