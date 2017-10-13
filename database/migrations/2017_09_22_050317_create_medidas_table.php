@@ -19,14 +19,14 @@ class CreateMedidasTable extends Migration
             $table->integer('admin_id')->nullable();
             $table->integer('organization_id');
             $table->integer('catastrofe_id');
-            $table->integer('avance');
             $table->integer('tipo_medida');
             $table->string('descripcion');
-            $table->integer('estado')->default(0);
             $table->date('fecha_inicio');
             $table->date('fecha_termino');
             $table->timestamps('fecha_creacion');
-            $table->morphs('MorphMedida');
+            $table->integer('estado')->default(0);
+            $table->integer('avance')->default(0);
+            $table->morphs('MorphMedida');->id 
             
             $table->foreign('user_id')
                 ->references('id')

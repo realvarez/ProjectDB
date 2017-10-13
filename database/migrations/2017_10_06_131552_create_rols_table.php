@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHistoriaTable extends Migration
+class CreateRolsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,16 @@ class CreateHistoriaTable extends Migration
      */
     public function up()
     {
-        Schema::create('historias', function (Blueprint $table) {
+        Schema::create('rols', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->integer('tipo_cambio');
-            $table->string('tabla');
-            $table->string('estado_antiguo');
-            $tabla->string('estado_nuevo');
-            $table->timestamps('fecha_accion');
+            $table->string('nombre');
+            $table->timestamps();
+        });
 
-            $table->foreign('user_id')
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreign('rol_id')
                 ->references('id')
-                ->on('users')
+                ->on('rols')
                 ->onDelete('cascade');
         });
     }
@@ -36,6 +34,7 @@ class CreateHistoriaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('historias');
+        Schema::table('users');
+        Schema::dropIfExists('rols');
     }
 }
