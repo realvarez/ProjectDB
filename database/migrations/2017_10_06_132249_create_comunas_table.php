@@ -21,21 +21,21 @@ class CreateComunasTable extends Migration
 
             $table->foreign('region_id')
                 ->references('id')
-                ->on('region')
+                ->on('regions')
                 ->onDelete('cascade');
         });
 
         Schema::table('users', function (Blueprint $table) {
             $table->foreign('comuna_id')
                 ->references('id')
-                ->on('comuna')
+                ->on('comunas')
                 ->onDelete('cascade');
         });
 
         Schema::table('catastrofes', function (Blueprint $table) {
             $table->foreign('comuna_id')
                 ->references('id')
-                ->on('comuna')
+                ->on('comunas')
                 ->onDelete('cascade');
         });
 
