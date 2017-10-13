@@ -15,11 +15,11 @@ class CreateHistoriaTable extends Migration
     {
         Schema::create('historias', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
             $table->integer('tipo_cambio');
             $table->string('tabla');
             $table->string('estado_antiguo');
-            $tabla->string('estado_nuevo');
+            $table->string('estado_nuevo');
             $table->timestamps('fecha_accion');
 
             $table->foreign('user_id')
