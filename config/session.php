@@ -122,6 +122,7 @@ return [
     |
     */
 
+
     'cookie' => env(
         'SESSION_COOKIE',
         str_slug(env('APP_NAME', 'laravel'), '_').'_session'
@@ -178,7 +179,6 @@ return [
     */
 
     'http_only' => true,
-
     /*
     |--------------------------------------------------------------------------
     | Same-Site Cookies
@@ -193,5 +193,6 @@ return [
     */
 
     'same_site' => null,
+
 
 ];

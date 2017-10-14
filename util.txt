@@ -1,0 +1,6 @@
+comandos utiles:
+	si hay problemas con la key y no entra a la pagina
+		php artisan key:generate
+		php artisan config:clear
+	no encuentra la carpeta (desde bash, fuera de vagrant)
+		vagrant reload --provision
