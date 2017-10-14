@@ -20,4 +20,9 @@ class Catastrofe extends Model
     public function medida(){
     	return $this ->hasMany('app\Medida');
     }
+
+    public function comuna(){
+
+        return $this->belongsTo('app\Comuna');
+    }
 }

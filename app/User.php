@@ -50,9 +50,32 @@ class User extends Authenticatable
     }
 
     public function catastrofes(){
-        return $this -> hasMany('App\catastrofe');
+        return $this -> hasMany('app\Catastrofe');
     }
 
-    
+
+    public function depositos(){
+      return $this -> hasMany('app\Deposito');
+     }
+
+     public function comuna(){
+
+        return $this->belongsTo('app\Comuna');
+     }
+
+     public function rol(){
+
+        return $this->belongsTo('app\Rol');
+     }
+
+
+     public function rnv(){
+
+        return $this->hasOne('app\rnv');
+
+     }
+
+     
+
 
 }
