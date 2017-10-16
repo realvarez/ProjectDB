@@ -16,8 +16,11 @@ class Voluntariado extends Model
     	'direccion',
 
     ];
+<<<<<<< HEAD
 
     public function medida(){
       return $this->morphMany('App\medida',medidas);
     }
+=======
+>>>>>>> master
 }

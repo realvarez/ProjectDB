@@ -20,7 +20,7 @@ class CreateHistoriaTable extends Migration
             $table->string('tabla');
             $table->string('estado_antiguo');
             $table->string('estado_nuevo');
-            $table->timestamps('fecha_accion');
+            $table->timestamp('fecha_accion');
 
             $table->foreign('user_id')
                 ->references('id')

@@ -9,12 +9,20 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> master
 
     protected $fillable = [
                         'nombre',
@@ -74,7 +82,12 @@ class User extends Authenticatable
 
      }
 
+<<<<<<< HEAD
 
+
+=======
+     
+>>>>>>> master
 
 
 }

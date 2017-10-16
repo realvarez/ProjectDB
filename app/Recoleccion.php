@@ -14,6 +14,7 @@ class Recoleccion extends Model
     	'comuna',
     	'direccion',
     	'tipoRecoleccion',
+<<<<<<< HEAD
       ];
 
 
@@ -24,4 +25,9 @@ class Recoleccion extends Model
 
 
 
+=======
+
+
+    ];
+>>>>>>> master
 }

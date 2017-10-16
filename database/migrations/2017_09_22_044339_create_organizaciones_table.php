@@ -18,7 +18,7 @@ class CreateOrganizacionesTable extends Migration
             $table->string('nombre');
             $table->string('logo');
             $table->string('descripcion');
-            $table->timestamps('fechaCreacion');
+            $table->timestamp('fechaCreacion');
         });
     }
 
