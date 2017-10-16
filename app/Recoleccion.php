@@ -6,5 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Recoleccion extends Model
 {
-    //
+    protected $fillable= [
+
+    	'metaRecoleccion',
+    	'recoleccionActual',
+    	'region',
+    	'comuna',
+    	'direccion',
+    	'tipoRecoleccion',
+      ];
+
+
+      public function medida(){
+        return $this->morphMany('App\medida',medidas);
+      }
+
+
+
+
 }

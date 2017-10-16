@@ -9,9 +9,7 @@ class Catastrofe extends Model
     protected $fillable = [
         'user_id',
         'region',
-        'comuna',
-        'tipo_catastrofe',
-    ];
+        'comuna',                      ]                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 
     public function user(){
     	return $this ->belongTo('app\User');

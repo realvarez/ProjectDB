@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Medida extends Model{
-    
+
     protected $fillable = [
     	'user_id',
     	'admin_id',
@@ -17,8 +17,11 @@ class Medida extends Model{
     	'estado',
     	'fecha_inicio',
     	'fecha_termino',
-    	'MorphMedida',
     ];
+
+    public function medidas(){
+      return $this->morphTo();
+    }
 
     public function creador(){
     	return $this -> belongsTo('app\User');

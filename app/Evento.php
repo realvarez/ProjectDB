@@ -14,4 +14,8 @@ class Evento extends Model
       'comuna',
       'direccion'
     ];
+
+    public function medida(){
+      return $this->morphMany('App\medida',medidas);
+    }
 }

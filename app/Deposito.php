@@ -20,4 +20,10 @@ class Deposito extends Model
     public function User(){
       $this-> belongsTo('app\User');
     }
+
+    public function Deposito(){
+
+      $this->belongsTo('app\Apoyoeconomico');
+
+    }
 }

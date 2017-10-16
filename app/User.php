@@ -9,6 +9,13 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+
+
     protected $fillable = [
                         'nombre',
                         'apellido',
@@ -20,6 +27,7 @@ class User extends Authenticatable
                         'comuna',
                         'direccion',
                         'estado',
+
     ];
 
     /**
@@ -31,6 +39,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
     public function historiales(){
         return $this -> hasMany('app\Historia');
     }
@@ -40,13 +49,32 @@ class User extends Authenticatable
     }
 
     public function catastrofes(){
-        return $this -> hasMany('App\catastrofe');
+        return $this -> hasMany('app\Catastrofe');
     }
+
 
     public function depositos(){
       return $this -> hasMany('app\Deposito');
      }
 
-     
+     public function comuna(){
+
+        return $this->belongsTo('app\Comuna');
+     }
+
+     public function rol(){
+
+        return $this->belongsTo('app\Rol');
+     }
+
+
+     public function rnv(){
+
+        return $this->hasOne('app\rnv');
+
+     }
+
+
+
 
 }
