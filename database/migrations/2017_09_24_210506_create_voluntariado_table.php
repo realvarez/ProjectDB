@@ -21,6 +21,7 @@ class CreateVoluntariadoTable extends Migration
             $table->string('region');
             $table->string('comuna');
             $table->string('direccion');
+            $table->timestamps();
         });
     }
 

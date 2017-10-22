@@ -19,12 +19,6 @@ class CreateRolsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreign('rol_id')
-                ->references('id')
-                ->on('rols')
-                ->onDelete('cascade');
-        });
     }
 
     /**
@@ -34,7 +28,6 @@ class CreateRolsTable extends Migration
      */
     public function down()
     {
-        Schema::table('users');
         Schema::dropIfExists('rols');
     }
 }

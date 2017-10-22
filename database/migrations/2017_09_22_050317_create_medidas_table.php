@@ -23,10 +23,10 @@ class CreateMedidasTable extends Migration
             $table->string('descripcion');
             $table->date('fecha_inicio');
             $table->date('fecha_termino');
-            $table->timestamp('fecha_creacion');
             $table->integer('estado')->default(0);
             $table->integer('avance')->default(0);
             $table->morphs('MorphMedida'); 
+            $table->timestamps();
             
             $table->foreign('user_id')
                 ->references('id')

@@ -25,21 +25,7 @@ class CreateComunasTable extends Migration
                 ->onDelete('cascade');
         });
 
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreign('comuna_id')
-                ->references('id')
-                ->on('comunas')
-                ->onDelete('cascade');
-        });
-
-        Schema::table('catastrofes', function (Blueprint $table) {
-            $table->foreign('comuna_id')
-                ->references('id')
-                ->on('comunas')
-                ->onDelete('cascade');
-        });
-
-
+       
     }
 
     /**

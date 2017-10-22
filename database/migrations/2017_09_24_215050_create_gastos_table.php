@@ -21,7 +21,7 @@ class CreateGastosTable extends Migration
             
             $table->foreign('medida_id')
                 ->references('id')
-                ->on('apoyos')
+                ->on('apoyo_economicos')
                 ->onDelete('cascade');
         });
     }

@@ -20,12 +20,13 @@ class CreateHistoriaTable extends Migration
             $table->string('tabla');
             $table->string('estado_antiguo');
             $table->string('estado_nuevo');
-            $table->timestamp('fecha_accion');
+            $table->timestamps();
 
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
+
         });
     }
 

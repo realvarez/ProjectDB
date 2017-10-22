@@ -14,11 +14,16 @@ class CreateCatastrofesTable extends Migration
             $table->integer('comuna_id');
             $table->string('descripcion');
             $table->integer('tipo_catastrofe');
-            $table->timestamp('fecha_incorporacion');
+            $table->timestamps();
             
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
+                ->onDelete('cascade');
+
+            $table->foreign('comuna_id')
+                ->references('id')
+                ->on('comunas')
                 ->onDelete('cascade');
         });
     }
