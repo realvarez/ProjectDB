@@ -25,9 +25,25 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('direccion');
             $table->integer('estado')->default(1);
+<<<<<<< HEAD
 
             $table->rememberToken();
             $table->timestamps();
+=======
+            $table->rememberToken();
+            $table->timestamps();
+
+            
+            $table->foreign('comuna_id')
+                ->references('id')
+                ->on('comunas')
+                ->onDelete('cascade');
+                
+            $table->foreign('rol_id')
+                ->references('id')
+                ->on('rols')
+                ->onDelete('cascade');
+>>>>>>> 07e9222251e562379181d127d05098bac64c12e0
         });
     }
 
