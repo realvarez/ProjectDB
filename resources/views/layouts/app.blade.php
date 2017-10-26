@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name') }}</title>
+    {{-- Favicon == Icono --}}
+    <link href="/IMG/favicon.ico" rel="icon" type="image/x-icon" />
+    <title>Emergencias Chile</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -19,7 +20,7 @@
             <div class="w3-bar w3-white w3-wide w3-padding w3-card">
                 <a href="{{ route('principal') }}" class="w3-bar-item w3-button">Chile Emergencias</a>
                 <div class="w3-hide-small">
-                    <a href="#projects" class="w3-bar-item w3-button">Catastrofes</a>
+                    <a href="#home" class="w3-bar-item w3-button">Catastrofes</a>
                     <a href="#contact" class="w3-bar-item w3-button"></a>
                     <div class="w3-right w3-hide-small">
                     @guest
