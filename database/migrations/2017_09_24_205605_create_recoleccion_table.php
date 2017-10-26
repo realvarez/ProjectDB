@@ -16,7 +16,7 @@ class CreateRecoleccionTable extends Migration
         Schema::create('recolecciones', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('metaRecoleccion');
-            $table->integer('recoleccionActual');
+            $table->integer('recoleccionActual')->default(0);
             $table->string('region');
             $table->string('comuna');
             $table->string('direccion');

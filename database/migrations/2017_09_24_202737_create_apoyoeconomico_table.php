@@ -16,7 +16,7 @@ class CreateApoyoeconomicoTable extends Migration
         Schema::create('apoyo_economicos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('metaMinima');
-            $table->integer('actual');
+            $table->integer('actual')->default(0);
             $table->integer('numCuenta');
             $table->string('TipoCuenta');
             $table->string('bancoCuenta');
