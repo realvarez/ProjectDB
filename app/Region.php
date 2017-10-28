@@ -8,11 +8,7 @@ class Region extends Model
 {
     protected $fillable=[
 
-<<<<<<< HEAD
-    	'nombre';
-=======
     	'nombre',
->>>>>>> 07e9222251e562379181d127d05098bac64c12e0
 
 
     ];

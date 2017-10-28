@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# ProjectDB
-=======
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
@@ -54,4 +51,3 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
->>>>>>> 07e9222251e562379181d127d05098bac64c12e0

@@ -16,15 +16,12 @@ class CreateVoluntariadoTable extends Migration
         Schema::create('voluntariados', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('metaVoluntarios');
-            $table->integer('voluntariosActuales');
+            $table->integer('voluntariosActuales')->default(0);
             $table->integer('duracionDias');
             $table->string('region');
             $table->string('comuna');
             $table->string('direccion');
-<<<<<<< HEAD
-=======
             $table->timestamps();
->>>>>>> 07e9222251e562379181d127d05098bac64c12e0
         });
     }
 

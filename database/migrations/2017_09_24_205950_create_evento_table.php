@@ -16,7 +16,7 @@ class CreateEventoTable extends Migration
         Schema::create('eventos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('metaDinero');
-            $table->integer('actualDinero');
+            $table->integer('actualDinero')->default(0);
             $table->string('region');
             $table->string('comuna');
             $table->string('direccion');

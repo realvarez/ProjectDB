@@ -29,11 +29,7 @@ class CreateDepositoTable extends Migration
                 ->onDelete('cascade');
             $table->foreign('medida_id')
                 ->references('id')
-<<<<<<< HEAD
-                ->on('apoyos')
-=======
                 ->on('apoyo_economicos')
->>>>>>> 07e9222251e562379181d127d05098bac64c12e0
                 ->onDelete('cascade');
         });
     }
