@@ -4,57 +4,86 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{-- W3.CSS \\QUITAR --}}
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    {{-- Boostrap --}}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     {{-- Favicon == Icono --}}
     <link href="/IMG/favicon.ico" rel="icon" type="image/x-icon" />
     <title>Emergencias Chile</title>
-
     <!-- Styles -->
+    <style> 
+        .slider{
+            background: url("/IMG/incendio.jpg");
+            height:100vh;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <div class="w3-top">
-            <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-                <a href="{{ route('principal') }}" class="w3-bar-item w3-button">Chile Emergencias</a>
-                <div class="w3-hide-small">
-                    <a href="#home" class="w3-bar-item w3-button">Catastrofes</a>
-                    <a href="#contact" class="w3-bar-item w3-button"></a>
-                    <div class="w3-right w3-hide-small">
-                    @guest
-                        <a href="#about" class="w3-bar-item w3-button">Mis Medidas</a>
-                        <a href="{{ route('login') }} " class="w3-bar-item w3-button">Entrar</a>
-                        <a href="{{ route('register') }}" class="w3-bar-item w3-button">Registrarte</a>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    @endguest
+    <nav class="navbar navbar-expand-sm navbar-light padding-top bg-faded">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">Chile Emergencias</a>
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+          <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <div class="navbar-nav mr-auto text-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Catastrofes</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#medidas" id="DropdownMedidas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Medidas</a>
+                    <div class="dropdown-menu" aria-labelledby="DropdownMedidas">
+                        <a class="dropdown-item" href="#">Centros de Acopio</a>
+                        <a class="dropdown-item" href="#">Voluntariados</a>
+                        <a class="dropdown-item" href="#">Evento a Beneficio</a>
+                        <a class="dropdown-item" href="#">Donaciones</a>
                     </div>
-                </div>
+                </li>
             </div>
-        </div>
+            <div class="navbar-nav text-center">
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">Entrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">Registrarse</a>
+                    </li>
+                @else
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                @endguest
+            </div>
+          </div>
+        </nav>
         @yield('content')
-    </div>
+    
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </body>
 </html>

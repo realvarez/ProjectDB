@@ -25,19 +25,49 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+
+                        <div class="form-group{{ $errors->has('Rut') ? ' has-error' : '' }}">
+                            <label for="Rut" class="col-md-4 control-label">Rut</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                <input id="email" type="email" class="form-control" name="Rut" value="{{ old('Rut') }}" required>   
 
-                                @if ($errors->has('email'))
+                                @if ($errors->has('Rut'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('Rut') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
+
+                        <div class="form-group{{ $errors->has('Rut') ? ' has-error' : '' }}">
+                            <label for="Rut" class="col-md-4 control-label">Rut</label>
+                            <select id="W3-select" name = 'option'>
+                                <option></option>
+                                <option value="Ultrasound Knee Right">Ultrasound Knee Right</option>
+                                <option value="Ultrasound Knee Left">Ultrasound Knee Left</option>
+                            </select>
+                            {{-- <div class="col-md-6">
+                                <input id="email" type="email" class="form-control" name="Rut" value="{{ old('Rut') }}" required>   
+
+                                @if ($errors->has('Rut'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('Rut') }}</strong>
+                                    </span>
+                                @endif
+                            </div> --}}
+                        </div>
+                       
+                        {{-- 
+                        <br />
+                        <div class="container">
+                            <div class="row">
+                                <div class="ui-widget">
+                                    <label>Region: </label>
+                                    
+                                </div>
+                            </div>
+                        </div> --}}
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
