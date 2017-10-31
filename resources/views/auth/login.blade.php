@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="card border-dark border col-6 offset-3 mt-5">
+<div class="card border-dark border col-6 offset-3 ">
     <div class="card-body ">
         <form class="form-horizontal" method="POST" action="{{ route('login') }}">
             {{ csrf_field() }}
