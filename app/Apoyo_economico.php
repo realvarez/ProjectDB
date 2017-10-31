@@ -20,7 +20,7 @@ class Apoyo_economico extends Model
     ];
 
     public function medida(){
-      return $this->morphMany('App\Medida','medidas');
+      return $this->morphMany('App\Medida','MorphMedida');
     }
 
     public function depositos(){

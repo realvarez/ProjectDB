@@ -19,7 +19,7 @@ class Medida extends Model{
     	'fecha_termino',
     ];
 
-    public function medidas(){
+    public function MorphMedida(){
       return $this->morphTo();
     }
 

@@ -18,6 +18,6 @@ class Voluntariado extends Model
     ];
 
     public function medida(){
-      return $this->morphMany('App\medida',medidas);
+      return $this->morphMany('App\medida','MorphMedida');
     }
 }
