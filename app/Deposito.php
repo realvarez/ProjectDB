@@ -23,7 +23,7 @@ class Deposito extends Model
 
     public function Deposito(){
 
-      $this->belongsTo('app\Apoyoeconomico');
+      $this->belongsTo('app\Apoyo_economico');
 
     }
 }

@@ -36,6 +36,6 @@ class Medida extends Model{
     }
 
     public function catastrofe(){
-    	return $this ->belongto('app\Catastrofe')
+    	return $this ->belongto('app\Catastrofe');
     }
 }

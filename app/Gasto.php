@@ -19,8 +19,8 @@ class Gasto extends Model
     public function apoyoeconomico(){
 
 
-    	return $this->belongsTo('app\Apoyoeconomico');
+    	return $this->belongsTo('app\Apoyo_economico');
     }
 
-    
+
 }

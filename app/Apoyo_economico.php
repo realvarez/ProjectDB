@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Apoyoeconomico extends Model
+class Apoyo_economico extends Model
 {
 
 
@@ -20,7 +20,7 @@ class Apoyoeconomico extends Model
     ];
 
     public function medida(){
-      return $this->morphMany('App\medida',medidas);
+      return $this->morphMany('App\Medida','medidas');
     }
 
     public function depositos(){
