@@ -3,14 +3,13 @@ DROP FUNCTION IF EXISTS bloquear_usuario() cascade;
 CREATE OR REPLACE FUNCTION bloquear_usuario() 
 RETURNS trigger AS $d$ 
 DECLARE
-	BEGIN
-		UPDATE users
-		SET estado = 0 
-		WHERE id = OLD.id;
-		-- CREATE OR REPLACE RULE bloquear AS ON DELETE TO users DO INSTEAD NOTHING;
-		RETURN NULL;
-    END;
- $d$ LANGUAGE plpgsql;
+BEGIN
+	UPDATE users
+	SET estado = 0 
+	WHERE id = OLD.id;
+	RETURN NULL;
+END;
+$d$ LANGUAGE plpgsql;
 
 DROP TRIGGER IF EXISTS funcion on usuarios cascade;
   
