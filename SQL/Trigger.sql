@@ -1,15 +1,22 @@
-CREATE OR REPLACE FUNCTION bloquear_usuario() RETURNS trigger AS $d$ 
+DROP FUNCTION IF EXISTS bloquear_usuario() cascade;
+
+CREATE OR REPLACE FUNCTION bloquear_usuario() 
+RETURNS trigger AS $d$ 
+DECLARE
 	BEGIN
-		UPDATE users SET estado = 0 WHERE id = OLD.id;
-		CREATE OR REPLACE RULE bloquear AS ON DELETE TO users DO INSTEAD NOTHING;
+		UPDATE users
+		SET estado = 0 
+		WHERE id = OLD.id;
+		-- CREATE OR REPLACE RULE bloquear AS ON DELETE TO users DO INSTEAD NOTHING;
 		RETURN NULL;
-        END;
+    END;
  $d$ LANGUAGE plpgsql;
 
+DROP TRIGGER IF EXISTS funcion on usuarios cascade;
   
 CREATE TRIGGER funcion BEFORE DELETE ON users FOR EACH ROW
 EXECUTE PROCEDURE bloquear_usuario();   
   
 
-DELETE FROM users WHERE id = 1;
-SELECT * FROM users;
+-- DELETE FROM users WHERE id = 1;
+-- SELECT * FROM users;
