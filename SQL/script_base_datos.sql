@@ -1,5 +1,4 @@
 
-
 /*==============================================================*/
 /* Table: REGION                                                */
 /*==============================================================*/
@@ -11,6 +10,7 @@ create table REGIONS (
 	primary key (ID)
 );
 
+/* Index: REGION_PK                                             */
 create unique index REGIONS_PK on REGIONS (ID);
 
 /*==============================================================*/
@@ -25,6 +25,7 @@ create table COMUNAS (
    primary key (ID)
 );
 
+/* Index: COMUNA_PK                                             */
 create unique index COMUNAS_PK on COMUNAS (ID);
 
 
@@ -101,7 +102,7 @@ create table ORGANIZATIONS (
 create unique index ORGANIZATION_PK on ORGANIZATIONS (ID);
 
 /*==============================================================*/
-/* Table: ORGANIZACION_USERS                                          */
+/* Table: ORGANIZACION_USERS                                    */
 /*==============================================================*/
 create table ORGANIZATION_USERS (
 	ID						SERIAL                 			not null,
@@ -181,7 +182,7 @@ create table DEPOSITOS (
 	UPDATED_AT				TIMESTAMP WITHOUT TIME ZONE		null,
 	primary key(ID)
 );
-
+/* iNDEX: DEPOSITOS_PK*/
 create unique index DEPOSITOS_PK on DEPOSITOS (ID);
 
 /*==============================================================*/
@@ -199,7 +200,7 @@ create table EVENTOS (
 	primary key (ID)
 	
 );
-
+/* INDEX: EVENTOS_SEMI_PK*/
 create unique index EVENTOS_SEMI_PK on EVENTOS (ID);
 
 /*==============================================================*/
@@ -214,6 +215,7 @@ create table GASTOS (
 	primary key (ID)
 );
 
+/* Index: GASTOS_PK                                             */
 create unique index GASTOS_PK on GASTOS (ID);
 
 
@@ -234,10 +236,11 @@ create table APOYO_ECONOMICOS (
 	primary key (ID)
 );
 
+/* Index: APOYO_ECONOMICOS_PK                                             */
 create unique index APOYO_ECONOMICOS_PK on APOYO_ECONOMICOS (ID);
 
 /*==============================================================*/
-/* Table: RECOLECCIONES		                                      */
+/* Table: RECOLECCIONES		                                    */
 /*==============================================================*/
 create table RECOLECCIONES (
 	ID		             	SERIAL                 			not null,
@@ -252,10 +255,11 @@ create table RECOLECCIONES (
 primary key (ID)
 );
 
+/* Index: RECOLECCIONES_PK                                             */
 create unique index RECOLECCIONES_SEMI_PK on RECOLECCIONES (ID);
 
 /*==============================================================*/
-/* Table: HISTORIAS		                                      */
+/* Table: HISTORIAS		                                        */
 /*==============================================================*/
 create table HISTORIAS (
 	ID		             	SERIAL                 			not null,
@@ -273,7 +277,7 @@ create table HISTORIAS (
 create unique index HISTORIAS_PK on HISTORIAS (ID);
 
 /*==============================================================*/
-/* Table: PASSWORD_RESETS		                                      */
+/* Table: PASSWORD_RESETS		                                */
 /*==============================================================*/
 create table PASSWORD_RESETS (
 	EMAIL		            VARCHAR(255)                 	not null,
@@ -281,11 +285,12 @@ create table PASSWORD_RESETS (
 	CREATED_AT          	TIMESTAMP WITHOUT TIME ZONE     null
 );
 
+/* INDEX: INDEX_EMAIL*/
 create index INDEX_EMAIL on PASSWORD_RESETS (EMAIL);
 
 
 /*==============================================================*/
-/* Table: VOLUNTARIADOS		                                      */
+/* Table: VOLUNTARIADOS		                                    */
 /*==============================================================*/
 create table VOLUNTARIADOS (
 	ID		            	SERIAL                 			not null,
@@ -300,6 +305,7 @@ create table VOLUNTARIADOS (
 	primary key (ID)
 );
 
+/* INDEX: INDEX_VOLUNTARIADOS*/
 create index INDEX_VOLUNTARIADOS on VOLUNTARIADOS (ID);
 
 
@@ -384,4 +390,5 @@ alter table USERS
 	add foreign key (COMUNA_ID)
 		references COMUNAS (ID)
 		on delete cascade;
+/*---------------------------------------------------------------------------------------------------------------------------*/
 
