@@ -16,6 +16,6 @@ class Evento extends Model
     ];
 
     public function medida(){
-      return $this->morphMany('App\medida','MorphMedida');
+      return $this->morphMany('App\Medida','MorphMedida');
     }
 }
