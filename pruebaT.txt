@@ -1,0 +1,4 @@
+$a=['user_id' => 1, 'admin_id' => NULL , 'organization_id' => 1, 'catastrofe_id'=>1, 'tipo_medida'=>2, 'descripcion' => 'prueba', 'fecha_inicio' => '2000-11-17 ', 'fecha_termino'=>'2000-12-18', 'estado'=>1, 'avance'=>1];
+$b=['metaDinero'=> 10000 ,'actualDinero'=>2,'region'=>' Metropolitana','comuna'=>'Maipu', 'direccion'=>'Mi casa 234'];
+$event=App\Evento::create($b);
+$event->medida()->create($a);
