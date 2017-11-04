@@ -1,107 +1,108 @@
 @extends('layouts.app')
-
 @section('content')
+
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
-
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-
-                        <div class="form-group{{ $errors->has('Rut') ? ' has-error' : '' }}">
-                            <label for="Rut" class="col-md-4 control-label">Rut</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="Rut" value="{{ old('Rut') }}" required>   
-
-                                @if ($errors->has('Rut'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('Rut') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('Rut') ? ' has-error' : '' }}">
-                            <label for="Rut" class="col-md-4 control-label">Rut</label>
-                            <select id="W3-select" name = 'option'>
-                                <option></option>
-                                <option value="Ultrasound Knee Right">Ultrasound Knee Right</option>
-                                <option value="Ultrasound Knee Left">Ultrasound Knee Left</option>
-                            </select>
-                            {{-- <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="Rut" value="{{ old('Rut') }}" required>   
-
-                                @if ($errors->has('Rut'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('Rut') }}</strong>
-                                    </span>
-                                @endif
-                            </div> --}}
-                        </div>
-                       
-                        {{-- 
-                        <br />
-                        <div class="container">
-                            <div class="row">
-                                <div class="ui-widget">
-                                    <label>Region: </label>
-                                    
-                                </div>
-                            </div>
-                        </div> --}}
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Register
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+    <form class="form-horizontal" role="form" method="POST" action="/register">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h2>Registro Nuevo Usuario</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="name">Nombre</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                        <input type="text" name="name" class="form-control" id="name"
+                               placeholder="Nombre" required autofocus>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="email">Correo</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                        <input type="text" name="email" class="form-control" id="email"
+                               placeholder="tu@correo.com" required autofocus>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="password">Contraseña</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group has-danger">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                        <input type="password" name="password" class="form-control" id="password"
+                               placeholder="Contraseña" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="password">Confirma tu Contraseña</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem">
+                            <i class="fa fa-repeat"></i>
+                        </div>
+                        <input type="password" name="password-confirmation" class="form-control"
+                               id="password-confirm" placeholder="Ingresa Nuevamente" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-3 field-label-responsive">
+                <label for="region">Region</label>
+            </div>
+            <div class="col-md-6">
+
+                <select class="form-control">
+                    <div class="mb-2 mr-sm-2 mb-sm-0">
+                        <option value="0">region 1</option>
+                        <option value="1">region 2</option>
+                        <option value="2"></option>
+                        <option value="3"></option>
+                        <option value="4"></option>
+                        
+                    </div>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-success"><i class="fa fa-user-plus"></i> Registrarse</button>
+            </div>
+        </div>
+
+        
+    </form>
 </div>
+
+
+
+
+
+
 @endsection

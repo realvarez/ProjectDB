@@ -9,13 +9,21 @@
 
     {{-- Boostrap --}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     {{-- Favicon == Icono --}}
     <link href="/IMG/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <title>Emergencias Chile</title>
     <!-- Styles -->
     <style> 
+        @media(min-width: 768px) {
+          .field-label-responsive {
+            padding-top: .5rem;
+            text-align: right;
+          }
+        }
         .slider{
             background: url("/IMG/incendio.jpg");
             height:100vh;
@@ -26,7 +34,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light padding-top bg-faded">
+    <nav class="navbar navbar-expand-sm navbar-light padding-top bg-faded pb-5">
         <!-- Brand -->
         <a class="navbar-brand" href="#">Chile Emergencias</a>
         <!-- Toggler/collapsibe Button -->

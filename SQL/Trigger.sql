@@ -11,7 +11,7 @@ BEGIN
 END;
 $d$ LANGUAGE plpgsql;
 
-DROP TRIGGER IF EXISTS funcion on usuarios cascade;
+DROP TRIGGER IF EXISTS funcion on users cascade;
   
 CREATE TRIGGER funcion BEFORE DELETE ON users FOR EACH ROW
 EXECUTE PROCEDURE bloquear_usuario();   
