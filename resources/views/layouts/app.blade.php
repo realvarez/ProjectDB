@@ -34,7 +34,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light padding-top bg-faded pb-5">
+    <nav class="navbar navbar-expand-sm navbar-light padding-top bg-faded">
         <!-- Brand -->
         <a class="navbar-brand" href="#">Chile Emergencias</a>
         <!-- Toggler/collapsibe Button -->
@@ -85,10 +85,19 @@
                     </li>
                 @endguest
             </div>
-          </div>
-        </nav>
-        @yield('content')
-    
+        </div>
+    </nav>
+    @yield('content')
+    <footer>
+        <div class="container">
+            <div>
+                <div class="copyright-box">
+                    2017 Universidad de Santiago de Chile.
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
