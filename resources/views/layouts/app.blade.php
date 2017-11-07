@@ -89,7 +89,7 @@
     </nav>
     @yield('content')
     <footer>
-        <div class="container">
+        <div class="container mt-5">
             <div>
                 <div class="copyright-box">
                     2017 Universidad de Santiago de Chile.

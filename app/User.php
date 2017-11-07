@@ -17,16 +17,16 @@ class User extends Authenticatable
 
 
     protected $fillable = [
-                        'nombre',
-                        'apellido',
-                        'rut',
-                        'email',
-                        'password',
-                        'rol',
-                        'region',
-                        'comuna',
-                        'direccion',
-                        'estado',
+        'nombre',
+        'apellido',
+        'rut',
+        'email',
+        'password',
+        'rol',
+        'region',
+        'comuna',
+        'direccion',
+        'estado',
 
     ];
 
@@ -55,24 +55,24 @@ class User extends Authenticatable
 
     public function depositos(){
       return $this -> hasMany('app\Deposito');
-     }
+  }
 
-     public function comuna(){
+  public function comuna(){
 
-        return $this->belongsTo('app\Comuna');
-     }
+    return $this->belongsTo('app\Comuna');
+}
 
-     public function rol(){
+public function rol(){
 
-        return $this->belongsTo('app\Rol');
-     }
+    return $this->belongsTo('app\Rol');
+}
 
 
-     public function rnv(){
+public function rnv(){
 
-        return $this->hasOne('app\rnv');
+    return $this->hasOne('app\rnv');
 
-     }
+}
 
 
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Medida;
 class MedidasController extends Controller
 {
     /**
@@ -11,9 +11,9 @@ class MedidasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(){
+        $medida = Medida::all();
+        return view('medidas.index', compact('medida'));
     }
 
     /**

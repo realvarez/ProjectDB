@@ -14,7 +14,10 @@
 Route::get('/', ['as' => 'principal' ,function () {
     return view('welcome');
 }]);
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('medidas','MedidasController');
+// Route::get('mis_medidas', 'MedidasController@');
+Route::resource('catastrofes','CatastrofesController');
