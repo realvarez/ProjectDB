@@ -13,7 +13,9 @@ class CatastrofesController extends Controller
      */
     public function index()
     {
-        //
+      $catastrofes= App\Catastrofe::all();
+      return view('inicio',compact('catastrofes'));
+
     }
 
     /**

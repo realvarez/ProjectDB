@@ -20,4 +20,4 @@ Auth::routes();
 
 Route::resource('medidas','MedidasController');
 // Route::get('mis_medidas', 'MedidasController@');
-Route::resource('catastrofes','CatastrofesController');
+Route::get('/inicio','CatastrofesController@index');
