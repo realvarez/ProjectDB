@@ -20,30 +20,17 @@
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
 
-                        <input type="text" name="name" class="form-control" id="nombre"
+                        <input type="text" name="name" class="form-control col-md-5" id="nombre"
                                placeholder="Nombres" required autofocus>
-                        
+
+                        <input type="text" name="apellido" class="form-control col-md-6" id="apellido"
+                               placeholder="Apellidos" required autofocus>
+
                         @if ($errors->has('name'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('name') }}</strong>
                             </span>
                         @endif
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 field-label-responsive">
-                <label for="name">Apellidos</label>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group {{ $errors->has('apellido') ? ' has-error' : '' }}">
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
-                        <input type="text" name="name" class="form-control" id="apellido"
-                               placeholder="Apellidos" required autofocus>
-                        
                         @if ($errors->has('apellido'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('apellido') }}</strong>
@@ -53,7 +40,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-md-3 field-label-responsive">
                 <label for="Run">Run</label>
@@ -63,7 +50,7 @@
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
                         <input type="text" name="Run" class="form-control" id="Run"
-                               placeholder="run" required autofocus>
+                               placeholder="Run (Sin Puntos ni Guion)" required autofocus>
                     </div>
                     @if ($errors->has('run'))
                         <span class="help-block">
@@ -138,15 +125,12 @@
                 <label for="region">Region</label>
             </div>
             <div class="col-md-6">
-
-                <select class="form-control">
-                    <div type="region" name="region" id="region" class="mb-2 mr-sm-2 mb-sm-0">
-                        <option value="0">region 1</option>
-                        <option value="1">region 2</option>
-                        <option value="2"></option>
-                        <option value="3"></option>
-                        <option value="4"></option>
-                        
+                <select class="form-control"  type="region" name="region" id="regionDropdown" >
+                    <div  class="mb-2 mr-sm-2 mb-sm-0">
+                        <option value="">Seleccione una Region</option>
+                        @foreach($regiones as $itemRegion)
+                        <option value={{$itemRegion->id}}>{{$itemRegion->nombre}}</option>
+                        @endforeach
                     </div>
                 </select>
             </div>
@@ -154,18 +138,15 @@
 
         <div class="row form-group">
             <div class="col-md-3 field-label-responsive">
-                <label for="region">Comuna</label>
+                <label for="comuna">Comuna</label>
             </div>
             <div class="col-md-6">
 
                 <select class="form-control">
-                    <div type="comuna" name="comuna" id="comuna" class="mb-2 mr-sm-2 mb-sm-0">
-                        <option value="0">comuna 1</option>
-                        <option value="1">comuna 2</option>
-                        <option value="2"></option>
-                        <option value="3"></option>
-                        <option value="4"></option>
-                        
+                        <div type="comuna" name="comuna" id="comunaDropdown" class="mb-2 mr-sm-2 mb-sm-0">
+                        @foreach($comunas as $itemComuna)
+                            <option value="{{$itemComuna->id}}">{{$itemComuna->nombre}}</option>
+                        @endforeach
                     </div>
                 </select>
             </div>
@@ -196,10 +177,4 @@
         
     </form>
 </div>
-
-
-
-
-
-
 @endsection

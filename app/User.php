@@ -22,7 +22,6 @@ class User extends Authenticatable
         'rut',
         'email',
         'password',
-        'rol',
         'region',
         'comuna',
         'direccion',

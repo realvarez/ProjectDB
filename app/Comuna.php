@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Comuna extends Model
 {
     protected $fillable= [
-
     	'region_id',
     	'nombre',
     ];
