@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Catastrofe;
 class CatastrofesController extends Controller
 {
     /**
@@ -13,7 +13,7 @@ class CatastrofesController extends Controller
      */
     public function index()
     {
-      $catastrofes= App\Catastrofe::all();
+      $catastrofes= Catastrofe::all();
       return view('inicio',compact('catastrofes'));
 
     }

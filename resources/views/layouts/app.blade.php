@@ -18,25 +18,14 @@
     <title>Emergencias Chile</title>
     <!-- Styles -->
     <style> 
-        @media(min-width: 768px) {
-          .field-label-responsive {
-            padding-top: .5rem;
-            text-align: right;
-          }
-        }
-        .slider{
-            background: url("/IMG/incendio.jpg");
-            height:100vh;
-            background-size: cover;
-            background-position: center;
-        }
+    
     </style>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light padding-top bg-faded">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light  padding-top  fixed-top">
         <!-- Brand -->
-        <a class="navbar-brand" href="#">Chile Emergencias</a>
+        <a class="navbar-brand" href="{{ route('principal') }}">Chile Emergencias</a>
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -45,10 +34,10 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <div class="navbar-nav mr-auto text-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Catastrofes</a>
+                    <a class="nav-link" href="{{ route('catastrofes.index') }}">Catastrofes</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#medidas" id="DropdownMedidas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Medidas</a>
+                    <a class="nav-link dropdown-toggle" href="{{ route('medidas.index') }}" id="DropdownMedidas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Medidas</a>
                     <div class="dropdown-menu" aria-labelledby="DropdownMedidas">
                         <a class="dropdown-item" href="#">Centros de Acopio</a>
                         <a class="dropdown-item" href="#">Voluntariados</a>

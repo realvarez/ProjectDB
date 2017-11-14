@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Medida;
-class MedidasController extends Controller
+
+class RecoleccionController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-        $medida = Medida::where('estado',1);
-        return view('medidas.index', compact('medida'));
+    public function index()
+    {
+        //
     }
 
     /**

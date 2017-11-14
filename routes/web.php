@@ -11,13 +11,14 @@
 |
 */
 
-Route::get('/', ['as' => 'principal' ,function () {
+Route::get('/', ['as' => 'principal' ,'uses'=> function () {
     return view('welcome');
 }]);
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home',['as'=> 'home','HomeController@index']);
 
 Auth::routes();
 
 Route::resource('medidas','MedidasController');
-// Route::get('mis_medidas', 'MedidasController@');
+Route::resource('catastrofes','CatastrofesController');
+
 Route::get('/inicio','CatastrofesController@index');
