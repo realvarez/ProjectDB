@@ -8,7 +8,7 @@
           {{$catastrofe->tipo_catastrofe}}
         </div>
         <div class="col-md">
-          {{$region->nombre->where($catastrofe->region,id)}}
+          {{$regiones->nombre->where($catastrofe->region,id)}}
         </div>
         <div class="col-md">
           {{$comunas->nombre->where($catastrofe->comuna,id)}}
