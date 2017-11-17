@@ -6,6 +6,7 @@
   <br>
   <br>
   <br>
+  <br>
 
   <h5>Lista de catastrofes</h5>
     @forelse($catastroves as $c)
