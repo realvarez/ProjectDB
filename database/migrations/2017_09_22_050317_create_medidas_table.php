@@ -18,7 +18,7 @@ class CreateMedidasTable extends Migration
             $table->integer('user_id');
             $table->integer('admin_id')->nullable();
             $table->integer('organization_id');
-            $table->integer('catastrofe_id');
+            $table->integer('catastrove_id');
             $table->integer('tipo_medida');
             $table->string('descripcion');
             $table->date('fecha_inicio');
@@ -38,9 +38,9 @@ class CreateMedidasTable extends Migration
                 ->on('users')
                 ->onDelete('cascade');
 
-            $table->foreign('catastrofe_id')
+            $table->foreign('catastrove_id')
                 ->references('id')
-                ->on('catastrofes')
+                ->on('catastroves')
                 ->onDelete('cascade');
 
             $table->foreign('organization_id')

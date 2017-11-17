@@ -19,6 +19,6 @@ Route::get('/home',['as'=> 'home','HomeController@index']);
 Auth::routes();
 
 Route::resource('medidas','MedidasController');
-Route::resource('catastrofes','CatastrofesController');
+Route::resource('catastrofes','CatastrovesController');
 
-Route::get('/inicio','CatastrofesController@index');
+Route::get('/inicio','CatastrovesController@index');
