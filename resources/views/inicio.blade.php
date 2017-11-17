@@ -8,7 +8,7 @@
           {{$catastrofe->id}}
         </div>
         <div class="col-md">
-          {{$catastrofe->comuna}}
+          <!-- {{$catastrofe->comuna}} -->
         </div>
       </div>
 
