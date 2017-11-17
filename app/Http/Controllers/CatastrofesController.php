@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Catastrofe;
-// use App\Comuna;
+use App\Comuna;
+use App\Region;
 class CatastrofesController extends Controller
 {
     /**
@@ -15,7 +16,9 @@ class CatastrofesController extends Controller
     public function index()
     {
       $catastrofes= Catastrofe::all();
-      return view('inicio',compact('catastrofes'));
+      $comunas = Comuna::all();
+      $regiones = Region::all();
+      return view('inicio',compact('catastrofes','comunas','regiones'));
 
     }
 

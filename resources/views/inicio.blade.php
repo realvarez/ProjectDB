@@ -5,10 +5,13 @@
     @forelse($catastrofes as $catastrofe)
       <div class="row">
         <div class="col-md">
-          <!-- {{$catastrofe->id}} -->
+          {{$catastrofe->tipo_catastrofe}}
         </div>
         <div class="col-md">
-          <!-- {{$catastrofe->comuna}} -->
+          {{$region->nombre->where($catastrofe->region,id)}}
+        </div>
+        <div class="col-md">
+          {{$comunas->nombre->where($catastrofe->comuna,id)}}
         </div>
       </div>
 
