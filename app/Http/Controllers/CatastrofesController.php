@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Catastrofe;
-use App\Comuna;
+// use App\Comuna;
 class CatastrofesController extends Controller
 {
     /**

@@ -5,7 +5,7 @@
     @forelse($catastrofes as $catastrofe)
       <div class="row">
         <div class="col-md">
-          {{$catastrofe->id}}
+          <!-- {{$catastrofe->id}} -->
         </div>
         <div class="col-md">
           <!-- {{$catastrofe->comuna}} -->
