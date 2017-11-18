@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Catastrofe extends Model
+class Catastrove extends Model
 {
     protected $fillable = [
         'user_id',

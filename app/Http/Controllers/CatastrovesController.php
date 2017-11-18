@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Catastrofe;
+use App\Catastrove;
 use App\Comuna;
 use App\Region;
-class CatastrofesController extends Controller
+class CatastrovesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,11 @@ class CatastrofesController extends Controller
      */
     public function index()
     {
-      $catastrofes= Catastrofe::all();
+      $catastroves= Catastrove::all();
       $comunas = Comuna::all();
       $regiones = Region::all();
-      return view('inicio',compact('catastrofes','comunas','regiones'));
+      $numero=12;
+      return view('inicio',compact('catastroves','comunas','regiones','numero'));
 
     }
 
