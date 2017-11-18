@@ -2,7 +2,7 @@ ALTER SEQUENCE regions_id_seq RESTART WITH 1;
 ALTER SEQUENCE comunas_id_seq RESTART WITH 1;
 ALTER SEQUENCE users_id_seq RESTART WITH 1;
 ALTER SEQUENCE rols_id_seq RESTART WITH 1;
-ALTER SEQUENCE catastrofes_id_seq RESTART WITH 1;
+ALTER SEQUENCE catastroves_id_seq RESTART WITH 1;
 ALTER SEQUENCE organizations_id_seq RESTART WITH 1;
 ALTER SEQUENCE apoyo_economicos_id_seq RESTART WITH 1;
 ALTER SEQUENCE organization_users_id_seq RESTART WITH 1;
@@ -195,7 +195,7 @@ insert into users ("nombre","apellido","rut","email","password","rol_id","comuna
 ('Baldomero','Lillo','56748274','baldomero.lillo@gmail.com','1234',3,18,'Carlos Causino 89',1,CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Catastrofes
-insert into catastrofes ("user_id","comuna_id","tipo_catastrofe","descripcion","created_at","updated_at") values 
+insert into catastroves ("user_id","comuna_id","tipo_catastrofe","descripcion","created_at","updated_at") values 
 (1,1,1,'incendio',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
 (2,2,2,'terremoto',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
@@ -213,7 +213,7 @@ insert into rnvs("user_id", "ultima_medida", "rut","nombre","correo","created_at
 (1,1,123456789,'Felipe','felipe.vasquez@usach.cl',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Medidas	
-insert into "medidas" ("user_id", "admin_id", "organization_id", "catastrofe_id", "tipo_medida", "descripcion", "fecha_inicio", "fecha_termino", "estado", "avance", "MorphMedida_id", "MorphMedida_type", "created_at", "updated_at" )
+insert into "medidas" ("user_id", "admin_id", "organization_id", "catastrove_id", "tipo_medida", "descripcion", "fecha_inicio", "fecha_termino", "estado", "avance", "MorphMedida_id", "MorphMedida_type", "created_at", "updated_at" )
 values 
 (1,NULL,1,1,2,'choripanada','2000-12-17','2000-12-17',1,1,2,'App/Eventos',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
 (2,NULL,2,2,1,'colecta junta vecinos','2000-12-17','2000-12-17',0,0,1,'App/Recolecciones',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));

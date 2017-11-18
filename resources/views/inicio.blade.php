@@ -16,7 +16,6 @@
           <p>Tipo Catastrofe:   {{$c->descripcion}}</p>
           <p>Comuna:            {{$c->comuna->nombre}}</p>
           <p>Codigo catastrofe: {{$c->tipo_catastrofe}}</p>
-          
           <p>--------------------------</p>
           <br>
 
