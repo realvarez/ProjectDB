@@ -2,44 +2,44 @@
 @extends('layouts.app')
 @section('content')
 
-  <section class="container">
-  <br>
-  <br>
-  <br>
-  <br>
+  <section class="container-fluid">
 
   <h5>Lista de catastrofes</h5>
-    @forelse($catastroves as $c)
+
       <div class="row">
-        <div class="col-md">
-
-          <p>Tipo Catastrofe:   {{$c->descripcion}}</p>
-          <p>Comuna:            {{$c->comuna->nombre}}</p>
-          <p>Codigo catastrofe: {{$c->tipo_catastrofe}}</p>
-          
-          <p>--------------------------</p>
-          <br>
+        <div class="col-md-4 color2">
+          1
+          1
+          1
 
         </div>
-        <div class="col-md">
-<<<<<<< HEAD
-          {{$regiones->nombre->where($catastrofe->region,id)}}
-=======
-         
->>>>>>> f272e75f337e7dd85148b0306bc231c62ef9aca2
-        </div>
-        <div class="col-md">
-      
-        </div>
-      </div>
 
-    @empty
-      <p>NO HAY CATASTROFES</p>
+        <div class="col-md-8 contenido color1">
+          <!-- @forelse($catastroves as $c)
+          <div class="row">
+            <div class="col">
+              <div class="elemento">
+                <p>Tipo Catastrofe:   {{$c->descripcion}}</p>
+                <p>Comuna:            {{$c->comuna->nombre}}</p>
+                <p>Codigo catastrofe: {{$c->tipo_catastrofe}}</p>
+              </div>
+              @empty
+              <p>NO HAY CATASTROFES</p>
 
-    @endforelse
+              @endforelse -->
+
+            </div>
+
+          </div>
+
+
+
+
+
+
+
 
   </section>
 
 
 @stop
-   

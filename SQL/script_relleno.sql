@@ -28,7 +28,7 @@ insert into regions ("nombre","created_at","updated_at") values
 
 
 --Insertar comunas
-insert into comunas ("nombre","region_id","created_at","updated_at") values 
+insert into comunas ("nombre","region_id","created_at","updated_at") values
 ('Arica',1,CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
 ('Camarones',1,CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
 ('Putre',1,CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
@@ -195,26 +195,26 @@ insert into users ("nombre","apellido","rut","email","password","rol_id","comuna
 ('Baldomero','Lillo','56748274','baldomero.lillo@gmail.com','1234',3,18,'Carlos Causino 89',1,CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Catastrofes
-insert into catastrofes ("user_id","comuna_id","tipo_catastrofe","descripcion","created_at","updated_at") values 
+insert into catastroves ("user_id","comuna_id","tipo_catastrofe","descripcion","created_at","updated_at") values
 (1,1,1,'incendio',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
 (2,2,2,'terremoto',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Organizacion
-insert into organizations ("nombre","logo","descripcion","created_at","updated_at") values 
+insert into organizations ("nombre","logo","descripcion","created_at","updated_at") values
 ('teleton','nose que va','fundacion que ayuda a discapacitados',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
 ('techo para chile','techito','fundacion que hace casas',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Organization users
-insert into organization_users("organization_id","user_id","rol","created_at","updated_at") values 
+insert into organization_users("organization_id","user_id","rol","created_at","updated_at") values
 (1,1,2,CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),(2,2,2,CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --RNV
-insert into rnvs("user_id", "ultima_medida", "rut","nombre","correo","created_at","updated_at") values 
+insert into rnvs("user_id", "ultima_medida", "rut","nombre","correo","created_at","updated_at") values
 (1,1,123456789,'Felipe','felipe.vasquez@usach.cl',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
---Medidas	
+--Medidas
 insert into "medidas" ("user_id", "admin_id", "organization_id", "catastrofe_id", "tipo_medida", "descripcion", "fecha_inicio", "fecha_termino", "estado", "avance", "MorphMedida_id", "MorphMedida_type", "created_at", "updated_at" )
-values 
+values
 (1,NULL,1,1,2,'choripanada','2000-12-17','2000-12-17',1,1,2,'App/Eventos',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
 (2,NULL,2,2,1,'colecta junta vecinos','2000-12-17','2000-12-17',0,0,1,'App/Recolecciones',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
@@ -228,7 +228,7 @@ insert into gastos("medida_id","descripcion","created_at","updated_at")values
 (1,'pago ayudantia',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Recoleccion
-insert into recolecciones("metaRecoleccion","recoleccionActual","region","comuna","direccion","tipoRecoleccion","created_at","updated_at") values 
+insert into recolecciones("metaRecoleccion","recoleccionActual","region","comuna","direccion","tipoRecoleccion","created_at","updated_at") values
 (1000000,500,'Region Metropolitana','Quinta Normal','San Juan 456',1,CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Depositos
