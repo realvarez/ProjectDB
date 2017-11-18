@@ -1,2 +1,23 @@
 /*@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";/*!
-*/ 
+*/
+
+.elemento{
+  margin: auto;
+  padding: 20px;
+  background: rgb(198, 198, 198);
+  border: 1px  solid gray;
+}
+
+.catastrofes{
+  margin-top: 30px;
+  padding: 30px;
+}
+
+.color2{
+  background: yellow;
+}
+
+.color1{
+  background: blue;
+  height: 50px;
+}
