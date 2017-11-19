@@ -30,7 +30,8 @@ class CatastrovesController extends Controller
      */
     public function create()
     {
-        //
+        $comunas=Comuna::all();
+        return view('catastrofes.crear',compact('comunas'));
     }
 
     /**
