@@ -8,9 +8,10 @@ class Catastrove extends Model
 {
     protected $fillable = [
         'user_id',
-        'region',
+        'region_id',
         'descripcion',
-        'comuna',
+        'titulo',
+        'comuna_id',
         'tipo_catastrofe',
     ];
 

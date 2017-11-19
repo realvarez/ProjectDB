@@ -255,3 +255,20 @@ insert into password_resets("email","token","created_at")values
 insert into voluntariados ("metaVoluntarios", "voluntariosActuales", "duracionDias","region","comuna","direccion","created_at","updated_at") values
 (100,50,10,'Araucania','Temuco','Miguel Aguirre 1499',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
 (43,40,15,'Arica y Parinacota','Arica','Balmaceda 1010',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
+
+--tipoCatastroves
+
+insert into tipoCatastroves("tipo")values
+  ('Incendio'),
+  ('Terremoto'),
+  ('Maremoto'),
+  ('Destruccion del Mundo'),
+  ('Aluvion'),
+  ('Movimientos de masa'),
+  ('Fenómenos atmosféricos'),
+  ('Desastres biológicos'),
+  ('Erupciones'),
+  ('Hambruna'),
+  ('Fenómenos espaciales'),
+  ('Inundación'),
+  ('otros');

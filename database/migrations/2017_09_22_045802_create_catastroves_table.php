@@ -28,6 +28,11 @@ class CreateCatastrovesTable extends Migration
                 ->on('comunas')
                 ->onDelete('cascade');
 
+          $table->foreign('tipo_catastrofe')
+                    ->references('id')
+                    ->on('tipoCatastroves')
+                    ->onDelete('cascade');
+
             $table->foreign('region_id')
                     ->references('id')
                     ->on('regions')
