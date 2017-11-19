@@ -23,7 +23,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body >
-    <nav class="navbar navbar-expand-sm navbar-light bg-light  padding-top  fixed-top ">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light  padding-top  fixed-top mb-5">
         <!-- Brand -->
         <a class="navbar-brand" href="{{ route('principal') }}">Chile Emergencias</a>
         <!-- Toggler/collapsibe Button -->

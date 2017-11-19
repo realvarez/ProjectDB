@@ -4,13 +4,15 @@
 
   <section class="container-fluid mt-5">
 
-      <div class="row">
+      <div class="row mt-5">
         <div class="col-md-2 color2">
-          1
-          1
-          1
-          1111
-          1111111
+
+
+
+
+
+
+
 
         </div>
 
@@ -25,7 +27,7 @@
                           <div class="card-block ">
                               <h4 class="card-title">Comuna:{{$c->comuna->nombre}}</h4>
                               <p class="card-text">{{$c->descripcion}}</p>
-                              <a class="btn btn-danger">Acceder</a>
+                              <a class="btn1 btn btn-danger">Acceder</a>
                           </div>
                       </div>
 
