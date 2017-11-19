@@ -177,6 +177,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+        * TWITTER
+        */
+        'Thujohn\Twitter\TwitterServiceProvider',
+
     ],
 
     /*
@@ -225,6 +230,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        /*
+        * TWITTER
+        */
+        'Twitter' => 'Thujohn\Twitter\Facades\Twitter',
 
     ],
 

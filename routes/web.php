@@ -21,4 +21,11 @@ Auth::routes();
 Route::resource('medidas','MedidasController');
 Route::resource('catastrofes','CatastrovesController');
 
+
 Route::get('/inicio','CatastrovesController@index');
+
+Route::get('prueba',['as'=> 'prueba','uses'=> 'PruebaController@index']);
+
+/* TWITTER */
+Route::get('twitter', 'TwitterController@twitter');
+Route::post('tweet', ['as'=>'post.tweet','uses'=>'TwitterController@tweet']);
