@@ -25,7 +25,7 @@
 }
 
 .color2{
-  background:#d93131;
+  background:#e3e1e1;
 
 }
 
@@ -35,8 +35,7 @@
 }*/
 
 .danger-color-dark {
-    background-color: #e3e1e1
-     !important;
+    background-color: #615b5b !important;
 }
 
 .card-block {
@@ -49,6 +48,7 @@
     color: #fff !important;
     margin: 6px;
     white-space: normal !important;
+    background: #8d8989;
 }
 
 
@@ -105,7 +105,10 @@
 
   }
 
+.ttr{
 
+  background: rgb(199, 199, 199);
+}
 
 /*formulario crear catastrofes*/
 
