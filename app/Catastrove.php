@@ -23,6 +23,6 @@ class Catastrove extends Model
 
     public function comuna(){
 
-        return $this->belongsTo('app\Comuna');
+        return $this->belongsTo('App\Comuna');
     }
 }

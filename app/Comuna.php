@@ -14,17 +14,17 @@ class Comuna extends Model
 
     public function user(){
 
-    	return $this->hasMany('app\User');
+    	return $this->hasMany('App\User');
     }
 
     public function region(){
 
-    	return $this->belongsTo('app\Region');
+    	return $this->belongsTo('App\Region');
     }
 
     public function catastrofes(){
 
-    	return $this->hasMany('app\Catastrofe');
+    	return $this->hasMany('App\Catastrofe');
     }
 
 
