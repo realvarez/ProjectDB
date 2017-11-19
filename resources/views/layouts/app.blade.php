@@ -17,13 +17,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <title>Emergencias Chile</title>
     <!-- Styles -->
-    <style> 
-    
+    <style>
+
     </style>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light  padding-top  fixed-top">
+<body >
+    <nav class="navbar navbar-expand-sm navbar-light bg-light  padding-top  fixed-top ">
         <!-- Brand -->
         <a class="navbar-brand" href="{{ route('principal') }}">Chile Emergencias</a>
         <!-- Toggler/collapsibe Button -->
@@ -88,7 +88,7 @@
     </footer>
 
     <!-- Scripts -->
-   
+
     <script src="{{ asset('js/app.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>

@@ -13,9 +13,10 @@ class CreateCatastrovesTable extends Migration
             $table->integer('user_id');
             $table->integer('comuna_id');
             $table->string('descripcion');
+            $table->string('titulo');
             $table->integer('tipo_catastrofe');
             $table->timestamps();
-            
+
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')

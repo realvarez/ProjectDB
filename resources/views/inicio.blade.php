@@ -2,39 +2,39 @@
 @extends('layouts.app')
 @section('content')
 
-  <section class="container-fluid">
+  <section class="container-fluid mt-5">
 
-  <h5>Lista de catastrofes</h5>
-
-<<<<<<< HEAD
-          <p>Tipo Catastrofe:   {{$c->descripcion}}</p>
-          <p>Comuna:            {{$c->comuna->nombre}}</p>
-          <p>Codigo catastrofe: {{$c->tipo_catastrofe}}</p>
-          <p>--------------------------</p>
-          <br>
-=======
       <div class="row">
-        <div class="col-md-4 color2">
+        <div class="col-md-2 color2">
           1
           1
           1
->>>>>>> 65ee3213b4561c9ebebd450bf07d308c5420b03a
+          1111
+          1111111
 
         </div>
 
-        <div class="col-md-8 contenido color1">
-          <!-- @forelse($catastroves as $c)
-          <div class="row">
-            <div class="col">
-              <div class="elemento">
-                <p>Tipo Catastrofe:   {{$c->descripcion}}</p>
-                <p>Comuna:            {{$c->comuna->nombre}}</p>
-                <p>Codigo catastrofe: {{$c->tipo_catastrofe}}</p>
-              </div>
+        <div class="col-md-7 contenido color1">
+          @forelse($catastroves as $c)
+          <div class="row ">
+            <div class="col m-2 p-2">
+              <div class="card elemento">
+                          <div class="card-header  danger-color-dark white-text">
+                              <h4> {{$c->titulo}} </h4>
+                          </div>
+                          <div class="card-block ">
+                              <h4 class="card-title">Comuna:{{$c->comuna->nombre}}</h4>
+                              <p class="card-text">{{$c->descripcion}}</p>
+                              <a class="btn btn-danger">Acceder</a>
+                          </div>
+                      </div>
+
+
               @empty
               <p>NO HAY CATASTROFES</p>
 
-              @endforelse -->
+              @endforelse
+
 
             </div>
 
