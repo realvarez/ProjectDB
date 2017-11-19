@@ -37,6 +37,8 @@
 
               @endforelse
 
+              {{ $catastroves->links() }}
+
 
             </div>
 
