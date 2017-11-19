@@ -50,10 +50,10 @@
 
 
       </div>
-      <div class="col ttr">
+      <div class="col">
 
-        Servicio Twitter
-
+<a class="twitter-timeline" href="https://twitter.com/Emergencias9?ref_src=twsrc%5Etfw">Tweets by Emergencias9</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <a href="https://twitter.com/Emergencias9?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @Emergencias9</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
   </section>
 

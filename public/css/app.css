@@ -35,7 +35,8 @@
 }*/
 
 .danger-color-dark {
-    background-color: #C00 !important;
+    background-color: #e3e1e1
+     !important;
 }
 
 .card-block {
@@ -97,17 +98,14 @@
     /*fin search*/
 
   .head-catastrofe{
-    background: rgb(126, 217, 226);
+    background: #b6b4b4;
     padding: 200px;
     text-align: center;
     color: #fff;
 
   }
 
-.ttr{
 
-  background: rgb(199, 199, 199);
-}
 
 /*formulario crear catastrofes*/
 
