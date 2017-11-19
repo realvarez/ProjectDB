@@ -24,7 +24,7 @@ class Comuna extends Model
 
     public function catastrofes(){
 
-    	return $this->hasMany('app\Catastrofe');
+    	return $this->hasMany('App\Catastrofe');
     }
 
 

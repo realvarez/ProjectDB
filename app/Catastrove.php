@@ -9,6 +9,7 @@ class Catastrove extends Model
     protected $fillable = [
         'user_id',
         'region',
+        'descripcion',
         'comuna',
         'tipo_catastrofe',
     ];
@@ -23,6 +24,6 @@ class Catastrove extends Model
 
     public function comuna(){
 
-        return $this->belongsTo('app\Comuna');
+        return $this->belongsTo('App\Comuna');
     }
 }
