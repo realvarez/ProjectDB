@@ -54,14 +54,14 @@ class CatastrovesController extends Controller
 
         //Crear
         $comuna= Comuna::where('nombre', $request->comuna)->get();
-        
+
         $catastrofe= new Catastrove;
-        $catastrofe->descripcion=$request->descripcion; 
+        $catastrofe->descripcion=$request->descripcion;
         $catastrofe->tipo_catastrofe=2;
         $catastrofe->titulo=$request->titulo;
         $catastrofe->user_id=2; // Por ahora constante
         $catastrofe->comuna()->associate($comuna[0]);
-        
+
 
        $catastrofe->save();
 
