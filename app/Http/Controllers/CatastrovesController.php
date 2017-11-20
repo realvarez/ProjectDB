@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Catastrove;
 use App\Comuna;
 use App\Region;
+use Twitter;
 class CatastrovesController extends Controller
 {
     /**
@@ -65,6 +66,9 @@ class CatastrovesController extends Controller
 
        $catastrofe->save();
 
+        //Twitteo de catastrofe
+        $newTwitte = ['status' => $request->titulo." en ".$request->comuna.". Descrip: ".$request->descripcion];
+        $twitter = Twitter::postTweet($newTwitte);
         //Redireccion
 
       return  redirect()->route('catastrofes.index');
