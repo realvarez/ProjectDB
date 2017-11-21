@@ -58,7 +58,7 @@ class CatastrovesController extends Controller
 
         $catastrofe= new Catastrove;
         $catastrofe->descripcion=$request->descripcion;
-        $catastrofe->tipo_catastrofe=2;
+        $catastrofe->tipoCatastrove_id=1;
         $catastrofe->titulo=$request->titulo;
         $catastrofe->user_id=2; // Por ahora constante
         $catastrofe->comuna()->associate($comuna[0]);

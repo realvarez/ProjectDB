@@ -286,20 +286,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   /*fin progres bar*/
+
+
+
+  .descripcionM{
+    border: 5px solid red;
+    border-radius: bottom 5px;
+    
+  }
