@@ -8,6 +8,24 @@ ALTER SEQUENCE apoyo_economicos_id_seq RESTART WITH 1;
 ALTER SEQUENCE organization_users_id_seq RESTART WITH 1;
 ALTER SEQUENCE recolecciones_id_seq RESTART WITH 1;
 ALTER SEQUENCE historias_id_seq RESTART WITH 1;
+ALTER SEQUENCE "tipoCatastroves_id_seq" RESTART WITH 1;
+
+
+insert into "tipoCatastroves" ("tipo")values
+  ('Incendio'),
+  ('Terremoto'),
+  ('Maremoto'),
+  ('Destruccion del Mundo'),
+  ('Aluvion'),
+  ('Movimientos de masa'),
+  ('Fenómenos atmosféricos'),
+  ('Desastres biológicos'),
+  ('Erupciones'),
+  ('Hambruna'),
+  ('Fenómenos espaciales'),
+  ('Inundación'),
+  ('otros');
+
 
 insert into regions ("nombre","created_at","updated_at") values
 ('XV-Arica y Parinacota',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),--1
@@ -195,7 +213,7 @@ insert into users ("nombre","apellido","rut","email","password","rol_id","comuna
 ('Baldomero','Lillo','56748274','baldomero.lillo@gmail.com','1234',3,18,'Carlos Causino 89',1,CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Catastrofes
-insert into catastroves ("user_id","comuna_id","tipo_catastrofe","descripcion","titulo","created_at","updated_at") values
+insert into catastroves ("user_id","comuna_id","tipoCatastrove_id","descripcion","titulo","created_at","updated_at") values
 (1,1,1,'Un gran incendio azota este lugar, dejando una gran cantidad de damnificados,bla blablablablablablablablablablablablablablablablablablablablablabla','incendio en este lugar',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
 (2,2,2,'Un gran terremota azota este lugar, dejando una gran cantidad de damnificados,bla blablablablablablablablablablablablablablablablablablablablablabla','Gran terremoto en otro lugar',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
@@ -217,7 +235,6 @@ insert into "medidas" ("user_id", "admin_id", "organization_id", "catastrove_id"
 values
 (1,NULL,1,1,2,'choripanada','2000-12-17','2000-12-17',1,1,2,'App/Eventos',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
 (2,NULL,2,2,1,'colecta junta vecinos','2000-12-17','2000-12-17',0,0,1,'App/Recolecciones',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
-
 
 --Apoyo economico
 insert into "apoyo_economicos" ("metaMinima", "actual", "numCuenta", "TipoCuenta", "bancoCuenta", "titularCuenta", "correoCuenta", "created_at", "updated_at")values
@@ -258,18 +275,3 @@ insert into voluntariados ("metaVoluntarios", "voluntariosActuales", "duracionDi
 (43,40,15,'Arica y Parinacota','Arica','Balmaceda 1010',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --tipoCatastroves
-
-insert into tipoCatastroves("tipo")values
-  ('Incendio'),
-  ('Terremoto'),
-  ('Maremoto'),
-  ('Destruccion del Mundo'),
-  ('Aluvion'),
-  ('Movimientos de masa'),
-  ('Fenómenos atmosféricos'),
-  ('Desastres biológicos'),
-  ('Erupciones'),
-  ('Hambruna'),
-  ('Fenómenos espaciales'),
-  ('Inundación'),
-  ('otros');
