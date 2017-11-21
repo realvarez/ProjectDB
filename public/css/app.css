@@ -16,12 +16,13 @@
 }
 
 
-.catastrofes{
+.contenedorC{
+  ;
 
 }
 
 .color2{
-  background:#e3e1e1;
+  background: #dfff9c ;
 
 }
 
@@ -29,7 +30,8 @@
   /*background:rgb(207, 207, 207);*/
   overflow: scroll;
   height: 500px;
-
+  width: 100%;
+  margin: 0px;
 }
 
 .danger-color-dark {
@@ -38,6 +40,7 @@
 
 .card-block {
   color: black;
+
 }
 
 .btn1 {
@@ -95,13 +98,7 @@
     }
     /*fin search*/
 
-  .head-catastrofe{
-    background: #b6b4b4;
-    padding: 200px;
-    text-align: center;
-    color: #fff;
 
-  }
 
 .ttr{
 

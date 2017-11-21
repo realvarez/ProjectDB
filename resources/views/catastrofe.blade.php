@@ -3,13 +3,9 @@
 
 <section class="container">
   <div class="row">
-    <div class="col-md-12">
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+    <div class="col-md-12 mt-5">
         <h4>{{$c->titutulo}}</h4>
+        <p>{{$c->tipoCatastrove->tipo}}</p>
         <p>{{$c->descripcion}}</p>
     </div>
 
@@ -26,7 +22,7 @@
     </div>
 
     <div class="col-md-6">
-      
+
     </div>
 
   </div>
