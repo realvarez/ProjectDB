@@ -83,7 +83,9 @@ class CatastrovesController extends Controller
      */
     public function show($id)
     {
-        //
+        $catastrofe=Catastrove::find($id);
+
+        return view ('catastrofe',compact('catastrofe'));
     }
 
     /**
@@ -94,7 +96,7 @@ class CatastrovesController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -106,7 +108,14 @@ class CatastrovesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $catastrofe=Catastrove::find($id);
+
+        $catastrofe->descripcion=$request->descripcion;
+        $catastrofe->titulo=$request->titulo;
+        $catastrofe->save();
+
+        return redirect()->route('catastrofes.index');
+
     }
 
     /**
@@ -117,6 +126,11 @@ class CatastrovesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $catastrofe=Catastrove::find($id);
+
+        $catastrofe->delete();
+
+        return redirect()->route('catastrofes.index');
+
     }
 }

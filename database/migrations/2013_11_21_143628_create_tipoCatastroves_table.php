@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TipoCatastroves extends Migration
+class CreateTipoCatastrovesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class TipoCatastroves extends Migration
      */
     public function up()
     {
-      Schema::create('participas', function (Blueprint $table) {
-          $table->increments('id');
-          $table->string('tipo');
-          $table->timestamps();
-      });
-  }
-
+        Schema::create('tipoCatastroves', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('tipo');
+            $table->timestamps();
+        });
+    }
 
     /**
      * Reverse the migrations.
