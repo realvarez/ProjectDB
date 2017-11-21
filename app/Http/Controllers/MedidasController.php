@@ -50,7 +50,7 @@ class MedidasController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
