@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TipoCatastrove extends Model
+class Tipo_catastrove extends Model
 {
   protected $fillable=[
 

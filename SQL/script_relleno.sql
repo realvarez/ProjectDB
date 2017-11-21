@@ -8,10 +8,10 @@ ALTER SEQUENCE apoyo_economicos_id_seq RESTART WITH 1;
 ALTER SEQUENCE organization_users_id_seq RESTART WITH 1;
 ALTER SEQUENCE recolecciones_id_seq RESTART WITH 1;
 ALTER SEQUENCE historias_id_seq RESTART WITH 1;
-ALTER SEQUENCE "tipoCatastroves_id_seq" RESTART WITH 1;
+ALTER SEQUENCE "tipo_catastroves_id_seq" RESTART WITH 1;
 
 
-insert into "tipoCatastroves" ("tipo")values
+insert into "tipo_catastroves" ("tipo")values
   ('Incendio'),
   ('Terremoto'),
   ('Maremoto'),

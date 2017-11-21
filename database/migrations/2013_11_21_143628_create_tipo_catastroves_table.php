@@ -13,7 +13,7 @@ class CreateTipoCatastrovesTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipoCatastroves', function (Blueprint $table) {
+        Schema::create('tipo_catastroves', function (Blueprint $table) {
             $table->increments('id');
             $table->string('tipo');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateTipoCatastrovesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipoCatastroves');
+        Schema::dropIfExists('tipo_catastroves');
     }
 }

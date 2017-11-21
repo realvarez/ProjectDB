@@ -28,6 +28,6 @@ class Catastrove extends Model
         return $this->belongsTo('App\Comuna');
     }
     public function tipoC(){
-      return $this->belongsTo('App\TipoCatastrove');
+      return $this->belongsTo('App\Tipo_catastrove');
     }
 }
