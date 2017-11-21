@@ -4,8 +4,13 @@
 <section class="container">
   <div class="row">
     <div class="col-md-12">
-        <h4>{{c->titutulo}}</h4>
-        <p>{{c->descripcion}}</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+        <h4>{{$c->titutulo}}</h4>
+        <p>{{$c->descripcion}}</p>
     </div>
 
     <div class="col-md-6">
@@ -21,7 +26,7 @@
     </div>
 
     <div class="col-md-6">
-      aca se deberian mostrar la descricion de cada medida al seleccionar alguna
+      
     </div>
 
   </div>

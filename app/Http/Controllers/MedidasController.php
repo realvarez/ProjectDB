@@ -91,12 +91,13 @@ class MedidasController extends Controller
     public function buscarMedidas($catastrofe_id)
 
     {
-
+        $c=Catastrove::find($catastrofe_id);
+        
        
         $medidas=Medida::where('catastrove_id',$catastrofe_id)->get();
 
         //dd($medidas);
-        return $medidas;
+        return view('catastrofe',compact('c','medidas'));
 
     }
 }
