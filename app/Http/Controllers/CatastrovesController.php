@@ -16,7 +16,7 @@ class CatastrovesController extends Controller
      */
     public function index()
     {
-      $catastroves= Catastrove::paginate(1);
+      $catastroves= Catastrove::paginate(3);
       $comunas = Comuna::all();
       $regiones = Region::all();
       $numero=12;

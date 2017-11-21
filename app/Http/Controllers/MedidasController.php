@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Medida;
+use App\Catastrove;
 class MedidasController extends Controller
 {
     /**
@@ -12,8 +13,12 @@ class MedidasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $medida = Medida::where('estado',1);
+       $medida = Medida::all();
+
+
         return view('medidas.index', compact('medida'));
+        
+
     }
 
     /**
@@ -80,5 +85,18 @@ class MedidasController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function buscarMedidas($catastrofe_id)
+
+    {
+
+       
+        $medidas=Medida::where('catastrove_id',$catastrofe_id)->get();
+
+        //dd($medidas);
+        return $medidas;
+
     }
 }

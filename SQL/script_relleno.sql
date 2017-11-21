@@ -218,6 +218,7 @@ values
 (1,NULL,1,1,2,'choripanada','2000-12-17','2000-12-17',1,1,2,'App/Eventos',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
 (2,NULL,2,2,1,'colecta junta vecinos','2000-12-17','2000-12-17',0,0,1,'App/Recolecciones',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
+
 --Apoyo economico
 insert into "apoyo_economicos" ("metaMinima", "actual", "numCuenta", "TipoCuenta", "bancoCuenta", "titularCuenta", "correoCuenta", "created_at", "updated_at")values
 (1000000, 1452,143224,'rut','banco estado','pedrito','pedrito@usach.cl',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),

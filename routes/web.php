@@ -18,11 +18,19 @@ Route::get('/home',['as'=> 'home','HomeController@index']);
 
 Auth::routes();
 
-Route::resource('medidas','MedidasController');
+/*Catastrofes*/
+
 Route::resource('catastrofes','CatastrovesController');
 
+/*Medidas*/
 
-Route::get('/inicio','CatastrovesController@index');
+Route::get('medidas/{catastrofe_id}',
+	['uses' => 'MedidasController@buscarMedidas',
+	'as' => 'medidas.busqueda']
+	);
+
+Route::resource('medidas','MedidasController');
+
 
 Route::get('prueba',['as'=> 'prueba','uses'=> 'PruebaController@index']);
 
