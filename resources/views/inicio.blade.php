@@ -29,7 +29,7 @@
                           <div class="card-block ">
                               <h4 class="card-title">Comuna:{{$c->comuna->nombre}}</h4>
                               <p class="card-text">{{$c->descripcion}}</p>
-                              <a class="btn1 btn btn-danger">Acceder</a>
+                              <a class="btn1 btn btn-danger" href="{{route('catastrofes.show',$c->id)}}">Acceder</a>
                           </div>
                       </div>
 
