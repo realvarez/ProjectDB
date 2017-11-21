@@ -18,7 +18,7 @@
 
         </div>
 
-        <div class="col-md-7  mt-3 contenido ">
+        <div class="col-md-8 m-5 contenido ">
           @forelse($catastroves as $c)
           <!-- <div class="row ">
             <div class="col m-2 p-2"> -->
@@ -41,7 +41,7 @@
             </div>
           <!-- </div>
       </div> -->
-      <div class="col-md-3 color1">
+      <div class="col-md-2  m-5 color1">
 
           <a class="twitter-timeline" href="https://twitter.com/pruebadbd1?ref_src=twsrc%5Etfw">Tweets by pruebadbd1</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
               <a href="https://twitter.com/pruebadbd1?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @pruebadbd1</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
