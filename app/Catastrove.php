@@ -12,7 +12,7 @@ class Catastrove extends Model
         'descripcion',
         'titulo',
         'comuna_id',
-        'tipo_catastrofe',
+        'tipoCatastrove_id',
     ];
 
     public function user(){
@@ -26,5 +26,8 @@ class Catastrove extends Model
     public function comuna(){
 
         return $this->belongsTo('App\Comuna');
+    }
+    public function tipoC(){
+      return $this->belongsTo('App\TipoCatastrove');
     }
 }

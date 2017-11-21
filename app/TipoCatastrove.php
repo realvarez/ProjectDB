@@ -8,8 +8,11 @@ class TipoCatastrove extends Model
 {
   protected $fillable=[
 
-    'tipo',
+    'tipo'
+  ];
 
+  public function catastroves(){
 
-  ]
+    return $this->hasMany('App\Catastrove');
+  }
 }
