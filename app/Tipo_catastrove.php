@@ -11,7 +11,7 @@ class Tipo_catastrove extends Model
     'tipo'
   ];
 
-  public function catastroves(){
+  public function catastrove(){
 
     return $this->hasMany('App\Catastrove');
   }

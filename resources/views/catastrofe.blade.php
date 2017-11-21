@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-md-12 mt-5 border-bottom-4 border-success rounded-bottom-3">
         <h4>{{$c->titutulo}}</h4>
-        <p>{{$c->tipoC}}</p>
+        <p>{{$c->tipoC->tipo}}</p>
         <p>{{$c->comuna->nombre}}</p>
         <p>{{$c->descripcion}}</p>
     </div>

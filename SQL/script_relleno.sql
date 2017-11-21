@@ -213,7 +213,7 @@ insert into users ("nombre","apellido","rut","email","password","rol_id","comuna
 ('Baldomero','Lillo','56748274','baldomero.lillo@gmail.com','1234',3,18,'Carlos Causino 89',1,CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Catastrofes
-insert into catastroves ("user_id","comuna_id","tipoCatastrove_id","descripcion","titulo","created_at","updated_at") values
+insert into catastroves ("user_id","comuna_id","tipo_catastrove_id","descripcion","titulo","created_at","updated_at") values
 (1,1,1,'Un gran incendio azota este lugar, dejando una gran cantidad de damnificados,bla blablablablablablablablablablablablablablablablablablablablablabla','incendio en este lugar',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
 (2,2,2,'Un gran terremota azota este lugar, dejando una gran cantidad de damnificados,bla blablablablablablablablablablablablablablablablablablablablablabla','Gran terremoto en otro lugar',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
