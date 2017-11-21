@@ -15,7 +15,6 @@ class CreateCatastrovesTable extends Migration
             $table->string('descripcion');
             $table->string('titulo');
             $table->integer('tipoCatastrove_id');
-            $table->integer('region_id');
             $table->timestamps();
 
             $table->foreign('user_id')
@@ -33,11 +32,7 @@ class CreateCatastrovesTable extends Migration
                     ->on('tipoCatastroves')
                     ->onDelete('cascade');
 
-            $table->foreign('region_id')
-                    ->references('id')
-                    ->on('regions')
-                    ->onDelete('cascade');
-
+      
         });
     }
 
