@@ -28,8 +28,13 @@ class MedidasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {   
+        $c1='Apoyo economico';
+        $c2='Recoleccion';
+        $c3='Voluntariado';
+        $c4='Evento';
+        $paso=1;
+        return view('medidas.crear',compact('c1','c2','c3','c4','paso'));
     }
 
     /**
@@ -40,7 +45,7 @@ class MedidasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -101,4 +106,7 @@ class MedidasController extends Controller
         return view('catastrofe',compact('c','medidas'));
 
     }
+
+
+
 }
