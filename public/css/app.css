@@ -25,10 +25,12 @@
 
 }
 
-/*.color1{
-  background:rgb(207, 207, 207);
+.color1{
+  /*background:rgb(207, 207, 207);*/
+  overflow: scroll;
+  height: 500px;
 
-}*/
+}
 
 .danger-color-dark {
     background-color: #615b5b !important;

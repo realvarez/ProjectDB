@@ -18,10 +18,10 @@
 
         </div>
 
-        <div class="col-md-7 contenido color1">
+        <div class="col-md-7  mt-3 contenido ">
           @forelse($catastroves as $c)
-          <div class="row ">
-            <div class="col m-2 p-2">
+          <!-- <div class="row ">
+            <div class="col m-2 p-2"> -->
               <div class="card elemento mb-2">
                           <div class="card-header  danger-color-dark white-text">
                               <h4> {{$c->titulo}} </h4>
@@ -32,28 +32,23 @@
                               <a class="btn1 btn btn-danger" href="{{route('medidas.busqueda',$c->id)}}">Acceder</a>
                           </div>
                       </div>
-
-
               @empty
               <p>NO HAY CATASTROFES</p>
-
               @endforelse
-              <div class="mt-5">
+              <!-- <div class="col mt-5"> -->
                 {!!$catastroves->links('pagination')!!}
-              </div>
-
+              <!-- </div> -->
             </div>
+          <!-- </div>
+      </div> -->
+      <div class="col-md-3 color1">
 
-
-          </div>
-
+          <a class="twitter-timeline" href="https://twitter.com/pruebadbd1?ref_src=twsrc%5Etfw">Tweets by pruebadbd1</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <a href="https://twitter.com/pruebadbd1?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @pruebadbd1</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
 
 
       </div>
-      <div class="col">
-
-<a class="twitter-timeline" href="https://twitter.com/pruebadbd1?ref_src=twsrc%5Etfw">Tweets by pruebadbd1</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      <a href="https://twitter.com/pruebadbd1?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @pruebadbd1</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </section>
 
 
