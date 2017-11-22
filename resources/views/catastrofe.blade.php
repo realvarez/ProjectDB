@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('content')
 
-<section class="container">
+<section class="container-fluid mt-5">
   <div class="row">
-    <div class="col-md-12 mt-5 descripcionM">
+    <div class="col-md-6 mt-5 descripcionM">
 
       <div class="row">
         <div class="col-md-8">
@@ -39,42 +39,41 @@
 
     </div>
 
-    <div class="col-md-12 px-5 py-3">
+    <div class="col-md-6  mt-5 px-5  row">
     @foreach ($medidas as $m)
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">{{$m->tipo_medida}}</h3>
-        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+    <div class="panelM col-md-10 border px-0">
+      <div class="headM d-flex justify-content-between border px-2 py-1 ">
+        <h4>Titulo Medida</h4>
+        <h4>Tipo Medida</h4>
       </div>
-      <div class="panel-body">Panel content</div>
+      <div class="descM">
+        <div class="infoM d-flex justify-content-around pt-3 ">
+          <p>Fecha de inicio</p>
+          <p>ubicacion</p>
+        </div>
+        <p>Descripcion Medida</p>
+        <p>organizacion</p>
+      </div>
+
+      <div class="progresM">
+        <div class="progress-outer2">
+                <div class="progress2">
+                    <div class="progress-bar progress-bar-info progress-bar-striped active" style="width:80%; box-shadow:-1px 10px 10px rgba(91, 192, 222, 0.7);"></div>
+                    <div class="progress-value2">80%</div>
+                </div>
+      </div>
+      <div class="">
+        <button type="button" class="btn btn-default">
+          Mas informacion
+        </button>
+      </div>
     </div>
     @endforeach
 
-    <div class="offer offer-danger">
-				<div class="shape">
-					<div class="shape-text">
-						<span class="glyphicon glyphicon glyphicon-eye-open"></span>
-					</div>
-				</div>
-				<div class="offer-content">
-					<h3 class="lead">
-					Danger : <label class="label label-danger">323</label>
-					</h3>
-					<p>
-						 Oranı:
-						<br>
-                        <div class="progress">
-             <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%" >
-                     60%
-                        </div>
-                   </div>
-					</p>
-				</div>
-    </div>
-
-    <div class="col-md-6">
 
     </div>
+
+
 
   </div>
 </section>
