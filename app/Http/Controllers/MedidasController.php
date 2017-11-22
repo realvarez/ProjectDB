@@ -18,7 +18,7 @@ class MedidasController extends Controller
 
 
         return view('medidas.index', compact('medida'));
-        
+
 
     }
 
@@ -57,7 +57,7 @@ class MedidasController extends Controller
      */
     public function show($id)
     {
-        
+
     }
 
     /**
@@ -100,10 +100,10 @@ class MedidasController extends Controller
     {
         $c=Catastrove::find($catastrofe_id);
         //$tipoC=Tipo_catastrove::all();
-       
+
         $medidas=Medida::where('catastrove_id',$catastrofe_id)->get();
 
-        dd($c->tipo_catastrove);
+      
         return view('catastrofe',compact('c','medidas'));
 
     }
