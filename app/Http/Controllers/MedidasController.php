@@ -29,13 +29,14 @@ class MedidasController extends Controller
      */
     public function create()
     {   
-
-        $c1='Apoyo economico';
-        $c2='Recoleccion';
-        $c3='Voluntariado';
-        $c4='Evento';
+        $tipo=array('c1' => 'Apoyo economico',
+                    'c2' => 'Recoleccion',
+                    'c3' => 'Voluntariado',
+                    'c4' => 'Evento');
+        
+       
         $paso=1;
-        return view('medidas.crear',compact('c1','c2','c3','c4','paso'));
+        return view('medidas.crear',compact('tipo','paso'));
     }
 
     /**
