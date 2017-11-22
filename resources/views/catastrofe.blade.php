@@ -3,7 +3,7 @@
 
 <section class="container-fluid mt-5">
   <div class="row">
-    <div class="col-md-6 mt-5 descripcionM">
+    <div class="col-md-6 mt-3 mb-0 pb-0 descripcionM color2">
 
       <div class="row">
         <div class="col-md-8">
@@ -39,20 +39,20 @@
 
     </div>
 
-    <div class="col-md-6  mt-5 px-5  row">
+    <div class="col-md-6  mt-5 px-5  row medidas justify-content-center d-flex">
     @foreach ($medidas as $m)
-    <div class="panelM col-md-10 border px-0">
-      <div class="headM d-flex justify-content-between border px-2 py-1 ">
-        <h4>Titulo Medida</h4>
+    <div class="panelM col-md-10 border px-0  mb-2 color1">
+      <div class="headM d-flex justify-content-between border px-2 py-1 color3">
+        <h4>{{$m->descripcion}}</h4>
         <h4>Tipo Medida</h4>
       </div>
       <div class="descM">
         <div class="infoM d-flex justify-content-around pt-3 ">
-          <p>Fecha de inicio</p>
-          <p>ubicacion</p>
         </div class="ml-4">
         <p>organizacion: </p>
       </div>
+          <p>Fecha de inicio</p>
+          <p>ubicacion</p>
 
       <div class="progresM">
         <div class="progress-outer2">

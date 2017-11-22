@@ -22,16 +22,17 @@
     </style>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body  >
-    <nav class="navbar navbar-expand-sm navbar-light bg-light  p-3 fixed-top color1">
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light color1 sombraN d-flex  m-0 fixed-top">
+
         <!-- Brand -->
-        <a class="navbar-brand" href="{{ route('principal') }}">Chile Emergencias</a>
+        <a class="navbar-brand color1 p-0 m-0" href="{{ route('principal') }}">Chile Emergencias</a>
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
           <!-- Navbar links -->
-        <div class="collapse navbar-collapse color1" id="collapsibleNavbar">
+        <div class="collapse navbar-collapse color1 p-0 m-0 " id="collapsibleNavbar">
             <div class="navbar-nav mr-auto text-center">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('catastrofes.index') }}">Catastrofes</a>
@@ -77,8 +78,8 @@
         </div>
     </nav>
     @yield('content')
-    <footer>
-        <div class="container mt-5">
+    <footer class="color6 mt-0 p-0">
+        <div class="container mt-5 ">
             <div>
                 <div class="copyright-box">
                     2017 Universidad de Santiago de Chile.
