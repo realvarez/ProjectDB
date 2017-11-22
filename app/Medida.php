@@ -10,7 +10,7 @@ class Medida extends Model{
     	'user_id',
     	'admin_id',
     	'organization_id',
-    	'catastrofe_id',
+    	'catastrove_id',
     	'avance',
     	'tipo_medida',
     	'descripcion',

@@ -26,7 +26,7 @@ Route::get('medidas_info/{catastrofe_id}',
 
 Route::resource('catastrofes','CatastrovesController');
 Route::resource('medidas','MedidasController');
-
+Route::resource('voluntarios','VoluntariosController');
 /*Medidas*/
 
 
