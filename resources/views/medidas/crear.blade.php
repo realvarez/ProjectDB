@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col">
       <div class="form-area">
-        <form role="form" method="POST" action="{{route('voluntarios.create')}}">
+        <form role="form" method="POST">
          {{ csrf_field() }}
         <br style="clear:both">
             <h3 style="margin-bottom: 25px; text-align: center;">Definir tipo de medida</h3>
@@ -18,9 +18,10 @@
               @endforeach
             </select>
           </div>
+        
+       
 
-        <button type="submit" id="submit" name="submit" class="btn btn-success">Siguiente</button>
-
+            <a href="{{route('voluntarios.create')}}" class="btn-primary">Siguiente</a>
         </form>
 
     </div>

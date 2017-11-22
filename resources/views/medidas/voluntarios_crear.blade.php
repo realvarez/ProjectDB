@@ -16,7 +16,7 @@
 					   </div>
     				<div class="form-group">
             <label for="titulo">Meta Voluntario</label>
-						<input type="number" class="form-control" id="" name="Meta" placeholder="Cantidad requeriada de Voluntarios" required>
+						<input type="number" class="form-control" id="number" name="Meta" placeholder="Cantidad requeriada de Voluntarios" required>
 					   </div>
           <div class="form-group">
             <label for="exampleFormControlSelect1">Region</label>
