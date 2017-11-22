@@ -22,8 +22,8 @@
     </style>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body >
-    <nav class="navbar navbar-expand-sm navbar-light bg-light  padding-top  fixed-top mb-5">
+<body  >
+    <nav class="navbar navbar-expand-sm navbar-light bg-light  p-3 fixed-top color1">
         <!-- Brand -->
         <a class="navbar-brand" href="{{ route('principal') }}">Chile Emergencias</a>
         <!-- Toggler/collapsibe Button -->
@@ -31,7 +31,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
           <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <div class="collapse navbar-collapse color1" id="collapsibleNavbar">
             <div class="navbar-nav mr-auto text-center">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('catastrofes.index') }}">Catastrofes</a>

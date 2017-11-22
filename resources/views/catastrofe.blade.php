@@ -50,9 +50,8 @@
         <div class="infoM d-flex justify-content-around pt-3 ">
           <p>Fecha de inicio</p>
           <p>ubicacion</p>
-        </div>
-        <p>Descripcion Medida</p>
-        <p>organizacion</p>
+        </div class="ml-4">
+        <p>organizacion: </p>
       </div>
 
       <div class="progresM">
@@ -62,7 +61,9 @@
                     <div class="progress-value2">80%</div>
                 </div>
       </div>
-      <div class="">
+
+      </div>
+      <div class="d-flex  justify-content-center mt-3">
         <button type="button" class="btn btn-default">
           Mas informacion
         </button>
