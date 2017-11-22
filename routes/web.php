@@ -21,6 +21,7 @@ Auth::routes();
 /*Catastrofes*/
 
 Route::resource('catastrofes','CatastrovesController');
+Route::resource('medidas','MedidasController');
 
 /*Medidas*/
 
@@ -29,7 +30,7 @@ Route::get('medidas/{catastrofe_id}',
 	'as' => 'medidas.busqueda']
 	);
 
-Route::resource('medidas','MedidasController');
+
 
 
 Route::get('prueba',['as'=> 'prueba','uses'=> 'PruebaController@index']);

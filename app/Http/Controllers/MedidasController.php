@@ -29,6 +29,7 @@ class MedidasController extends Controller
      */
     public function create()
     {   
+
         $c1='Apoyo economico';
         $c2='Recoleccion';
         $c3='Voluntariado';
