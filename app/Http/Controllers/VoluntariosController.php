@@ -23,9 +23,9 @@ class VoluntariosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
+    {
         //return 'sksksksks';
-        
+
         return view('medidas.voluntarios_crear');
     }
 
@@ -37,9 +37,9 @@ class VoluntariosController extends Controller
      */
     public function store(Request $request){
 
-  
-        
-    
+
+
+
          $this->validate($request,[
 
             'Descripcion' => 'required|string',
@@ -48,7 +48,7 @@ class VoluntariosController extends Controller
             'Direccion' => 'required|string'
 
 
-            ]); 
+            ]);
 
 
          $voluntario=new Voluntariado;
@@ -72,14 +72,13 @@ class VoluntariosController extends Controller
             'descripcion' => $request->Descripcion,
             'user_id' => 1,
             'organization_id' =>1,
-            
+
             'tipo_medida' =>1,
             'fecha_inicio' => '2017-3-1',
-            'fecha_termino' => '2018-3-1',
-            'MorphMedida_id' => 1
+            'fecha_termino' => '2018-3-1'
 
             );
-       
+          $voluntario->save();
          $voluntario->medida()->create($medida);
          dd($voluntario);
          return 'ksksksks';
