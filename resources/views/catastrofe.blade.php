@@ -49,6 +49,27 @@
       <div class="panel-body">Panel content</div>
     </div>
     @endforeach
+
+    <div class="offer offer-danger">
+				<div class="shape">
+					<div class="shape-text">
+						<span class="glyphicon glyphicon glyphicon-eye-open"></span>
+					</div>
+				</div>
+				<div class="offer-content">
+					<h3 class="lead">
+					Danger : <label class="label label-danger">323</label>
+					</h3>
+					<p>
+						 Oranı:
+						<br>
+                        <div class="progress">
+             <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%" >
+                     60%
+                        </div>
+                   </div>
+					</p>
+				</div>
     </div>
 
     <div class="col-md-6">
