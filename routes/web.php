@@ -33,8 +33,11 @@ Route::resource('voluntarios','VoluntariosController');
 
 
 
-Route::get('prueba',['as'=> 'prueba','uses'=> 'PruebaController@index']);
+//Route::get('prueba',['as'=> 'prueba','uses'=> 'PruebaController@index']);
 
 /* TWITTER */
 Route::get('twitter', 'TwitterController@twitter');
 Route::post('tweet', ['as'=>'post.tweet','uses'=>'TwitterController@tweet']);
+
+Route::get('prueba', 'PruebaController@myform');
+Route::post('select-ajax', ['as'=>'select-ajax','uses'=>'PruebaController@selectAjax']);

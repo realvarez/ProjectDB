@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use DB;
 class PruebaController extends Controller
 {
     /**
@@ -13,8 +14,8 @@ class PruebaController extends Controller
      */
     public function index()
     {
-        $u=User::all();
-      return view('prueba',compact('u'));
+        
+      return view('prueba');
     }
 
     /**
@@ -81,5 +82,25 @@ class PruebaController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function myform()
+    {
+        $regiones = DB::table('regions')->pluck("nombre","id")->all();
+        return view('prueba',compact('regiones'));
+    }
+
+    /**
+     * Show the application selectAjax.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function selectAjax(Request $request)
+    {
+        if($request->ajax()){
+            $comunas = DB::table('comunas')->where('region_id',$request->region_id)->pluck("nombre","id")->all();
+            $data = view('ajax-select',compact('comunas'))->render();
+            return response()->json(['options'=>$data]);
+        }
     }
 }
