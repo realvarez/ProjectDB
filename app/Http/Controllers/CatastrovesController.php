@@ -50,7 +50,13 @@ class CatastrovesController extends Controller
         //Validacion
         //Completar, alguien puso en la validacion que fuera string el comuna_id y estuve
         //pegado como 2 horas viendo porque no funcionaba.
+        $this->validate($request,[
 
+            'titulo'=>'required',
+            'descripcion'=>'required',
+            'comuna_id'=>'required',
+            'tipo_id' => 'required',
+        ]);
         
         //Crear
         

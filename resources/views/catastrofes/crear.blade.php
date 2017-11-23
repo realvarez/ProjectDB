@@ -30,8 +30,8 @@
           </div>
 
           <div class="form-group">
-            <label>Select State:</label>
-            <textarea class="form-control" type="textarea" id="descripcion" name="descripcion" placeholder="Message"  rows="7"></textarea>
+            <label>Descripcion :</label>
+            <textarea class="form-control" type="textarea" id="descripcion" name="descripcion" placeholder="Escribe aqui una breve descripcion"  rows="7"></textarea>
             <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
           </div>
 
