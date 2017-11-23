@@ -10,18 +10,23 @@
 
           <h3 style="margin-bottom: 25px; text-align: center;">Crear Catastrofe</h3>
             <div class="form-group">
-            <label for="titulo">titulo</label>
+            <label for="titulo">Titulo</label>
             <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo" required>
              </div>
 
           <div class="form-group">
-            <label>Select Country:</label>
+            <label>Seleccione el tipo de Catastrofe:</label>
+            {!! Form::select('tipo_id',[''=>'--- Selecciona Tipo Catastrofe ---']+$tipo,null,['class'=>'form-control']) !!}
+          </div>
+
+          <div class="form-group">
+            <label>Seleccione la Region:</label>
             {!! Form::select('region_id',[''=>'--- Selecciona Region ---']+$regiones,null,['class'=>'form-control']) !!}
           </div>
 
           <div class="form-group">
-            <label>Select State:</label>
-            {!! Form::select('comuna_id',[''=>'--- Selecciona Comuna2 ---'],null,['class'=>'form-control']) !!}
+            <label>Seleccione la Comuna:</label>
+            {!! Form::select('comuna_id',[''=>'--- Selecciona Comuna ---'],null,['class'=>'form-control']) !!}
           </div>
 
           <div class="form-group">

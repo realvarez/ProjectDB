@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Catastrove;
 use App\Comuna;
 use App\Region;
+use App\Tipo_catastrove;
 use Twitter;
 use DB;
 class CatastrovesController extends Controller
@@ -33,7 +34,8 @@ class CatastrovesController extends Controller
     public function create() 
     { 
         $regiones = DB::table('regions')->pluck("nombre","id")->all();
-        return view('catastrofes.crear',compact('regiones')); 
+        $tipo = DB::table('tipo_catastroves')->pluck("tipo","id")->all();
+        return view('catastrofes.crear',compact('regiones','tipo')); 
     } 
 
     /**
@@ -55,7 +57,7 @@ class CatastrovesController extends Controller
         $catastrofe = new Catastrove;
         $catastrofe->titulo=$request->titulo;
         $catastrofe->descripcion=$request->descripcion;
-        $catastrofe->tipo_catastrove_id=1;
+        $catastrofe->tipo_catastrove_id=$request->tipo_id;
         $catastrofe->user_id=2; // Por ahora constante
         $catastrofe->comuna_id = $request->comuna_id;
 
