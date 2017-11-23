@@ -16,12 +16,18 @@ class CreateGastosTable extends Migration
         Schema::create('gastos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('medida_id');
+            $table->integer('comuna_id');
             $table->string('descripcion');
             $table->timestamps();
             
             $table->foreign('medida_id')
                 ->references('id')
                 ->on('apoyo_economicos')
+                ->onDelete('cascade');
+
+            $table->foreign('comuna_id')
+                ->references('id')
+                ->on('comunas')
                 ->onDelete('cascade');
         });
     }

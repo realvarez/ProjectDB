@@ -243,11 +243,11 @@ insert into "apoyo_economicos" ("metaMinima", "actual", "numCuenta", "TipoCuenta
 
 --Gastos
 insert into gastos("medida_id","descripcion","created_at","updated_at")values
-(1,'pago ayudantia',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
+(1,'pago ayudantia',30,CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Recoleccion
-insert into recolecciones("metaRecoleccion","recoleccionActual","region","comuna","direccion","tipoRecoleccion","created_at","updated_at") values
-(1000000,500,'Region Metropolitana','Quinta Normal','San Juan 456',1,CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
+insert into recolecciones("metaRecoleccion","recoleccionActual","region","comuna_id","direccion","tipoRecoleccion","created_at","updated_at") values
+(1000000,500,'Region Metropolitana',120,'San Juan 456',1,CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Depositos
 insert into depositos("user_id","medida_id","rut","cantidad","fechaDeposito","documento","created_at","updated_at")values
@@ -255,9 +255,9 @@ insert into depositos("user_id","medida_id","rut","cantidad","fechaDeposito","do
 (2,1,324613453,12000,'2017-06-17','cheque',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Eventos
-insert into eventos ("metaDinero","actualDinero","region","comuna", "direccion","created_at","updated_at")values
-(15000000,1499999,'Metropolitana','Puente Alto','Alameda 1234',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
-(1000,500,'Antofagasta','Antofagasta','Matta 6367',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
+insert into eventos ("metaDinero","actualDinero","region","comuna_id", "direccion","created_at","updated_at")values
+(15000000,1499999,'Metropolitana',150,'Alameda 1234',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
+(1000,500,'Antofagasta',5,'Matta 6367',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Historias
 insert into historias("user_id","tipo_cambio","tabla","estado_antiguo","estado_nuevo","created_at","updated_at")values
@@ -270,8 +270,8 @@ insert into password_resets("email","token","created_at")values
 ('baldomero.lillo@gmail.com','carbon',CURRENT_TIMESTAMP(0));
 
 --voluntariados
-insert into voluntariados ("metaVoluntarios", "voluntariosActuales", "duracionDias","region","comuna","direccion","created_at","updated_at") values
-(100,50,10,'Araucania','Temuco','Miguel Aguirre 1499',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
-(43,40,15,'Arica y Parinacota','Arica','Balmaceda 1010',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
+insert into voluntariados ("metaVoluntarios", "voluntariosActuales", "duracionDias","region","comuna_id","direccion","created_at","updated_at") values
+(100,50,10,'Araucania',70,'Miguel Aguirre 1499',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
+(43,40,15,'Arica y Parinacota',1,'Balmaceda 1010',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --tipoCatastroves

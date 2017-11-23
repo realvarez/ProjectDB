@@ -7,7 +7,7 @@
 
         
         {!! Form::open(array('route' => 'testeo', 'class' => 'form')) !!}
-
+          {{ csrf_field() }}
           <h3 style="margin-bottom: 25px; text-align: center;">Crear Catastrofe</h3>
             <div class="form-group">
             <label for="titulo">Titulo</label>

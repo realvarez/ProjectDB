@@ -47,6 +47,7 @@ class CreateMedidasTable extends Migration
                 ->references('id')
                 ->on('organizations')
                 ->onDelete('cascade');
+
         });
     }
 

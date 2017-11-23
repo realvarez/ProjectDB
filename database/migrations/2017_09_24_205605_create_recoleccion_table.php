@@ -18,10 +18,15 @@ class CreateRecoleccionTable extends Migration
             $table->integer('metaRecoleccion');
             $table->integer('recoleccionActual')->default(0);
             $table->string('region');
-            $table->string('comuna');
+            $table->integer('comuna_id');
             $table->string('direccion');
             $table->integer('tipoRecoleccion');
             $table->timestamps();
+
+            $table->foreign('comuna_id')
+                ->references('id')
+                ->on('comunas')
+                ->onDelete('cascade');
         });
     }
 
