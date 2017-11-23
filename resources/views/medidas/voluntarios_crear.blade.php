@@ -19,15 +19,13 @@
 						<input type="number" class="form-control" id="number" name="Meta" placeholder="Cantidad requeriada de Voluntarios" required>
 					   </div>
           <div class="form-group">
-            <label for="exampleFormControlSelect1">Region</label>
-            <input type="text" class="form-control" id="" name="Region" placeholder="Indique la region " required>
-
+            <label>Seleccione la Region:</label>
+            {!! Form::select('region_id',[''=>'--- Selecciona Region ---']+$regiones,null,['class'=>'form-control']) !!}
           </div>
 
           <div class="form-group">
-            <label for="exampleFormControlSelect1">Comuna</label>
-            <input type="text" class="form-control" id="" name="Comuna" placeholder="Indique la Comuna " required>
-
+            <label>Seleccione la Comuna:</label>
+            {!! Form::select('comuna_id',[''=>'--- Selecciona Comuna ---'],null,['class'=>'form-control']) !!}
           </div>
           <div class="form-group">
             <label for="exampleFormControlSelect1">Direccion</label>

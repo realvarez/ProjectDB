@@ -14,13 +14,13 @@ class MedidasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-       $medida = Medida::all();
+     $medida = Medida::all();
 
 
-        return view('medidas.index', compact('medida'));
+     return view('medidas.index', compact('medida'));
 
 
-    }
+ }
 
     /**
      * Show the form for creating a new resource.
@@ -29,9 +29,9 @@ class MedidasController extends Controller
      */
     public function create()
     {   
-        
-        
-       
+
+
+
         return view('medidas.crear');
     }
 
@@ -43,7 +43,7 @@ class MedidasController extends Controller
      */
     public function store(Request $request)
     {
-        
+
     }
 
     /**
@@ -100,13 +100,16 @@ class MedidasController extends Controller
 
         $medidas=Medida::where('catastrove_id',$catastrofe_id)->get();
 
-      
+
         return view('catastrofe',compact('c','medidas'));
 
     }
-      public function createFormulario(Request $request)
+
+    public function createFormulario(Request $request)
     {   
         //dd($request);
+        //return view('catastrofes');
+    
         
         if($request->tipo=="c1"){
 
@@ -126,10 +129,11 @@ class MedidasController extends Controller
             return  redirec()->route('eventos.create');
         }
 
-
         
-       
-        //return view('medidas.crear');
+        
+        
+        return view('medidas.crear');
+        
     }
 
 

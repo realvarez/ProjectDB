@@ -18,7 +18,6 @@ class CreateVoluntariadoTable extends Migration
             $table->integer('metaVoluntarios');
             $table->integer('voluntariosActuales')->default(0);
             $table->integer('duracionDias');
-            $table->string('region');
             $table->integer('comuna_id');
             $table->string('direccion');
             $table->timestamps();

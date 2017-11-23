@@ -270,8 +270,8 @@ insert into password_resets("email","token","created_at")values
 ('baldomero.lillo@gmail.com','carbon',CURRENT_TIMESTAMP(0));
 
 --voluntariados
-insert into voluntariados ("metaVoluntarios", "voluntariosActuales", "duracionDias","region","comuna_id","direccion","created_at","updated_at") values
-(100,50,10,'Araucania',70,'Miguel Aguirre 1499',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
-(43,40,15,'Arica y Parinacota',1,'Balmaceda 1010',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
+insert into voluntariados ("metaVoluntarios", "voluntariosActuales", "duracionDias","comuna_id","direccion","created_at","updated_at") values
+(100,50,10,70,'Miguel Aguirre 1499',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
+(43,40,15,1,'Balmaceda 1010',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --tipoCatastroves

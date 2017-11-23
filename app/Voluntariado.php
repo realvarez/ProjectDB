@@ -11,8 +11,7 @@ class Voluntariado extends Model
     	'metaVoluntarios',
     	'voluntariosActuales',
     	'duracionDias',
-    	'region',
-    	'comuna',
+    	'comuna_id',
     	'direccion',
 
     ];
