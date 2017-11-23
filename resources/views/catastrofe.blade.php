@@ -24,7 +24,7 @@
         </div>
         <div class="col-md-4 d-flex justify-content-center align-items-center">
 
-          <div class="progress blue">
+          <div class="progress2 blue">
                 <span class="progress-left">
                     <span class="progress-bar"></span>
                 </span>
@@ -39,40 +39,40 @@
 
     </div>
 
-    <div class="col-md-6  mt-5 px-5  row medidas justify-content-center d-flex">
-    @foreach ($medidas as $m)
-    <div class="panelM col-md-10 border px-0  mb-2 color1">
-      <div class="headM d-flex justify-content-between border px-2 py-1 color3">
-        <h4>{{$m->descripcion}}</h4>
-        <h4>Tipo Medida</h4>
-      </div>
-      <div class="descM">
-        <div class="infoM d-flex justify-content-around pt-3 ">
-        </div class="ml-4">
-        <p>organizacion: </p>
-      </div>
+    <div class="col-md-6  mt-5 px-5 medidas justify-content-center d-flex">
+      @foreach ($medidas as $m)
+      <div class="row">
+
+        <div class=" col panelM  border px-0  mb-2 color1">
+          <div class="headM d-flex justify-content-between border px-2 py-1 color3 text-white">
+            <h4>{{$m->descripcion}}</h4>
+            <h4>Tipo Medida</h4>
+          </div>
+          <div class="descM">
+            <div class="infoM d-flex justify-content-around pt-3 ">
+            </div class="ml-4">
+            <p>organizacion: </p>
+          </div>
           <p>Fecha de inicio</p>
           <p>ubicacion</p>
 
-      <div class="progresM">
-        <div class="progress-outer2">
-                <div class="progress2">
-                    <div class="progress-bar progress-bar-info progress-bar-striped active" style="width:80%; box-shadow:-1px 10px 10px rgba(91, 192, 222, 0.7);"></div>
-                    <div class="progress-value2">80%</div>
-                </div>
-      </div>
+          <div class="progresM">
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
 
-      </div>
-      <div class="d-flex  justify-content-center mt-3">
-        <button type="button" class="btn btn-default">
-          Mas informacion
-        </button>
-      </div>
-    </div>
-    @endforeach
+          </div>
+          <div class="d-flex  justify-content-center mt-3">
+            <button type="button" class="btn btn-default">
+              Mas informacion
+            </button>
+          </div>
+        </div>
 
 
-    </div>
+      </div>
+      </div>
+      @endforeach
 
 
 

@@ -23,7 +23,7 @@ class User extends Authenticatable
         'email',
         'password',
         'region',
-        'comuna',
+        'comuna_id',
         'direccion',
         'estado',
 
