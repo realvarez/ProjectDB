@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container">
+<div class="container ">
     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
         {{ csrf_field() }}
         <div class="row">

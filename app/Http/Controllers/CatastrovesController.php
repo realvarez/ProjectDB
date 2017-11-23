@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Catastrove;
 use App\Comuna;
 use App\Region;
+use App\Tipo_catastrove;
 use Twitter;
+use DB;
 class CatastrovesController extends Controller
 {
     /**
@@ -29,11 +31,12 @@ class CatastrovesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        $comunas=Comuna::all();
-        return view('catastrofes.crear',compact('comunas'));
-    }
+    public function create() 
+    { 
+        $regiones = DB::table('regions')->pluck("nombre","id")->all();
+        $tipo = DB::table('tipo_catastroves')->pluck("tipo","id")->all();
+        return view('catastrofes.crear',compact('regiones','tipo')); 
+    } 
 
     /**
      * Store a newly created resource in storage.
@@ -45,33 +48,36 @@ class CatastrovesController extends Controller
     {
 
         //Validacion
+        //Completar, alguien puso en la validacion que fuera string el comuna_id y estuve
+        //pegado como 2 horas viendo porque no funcionaba.
         $this->validate($request,[
 
-            'descripcion' => 'required|string',
-            'comuna' => 'required|string',
-            'titulo' => 'required|string'
-
-            ]);
-
+            'titulo'=>'required',
+            'descripcion'=>'required',
+            'comuna_id'=>'required',
+            'tipo_id' => 'required',
+        ]);
+        
         //Crear
-        $comuna= Comuna::where('nombre', $request->comuna)->get();
-
-        $catastrofe= new Catastrove;
-        $catastrofe->descripcion=$request->descripcion;
-        $catastrofe->tipoCatastrove_id=1;
+        
+        $catastrofe = new Catastrove;
         $catastrofe->titulo=$request->titulo;
+        $catastrofe->descripcion=$request->descripcion;
+        $catastrofe->tipo_catastrove_id=$request->tipo_id;
         $catastrofe->user_id=2; // Por ahora constante
-        $catastrofe->comuna()->associate($comuna[0]);
+        $catastrofe->comuna_id = $request->comuna_id;
 
-
-       $catastrofe->save();
+        $catastrofe->save();
 
         //Twitteo de catastrofe
         $newTwitte = ['status' => $request->titulo." en ".$request->comuna.". Descrip: ".$request->descripcion];
         $twitter = Twitter::postTweet($newTwitte);
         //Redireccion
 
-      return  redirect()->route('catastrofes.index');
+        
+
+        return  redirect()->route('catastrofes.index');
+        
 
     }
 
@@ -132,5 +138,14 @@ class CatastrovesController extends Controller
 
         return redirect()->route('catastrofes.index');
 
+    }
+    
+    public function selectAjax(Request $request)
+    {
+        if($request->ajax()){
+            $comunas = DB::table('comunas')->where('region_id',$request->region_id)->pluck("nombre","id")->all();
+            $data = view('ajax-select',compact('comunas'))->render();
+            return response()->json(['options'=>$data]);
+        }
     }
 }
