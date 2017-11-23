@@ -23,16 +23,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light color1 sombraN d-flex  m-0 fixed-top">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light padding-top mb-5">
 
         <!-- Brand -->
-        <a class="navbar-brand color1 p-0 m-0" href="{{ route('principal') }}">Chile Emergencias</a>
+        <a class="navbar-brand  p-0 m-0 mx-5" href="{{ route('principal') }}">Chile Emergencias</a>
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
           <!-- Navbar links -->
-        <div class="collapse navbar-collapse color1 p-0 m-0 " id="collapsibleNavbar">
+        <div class="collapse navbar-collapse  p-0 m-0 " id="collapsibleNavbar">
             <div class="navbar-nav mr-auto text-center">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('catastrofes.index') }}">Catastrofes</a>
@@ -78,7 +78,7 @@
         </div>
     </nav>
     @yield('content')
-    <footer class="color6 mt-0 p-0">
+    <footer class="mt-0 p-0">
         <div class="container mt-5 ">
             <div>
                 <div class="copyright-box">
