@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Recoleccion;
+use App\Medida;
 
 class RecoleccionController extends Controller
 {
@@ -34,7 +36,42 @@ class RecoleccionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+           $this->validate($request,[
+
+            'Descripcion' => 'required|string',
+            'Region' => 'required|string',
+            'Comuna' => 'required|string',
+            'Direccion' => 'required|string'
+
+            ]);
+
+
+         $recoleccion=new Recoleccion;
+         $recoleccion->metaRecoleccion=$request->Meta;
+         $recoleccion->tipoRecoleecion=1; //Para que es este atributo
+         $recoleccion->region=$request->Region;
+         $recoleccion->comuna=$request->Comuna;
+         $recoleccion->direccion=$request->Direccion;
+
+       
+
+         $medida=array(
+
+            'catastrove_id' => 1, //Por ahora constante
+            'descripcion' => $request->Descripcion,
+            'user_id' => 1, //Por ahora constante
+            'organization_id' =>1, //Por ahora constante
+
+            'tipo_medida' =>1, //Por ahora constante
+            'fecha_inicio' => '2017-3-1', //Por ahora constante
+            'fecha_termino' => '2018-3-1' //Por ahora constante
+
+            );
+          $recoleccion->save();
+         $recoleccion->medida()->create($medida);
+         
+         return  redirect()->route('medidas.busqueda',1);
     }
 
     /**

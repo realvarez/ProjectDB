@@ -58,17 +58,11 @@ class VoluntariosController extends Controller
          $voluntario->comuna=$request->Comuna;
          $voluntario->direccion=$request->Direccion;
 
-         /*$medida=new Medida;
-
-         $medida->descripcion=$request->Descripcion;
-         $medida->user_id=1;
-         $medida->catastrove_id=1;
-         $medida->organization_id=1;
-         $medida->tipo_medida=1;*/
+       
 
          $medida=array(
 
-            'catastrove_id' => 2,
+            'catastrove_id' => 1,
             'descripcion' => $request->Descripcion,
             'user_id' => 1,
             'organization_id' =>1,
@@ -80,8 +74,9 @@ class VoluntariosController extends Controller
             );
           $voluntario->save();
          $voluntario->medida()->create($medida);
-         dd($voluntario);
-         return 'ksksksks';
+         
+         return  redirect()->route('medidas.busqueda',1);
+        
 
     }
 

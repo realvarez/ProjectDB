@@ -12,6 +12,7 @@ class CreateCatastrovesTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('comuna_id');
+          
             $table->string('descripcion');
             $table->string('titulo');
             $table->integer('tipo_catastrove_id');

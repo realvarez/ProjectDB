@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Evento;
+use App\Medida;
 
 class EventoController extends Controller
 {
@@ -33,8 +35,44 @@ class EventoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
+
     {
-        //
+        
+        $this->validate($request,[
+
+            'Descripcion' => 'required|string',
+            'Region' => 'required|string',
+            'Comuna' => 'required|string',
+            'Direccion' => 'required|string',
+            'metaDinero' => 'required|string'
+
+            ]
+        );
+
+         $evento=new Recoleccion;
+         $evento->metaDinero=$request->metaDinero;
+        
+         $evento->region=$request->Region;
+         $evento->comuna=$request->Comuna;
+         $evento->direccion=$request->Direccion;
+
+       
+
+         $medida=array(
+
+            'catastrove_id' => 1, //Por ahora constante
+            'descripcion' => $request->Descripcion,
+            'user_id' => 1, //Por ahora constante
+            'organization_id' =>1, //Por ahora constante
+
+            'tipo_medida' =>1, //Por ahora constante
+            'fecha_inicio' => '2017-3-1', //Por ahora constante
+            'fecha_termino' => '2018-3-1' //Por ahora constante
+
+            );
+        $evento->save();
+        $evento->medida()->create($medida);
+         
     }
 
     /**
