@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use DB;
+use View;
 class PruebaController extends Controller
 {
     /**
@@ -102,5 +103,12 @@ class PruebaController extends Controller
             $data = view('ajax-select',compact('comunas'))->render();
             return response()->json(['options'=>$data]);
         }
+    }
+    public function test(Request $request)
+    {
+        $region_id = $request->get('region_id');
+        $comuna_id = $request->get('comuna_id');
+        echo "<p>ID de region: </p>".$region_id."<p> ID de comuna: </p>".$comuna_id;
+        
     }
 }

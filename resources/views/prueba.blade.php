@@ -11,25 +11,39 @@
 <body>
 
 <div class="container">
-  <h1>Laravel 5 - Dynamic Dependant Select Box using JQuery Ajax Example</h1>
+  <div class="row">
+    <div class="col">
 
-  {!! Form::open() !!}
 
-    <div class="form-group">
-      <label>Select Country:</label>
-      {!! Form::select('region_id',[''=>'--- Select Country ---']+$regiones,null,['class'=>'form-control']) !!}
+
+
+
+      {{  Form::open([route'=>'login.form', 'method' => 'post')] }}
+
+
+        
+
+        <div class="form-group">
+          <label>Select Country:</label>
+          {!! Form::select('region_id',[''=>'--- Selecciona Region ---']+$regiones,null,['class'=>'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+          <label>Select State:</label>
+          {!! Form::select('comuna_id',[''=>'--- Selecciona Comuna ---'],null,['class'=>'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+        {!! Form::submit('Contact Us!', 
+          array('class'=>'btn btn-primary')) !!}
+        </div>
+
+      {!! Form::close() !!}
+    
+
     </div>
+  </div>
 
-    <div class="form-group">
-      <label>Select State:</label>
-      {!! Form::select('comuna_id',[''=>'--- Select State ---'],null,['class'=>'form-control']) !!}
-    </div>
-
-    <div class="form-group">
-      <button class="btn btn-success" type="submit">Submit</button>
-    </div>
-
-  {!! Form::close() !!}
 
 </div>
 
