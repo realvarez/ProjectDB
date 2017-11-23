@@ -50,7 +50,6 @@ class VoluntariosController extends Controller
         $voluntario=new Voluntariado;
         $voluntario->metaVoluntarios=$request->Meta;
         $voluntario->duracionDias=10;
-        $voluntario->region= Region::find($request->region_id)->nombre;
         $voluntario->comuna_id=$request->comuna_id;
         $voluntario->direccion=$request->Direccion;
 

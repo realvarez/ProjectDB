@@ -10,8 +10,7 @@ class Evento extends Model
     protected $fillable = [
       'metaDinero',
       'actualDinero',
-      'region',
-      'comuna',
+      'comuna_id',
       'direccion'
     ];
 

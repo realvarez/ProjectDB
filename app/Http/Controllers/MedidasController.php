@@ -14,13 +14,13 @@ class MedidasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-     $medida = Medida::all();
+       $medida = Medida::all();
 
 
-     return view('medidas.index', compact('medida'));
+       return view('medidas.index', compact('medida'));
 
 
- }
+   }
 
     /**
      * Show the form for creating a new resource.
@@ -109,7 +109,7 @@ class MedidasController extends Controller
     {   
         //dd($request);
         //return view('catastrofes');
-    
+
         
         if($request->tipo=="c1"){
 
@@ -119,21 +119,22 @@ class MedidasController extends Controller
 
             return redirect()->route('voluntarios.create');
         }
-        else if($request->tipo="c3"){
+        else if($request->tipo=="c3"){
 
             return redirect()->route('recoleccion.create');
         }
 
-        else{
+        else if($request->tipo=="c4"){
 
-            return  redirec()->route('eventos.create');
+            return  redirect()->route('eventos.create');
         }
 
-        
-        
-        
+
+
+
         return view('medidas.crear');
         
+
     }
 
 

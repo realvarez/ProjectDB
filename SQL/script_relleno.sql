@@ -255,9 +255,9 @@ insert into depositos("user_id","medida_id","rut","cantidad","fechaDeposito","do
 (2,1,324613453,12000,'2017-06-17','cheque',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Eventos
-insert into eventos ("metaDinero","actualDinero","region","comuna_id", "direccion","created_at","updated_at")values
-(15000000,1499999,'Metropolitana',150,'Alameda 1234',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
-(1000,500,'Antofagasta',5,'Matta 6367',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
+insert into eventos ("metaDinero","actualDinero","comuna_id", "direccion","created_at","updated_at")values
+(15000000,1499999,150,'Alameda 1234',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
+(1000,500,5,'Matta 6367',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Historias
 insert into historias("user_id","tipo_cambio","tabla","estado_antiguo","estado_nuevo","created_at","updated_at")values

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Evento;
 use App\Medida;
+use DB;
 
 class EventoController extends Controller
 {
@@ -25,7 +26,8 @@ class EventoController extends Controller
      */
     public function create()
     {
-        return view('medidas.evento_crear');
+        $regiones= DB::table('regions')->pluck("nombre","id")->all();
+        return view('medidas.evento_crear',compact('regiones'));
     }
 
     /**
@@ -35,30 +37,32 @@ class EventoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-
     {
         
         $this->validate($request,[
 
             'Descripcion' => 'required|string',
-            'Region' => 'required|string',
-            'Comuna' => 'required|string',
-            'Direccion' => 'required|string',
-            'metaDinero' => 'required|string'
+            'Meta' => 'required',
+            'actual' => 'required',
+            'region_id' => 'required|not_in:0',
+            'comuna_id' => 'required|not_in:0',
+            'Direccion' => 'required|string'
+            
 
-            ]
-        );
+        ]
+    );
 
-         $evento=new Recoleccion;
-         $evento->metaDinero=$request->metaDinero;
+        $evento = new Evento;
+        $evento->metaDinero=$request->Meta;
+        $evento->actualDinero=$request->actual;
+        $evento->comuna_id=$request->comuna_id;
+        $evento->direccion=$request->Direccion;
         
-         $evento->region=$request->Region;
-         $evento->comuna=$request->Comuna;
-         $evento->direccion=$request->Direccion;
+        
+        $evento->save();
 
-       
 
-         $medida=array(
+        $medida=array(
 
             'catastrove_id' => 1, //Por ahora constante
             'descripcion' => $request->Descripcion,
@@ -69,10 +73,12 @@ class EventoController extends Controller
             'fecha_inicio' => '2017-3-1', //Por ahora constante
             'fecha_termino' => '2018-3-1' //Por ahora constante
 
-            );
-        $evento->save();
+        );
+        
         $evento->medida()->create($medida);
-         
+        return  redirect()->route('medidas.busqueda',1);
+        
+
     }
 
     /**

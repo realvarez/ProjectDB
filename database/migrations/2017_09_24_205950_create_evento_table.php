@@ -17,7 +17,6 @@ class CreateEventoTable extends Migration
             $table->increments('id');
             $table->integer('metaDinero');
             $table->integer('actualDinero')->default(0);
-            $table->string('region');
             $table->integer('comuna_id');
             $table->string('direccion');
             $table->timestamps();

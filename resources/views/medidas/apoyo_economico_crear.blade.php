@@ -16,14 +16,12 @@
           </div>
           <div class="form-group">
             <label for="titulo">Meta Minima</label>
-            <input type="text" class="form-control" id="number" name="Meta" placeholder="Cantidad requeriada de Voluntarios" required>
+            <input type="number" class="form-control" id="number" name="Meta" placeholder="Cantidad requeriada de ayuda" required>
           </div>
           <div class="form-group">
             <label for="exampleFormControlSelect1">Numero Cuenta</label>
             <input type="text" class="form-control" id="" name="Region" placeholder="Indique la region " required>
-
           </div>
-
           <div class="form-group">
             <label for="exampleFormControlSelect1">Banco Cuenta</label>
             <select class="form-control" name='comuna' id="exampleFormControlSelect1">
