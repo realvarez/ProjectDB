@@ -45,3 +45,8 @@ Route::get('prueba', 'PruebaController@myform');
 Route::get('catastrofes.crear', 'CatastrovesController@index');
 Route::post('catastrofes',['as'=>'testeo','uses'=>'CatastrovesController@store']);
 Route::post('select-ajax', ['as'=>'select-ajax','uses'=>'CatastrovesController@selectAjax']);
+
+//rutas registro
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register',['as'=>'registro','uses'=>'Auth\RegisterController@register']);
+//Route::post('register', 'Auth\RegisterController@register');
