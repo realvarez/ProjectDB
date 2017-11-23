@@ -164,7 +164,7 @@ position: static;
 
 
   /*progres bar */
-  .progress{
+  .progress2{
       width: 150px;
       height: 150px;
       line-height: 150px;
@@ -173,7 +173,7 @@ position: static;
       box-shadow: none;
       position: relative;
   }
-  .progress:after{
+  .progress2:after{
       content: "";
       width: 100%;
       height: 100%;
@@ -183,7 +183,7 @@ position: static;
       top: 0;
       left: 0;
   }
-  .progress > span{
+  .progress2 > span{
       width: 50%;
       height: 100%;
       overflow: hidden;
@@ -191,10 +191,10 @@ position: static;
       top: 0;
       z-index: 1;
   }
-  .progress .progress-left{
+  .progress2 .progress-left{
       left: 0;
   }
-  .progress .progress-bar{
+  .progress2 .progress-bar{
       width: 100%;
       height: 100%;
       background: none;
@@ -203,7 +203,7 @@ position: static;
       position: absolute;
       top: 0;
   }
-  .progress .progress-left .progress-bar{
+  .progress2 .progress-left .progress-bar{
       left: 100%;
       border-top-right-radius: 80px;
       border-bottom-right-radius: 80px;
@@ -211,10 +211,10 @@ position: static;
       -webkit-transform-origin: center left;
       transform-origin: center left;
   }
-  .progress .progress-right{
+  .progress2 .progress-right{
       right: 0;
   }
-  .progress .progress-right .progress-bar{
+  .progress2 .progress-right .progress-bar{
       left: -100%;
       border-top-left-radius: 80px;
       border-bottom-left-radius: 80px;
@@ -223,7 +223,7 @@ position: static;
       transform-origin: center right;
       animation: loading-1 1.8s linear forwards;
   }
-  .progress .progress-value{
+  .progress2 .progress-value{
       width: 85%;
       height: 85%;
       border-radius: 50%;
@@ -235,40 +235,40 @@ position: static;
       top: 7.5%;
       left: 7.5%;
   }
-  .progress.blue .progress-bar{
+  .progress2.blue .progress-bar{
       border-color: #049dff;
   }
-  .progress.blue .progress-value{
+  .progress2.blue .progress-value{
       color: #049dff;
   }
-  .progress.blue .progress-left .progress-bar{
+  .progress2.blue .progress-left .progress2-bar{
       animation: loading-2 1.5s linear forwards 1.8s;
   }
-  .progress.yellow .progress-bar{
+  .progress2.yellow .progress-bar{
       border-color: #fdba04;
   }
-  .progress.yellow .progress-value{
+  .progress2.yellow .progress-value{
       color: #fdba04;
   }
-  .progress.yellow .progress-left .progress-bar{
+  .progress2.yellow .progress-left .progress2-bar{
       animation: loading-3 1s linear forwards 1.8s;
   }
-  .progress.pink .progress-bar{
+  .progress2.pink .progress-bar{
       border-color: #ed687c;
   }
-  .progress.pink .progress-value{
+  .progress2.pink .progress-value{
       color: #ed687c;
   }
-  .progress.pink .progress-left .progress-bar{
+  .progress2.pink .progress-left .progress-bar{
       animation: loading-4 0.4s linear forwards 1.8s;
   }
-  .progress.green .progress-bar{
+  .progress2.green .progress-bar{
       border-color: #1abc9c;
   }
-  .progress.green .progress-value{
+  .progress2.green .progress-value{
       color: #1abc9c;
   }
-  .progress.green .progress-left .progress-bar{
+  .progress2.green .progress-left .progress-bar{
       animation: loading-5 1.2s linear forwards 1.8s;
   }
   @keyframes loading-1{
@@ -322,7 +322,7 @@ position: static;
       }
   }
   @media only screen and (max-width: 990px){
-      .progress{ margin-bottom: 20px; }
+      .progress2{ margin-bottom: 20px; }
   }
 
 
@@ -335,39 +335,3 @@ position: static;
 
 
   /* adsad*/
-  .progress-outer2{
-    background: #fff;
-    border-radius: 50px;
-    padding: 25px;
-    margin: 10px 0;
-    box-shadow: 0 0  10px rgba(209, 219, 231,0.7);
-}
-.progress2{
-    height: 27px;
-    margin: 0;
-    overflow: visible;
-    border-radius: 50px;
-    background: #eaedf3;
-    box-shadow: inset 0 10px  10px rgba(244, 245, 250,0.9);
-}
-.progress2 .progress-bar{
-    border-radius: 50px;
-}
-.progress2 .progress-value{
-    position: relative;
-    left: -45px;
-    top: 4px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #fff;
-    letter-spacing: 2px;
-}
-.progress-bar.active{
-    animation: reverse progress-bar-stripes 0.40s linear infinite, animate-positive 2s;
-}
-@-webkit-keyframes animate-positive{
-    0% { width: 0%; }
-}
-@keyframes animate-positive {
-    0% { width: 0%; }
-}
