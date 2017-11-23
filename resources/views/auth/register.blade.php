@@ -2,8 +2,8 @@
 @section('content')
 
 <div class="container ">
-    <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
-        {{ csrf_field() }}
+    {!! Form::open(array('route' => 'registro', 'class' => 'form')) !!}  
+      {{ csrf_field() }}
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
@@ -121,36 +121,27 @@
 
 
         <div class="row form-group">
-            <div class="col-md-3 field-label-responsive">
-                <label for="region">Region</label>
+            <div class="col-md-3 field-label-responsive"> 
+                <label for="region">Region</label> 
             </div>
             <div class="col-md-6">
-                <select class="form-control"  type="region" name="region" id="regionDropdown" >
-                    <div  class="mb-2 mr-sm-2 mb-sm-0">
-                        <option value="">Seleccione una Region</option>
-                        @foreach($regiones as $itemRegion)
-                            <option value={{$itemRegion->id}}>{{$itemRegion->nombre}}</option>
-                        @endforeach
-                    </div>
-                </select>
+                <div  class="mb-2 mr-sm-2 mb-sm-0">
+                    {!! Form::select('region_id',[''=>'--- Selecciona Region ---']+$regiones,null,['select class'=>'form-control']) !!}
+                </div>
             </div>
         </div>
 
         <div class="row form-group">
-            <div class="col-md-3 field-label-responsive">
-                <label for="comuna">Comuna</label>
+            <div class="col-md-3 field-label-responsive"> 
+                <label for="region">Comuna</label> 
             </div>
             <div class="col-md-6">
-
-                <select class="form-control" type="comuna" name="comuna" id="comunaDropdown" >
-                    <div class="mb-2 mr-sm-2 mb-sm-0">
-                        @foreach($comunas as $itemComuna)
-                            <option value="{{$itemComuna->id}}">{{$itemComuna->nombre}}</option>
-                        @endforeach
-                    </div>
-                </select>
+                <div  class="mb-2 mr-sm-2 mb-sm-0">
+                    {!! Form::select('comuna_id',[''=>'--- Selecciona Comuna ---'],null,['class'=>'form-control']) !!}
+                </div>
             </div>
         </div>
+
 
         <div class="row">
             <div class="col-md-3 field-label-responsive">
@@ -175,6 +166,6 @@
         </div>
 
         
-    </form>
+    {!! Form::close() !!}
 </div>
 @endsection
