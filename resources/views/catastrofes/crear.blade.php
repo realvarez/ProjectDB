@@ -42,20 +42,7 @@
     </div>
   </div>
   <a href="/catastrofes" class="btn-primary">Volver</a>
-  <script type="text/javascript">
-  $("select[name='region_id']").change(function(){
-      var region_id = $(this).val();
-      var token = $("input[name='_token']").val();
-      $.ajax({
-          url: "<?php echo route('select-ajax') ?>",
-          method: 'POST',
-          data: {region_id:region_id, _token:token},
-          success: function(data) {
-            $("select[name='comuna_id'").html('');
-            $("select[name='comuna_id'").html(data.options);
-          }
-      });
-  });
-</script>
+  
 
 </section>
+
