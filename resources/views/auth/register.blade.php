@@ -112,7 +112,7 @@
                         <div class="input-group-addon" style="width: 2.6rem">
                             <i class="fa fa-repeat"></i>
                         </div>
-                        <input type="password" name="password-confirmation" class="form-control"
+                        <input type="password" name="password_confirmation" class="form-control"
                                id="password-confirm" placeholder="Ingresa Nuevamente" required>
                     </div>
                 </div>
@@ -129,7 +129,7 @@
                     <div  class="mb-2 mr-sm-2 mb-sm-0">
                         <option value="">Seleccione una Region</option>
                         @foreach($regiones as $itemRegion)
-                        <option value={{$itemRegion->id}}>{{$itemRegion->nombre}}</option>
+                            <option value={{$itemRegion->id}}>{{$itemRegion->nombre}}</option>
                         @endforeach
                     </div>
                 </select>
@@ -142,8 +142,8 @@
             </div>
             <div class="col-md-6">
 
-                <select class="form-control">
-                        <div type="comuna" name="comuna" id="comunaDropdown" class="mb-2 mr-sm-2 mb-sm-0">
+                <select class="form-control" type="comuna" name="comuna" id="comunaDropdown" >
+                    <div class="mb-2 mr-sm-2 mb-sm-0">
                         @foreach($comunas as $itemComuna)
                             <option value="{{$itemComuna->id}}">{{$itemComuna->nombre}}</option>
                         @endforeach
