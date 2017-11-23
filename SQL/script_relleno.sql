@@ -242,7 +242,7 @@ insert into "apoyo_economicos" ("metaMinima", "actual", "numCuenta", "TipoCuenta
 (1000,0,644397,'vista','banco santander','alberto','alberto@hotmail.com',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Gastos
-insert into gastos("medida_id","descripcion","created_at","updated_at")values
+insert into gastos("medida_id","descripcion","comuna_id","created_at","updated_at")values
 (1,'pago ayudantia',30,CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Recoleccion
