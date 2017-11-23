@@ -29,14 +29,10 @@ class MedidasController extends Controller
      */
     public function create()
     {   
-        $tipo=array('c1' => 'Apoyo economico',
-                    'c2' => 'Recoleccion',
-                    'c3' => 'Voluntariado',
-                    'c4' => 'Evento');
+        
         
        
-        $paso=1;
-        return view('medidas.crear',compact('tipo','paso'));
+        return view('medidas.crear');
     }
 
     /**
@@ -107,6 +103,33 @@ class MedidasController extends Controller
       
         return view('catastrofe',compact('c','medidas'));
 
+    }
+      public function createFormulario(Request $request)
+    {   
+        //dd($request);
+        
+        if($request->tipo=="c1"){
+
+            return redirect()->route('apoyos.create');
+        }
+        else if($request->tipo=="c2"){
+
+            return redirect()->route('voluntarios.create');
+        }
+        else if($request->tipo="c3"){
+
+            return redirect()->route('recoleccion.create');
+        }
+
+        else{
+
+            return  redirec()->route('eventos.create');
+        }
+
+
+        
+       
+        //return view('medidas.crear');
     }
 
 

@@ -25,7 +25,7 @@ class ApoyoEconomicoController extends Controller
      */
     public function create()
     {
-        //
+        return view('medidas.apoyo_economico_crear');
     }
 
     /**
@@ -82,7 +82,7 @@ class ApoyoEconomicoController extends Controller
         $apoyo->save();
         $apoyo->medida()->create($medida);
          
-        return  redirect()->route('medidas.busqueda',1);apoyo
+        return  redirect()->route('medidas.busqueda',1);
     }
 
     /**

@@ -25,7 +25,7 @@ class EventoController extends Controller
      */
     public function create()
     {
-        //
+        return view('medidas.evento_crear');
     }
 
     /**

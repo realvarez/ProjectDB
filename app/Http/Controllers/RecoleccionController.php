@@ -25,7 +25,7 @@ class RecoleccionController extends Controller
      */
     public function create()
     {
-        //
+        return view('medidas.recoleccion_crear');
     }
 
     /**

@@ -22,11 +22,18 @@ Route::get('medidas_info/{catastrofe_id}',
 ['uses' => 'MedidasController@buscarMedidas',
 'as' => 'medidas.busqueda']
 );
+
+Route::post('/medidasForm',
+	['uses' => 'MedidasController@createFormulario',
+	'as' => 'medidas.createFormulario' ]);
 /*Catastrofes*/
 
 Route::resource('catastrofes','CatastrovesController');
 Route::resource('medidas','MedidasController');
 Route::resource('voluntarios','VoluntariosController');
+Route::resource('apoyos','ApoyoEconomicoController');
+Route::resource('eventos','EventoController');
+Route::resource('recoleccion','RecoleccionController');
 /*Medidas*/
 
 
