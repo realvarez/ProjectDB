@@ -50,3 +50,4 @@
   <a href="/catastrofes" class="btn-primary">Volver</a>
 
 </section>
+@stop

@@ -122,7 +122,7 @@ class MedidasController extends Controller
         $c=Catastrove::find($catastrofe_id);
         //$tipoC=Tipo_catastrove::all();
 
-        $medidas=Medida::where('catastrove_id',$catastrofe_id)->paginate(2);
+        $medidas=Medida::where('catastrove_id',$catastrofe_id)->paginate(4);
 
 
         return view('catastrofe',compact('c','medidas'));
