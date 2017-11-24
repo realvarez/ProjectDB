@@ -67,7 +67,7 @@
 
           </div>
           @endforeach
-
+           {!!$medidas->links('pagination')!!}
 
         </div>
 
