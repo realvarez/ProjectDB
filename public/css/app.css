@@ -25,7 +25,7 @@
 }
 
 .color2{
-  background:#bbffe2;
+  background:#e4e4e4;
 
 }
 .color1{
@@ -51,13 +51,13 @@
 }
 
 .Enlace{
-  border-bottom: 3px solid #24b432;
+  border-bottom: 2px solid #093575;
 }
 .bt{
   border-top: 7px solid  #4ed95c;
 }
 .Enlace:hover{
-  border-left: 5px solid #4ed95c;
+  border-left: 5px solid#093575;
   background: #9ee2a5;
 
 }

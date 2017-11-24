@@ -14,15 +14,8 @@
             <label for="titulo">Descripcion</label>
             <input type="text" class="form-control" id="titulo" name="Descripcion" placeholder="Descripcion" required>
           </div>
-          <div class="form-group">
-            <label for="titulo">Meta recoleccion</label>
-            <input type="number" class="form-control" id="number" name="metaRecoleccion" placeholder="Cantidad requeriada de Voluntarios" required>
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Tipo recoleccion</label>
-            <input type="text" class="form-control" id="dir" name="tipoRecoleccion" placeholder="Indique la Direccion " required>
 
-          </div>
+
           <div class="form-group">
             <label for="exampleFormControlSelect1">Region</label>
             <input type="text" class="form-control" id="" name="Region" placeholder="Indique la region " required>
@@ -39,6 +32,28 @@
             <input type="text" class="form-control" id="dir" name="Direccion" placeholder="Indique la Direccion " required>
           </div>
 
+          <h3 style="margin-bottom: 25px; text-align: center;">Elementos a recolectar</h3>
+          <div class="form-group">
+            <table class="table">
+              <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Elemento</th>
+                    <th scope="col">cantidad</th>
+
+                  </tr>
+                </thead>
+                <tbody id='formc'>
+                <tr>
+                  <th scope="row">1</th>
+                  <td><input type="text" class="form-control" id="dir" name="elemento"  required></td>
+                  <td><input type="number" class="form-control" id="dir" name="cantidad"  required></td>
+                </tr>
+              </tbody>
+            </table>
+
+              <button type="button" id="dinamico" name="submit" class="btn btn-success">agregar</button>
+          </div>
 
 
           <button type="submit" id="submit" name="submit" class="btn btn-success">Enviar</button>
@@ -54,6 +69,20 @@
 
 
 
+
   <a href="/catastrofes" class="btn-primary">Volver</a>
+
+  <script>
+  alert('adasd');
+  $('#dinamico').onclick(function (event){
+    var form = $("<tr>");
+    var input1 = $("<input>").attr("type","text").attr("name","elemento");
+    var input2 = $($("<input>").attr("type","number").attr("name","cantidad");
+    form.append(input1);
+    form.append(input2);
+    $('#formc').append(form);
+  });
+
+  </script>
 
 </section>
