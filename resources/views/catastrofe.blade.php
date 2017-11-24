@@ -51,7 +51,7 @@
                 <td>{{$m->tipo_medida}}</td>
                 <td>{{$m->descripcion}}</td>
                 <td><div class="d-flex  justify-content-center mt-3">
-                  <button type="button" class="btn btn-default">
+                  <button type="button" class="btn btn-default" href="{{route('medidas.show',$m->show}}">
                     Mas informacion
                   </button>
                 </div></td>
