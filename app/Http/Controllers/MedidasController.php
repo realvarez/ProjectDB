@@ -54,7 +54,31 @@ class MedidasController extends Controller
      */
     public function show($id)
     {
-            return 'probando';
+
+        $medida=Medida::find($id);
+
+
+        if($medida->MorphMedida_type=='App\Recoleccion'){
+            
+
+            return redirect()->route('recoleccion.show',['recoleccion' =>$medida->MorphMedida_id]);
+        }
+        else if($medida->MorphMedida_type=='App\Apoyo_economico'){
+
+            return redirect()->route('apoyos.show',['apoyos' =>$medida->MorphMedida_id]);
+        }
+
+          else if($medida->MorphMedida_type=='App\Evento'){
+
+            return redirect()->route('eventos.show',['eventos' =>$medida->MorphMedida_id]);
+        }
+        
+          else if($medida->MorphMedida_type=='App\Voluntariado'){
+
+            return redirect()->route('voluntarios.show',['voluntarios' =>$medida->MorphMedida_id]);
+        }
+        
+
     }
 
     /**

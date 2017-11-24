@@ -90,7 +90,9 @@ class EventoController extends Controller
      */
     public function show($id)
     {
-        //
+        $evento=Evento::find($id);
+
+        return view('medidas.vista_evento',compact('evento'));
     }
 
     /**
