@@ -13,6 +13,7 @@ class Catastrove extends Model
         'titulo',
         'comuna_id',
         'tipoCatastrove_id',
+        'activa',
     ];
 
     public function user(){

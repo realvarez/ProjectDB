@@ -16,6 +16,7 @@ class CreateCatastrovesTable extends Migration
             $table->string('descripcion');
             $table->string('titulo');
             $table->integer('tipo_catastrove_id');
+            $table->integer('activa')->default(1);
 
             $table->timestamps();
 

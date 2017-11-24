@@ -24,8 +24,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light padding-top border border-right-0 border-left-0 border-top-0 border-secondary">
-
+    <nav class="navbar navbar-expand-sm navbar-light bg-light padding-top border border-right-0 border-left-0 border-top-0 border-secondary mb-5">
         <!-- Brand -->
         <a class="navbar-brand  p-0 m-0 mx-5" href="{{ route('principal') }}">Chile Emergencias</a>
         <!-- Toggler/collapsibe Button -->
@@ -47,6 +46,13 @@
                         <a class="dropdown-item" href="#">Donaciones</a>
                     </div>
                 </li>
+                {{-- Aqui ver bien que id tendra cada rol --}}
+                {{-- @if(Auth::user()->rol_id ==3) --}}
+                {{-- @endif --}}
+                <li class="nav-item">
+                    <a class="nav-link" href="administradores">Administrador</a>
+                </li>
+                
             </div>
             <div class="navbar-nav text-center">
                 @guest
@@ -57,6 +63,7 @@
                         <a class="nav-link" href="{{ route('register') }}">Registrarse</a>
                     </li>
                 @else
+                    
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>

@@ -12,7 +12,10 @@
 			<h1 class="mb-3 display-5 font-weight-bold">Chile Emergencias</h1>
 			<p class="lead">Ayuda Informado</p>
 			<p class="text-justify">Informate acerca de las ultimas catastrofes ocurrentes Chile y participa en las diferentes tipos de medidas paleativas de las Organizaciones participantes</p>
-			<button type="button" class="btn btn-lg btn-block btn-outline-secondary mt-5">Catastrofes</button>
+			
+			<a href="{{ route('login') }}" class="btn btn-lg btn-block btn-outline-secondary mt-5" role="button">¡Ingresa Ahora!</a>
+			<a href="{{ route('catastrofes.index') }}" class="btn btn-lg btn-block btn-outline-secondary mt-5" role="button">Revisa Donde Necesitan Ayuda </a>
+
 		</div>
 	</div>
 </section>
