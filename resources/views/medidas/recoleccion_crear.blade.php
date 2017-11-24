@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col">
       <div class="form-area">
-        <form role="form" method="POST" action="{{route('voluntarios.store')}}">
+        <form role="form" method="POST" action="{{route('recoleccion.store')}}">
           {{ csrf_field() }}
           <br style="clear:both">
           <h3 style="margin-bottom: 25px; text-align: center;">Crear Medida Recoleccion</h3>
@@ -38,6 +38,7 @@
             <label for="exampleFormControlSelect1">Direccion</label>
             <input type="text" class="form-control" id="dir" name="Direccion" placeholder="Indique la Direccion " required>
           </div>
+
 
 
           <button type="submit" id="submit" name="submit" class="btn btn-success">Enviar</button>

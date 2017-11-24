@@ -34,7 +34,7 @@
             <label class="control-label col-sm-3" for="registration-date">Fecha Inicio:</label>
             <div class="input-group registration-date-time">
               <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
-              <input class="form-control" name="registration_date" id="registration-date" type="date">
+              <input class="form-control" name="fecha_inicio" id="registration-date" type="date">
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@
             <label class="control-label col-sm-3" for="registration-date">Fecha Termino:</label>
             <div class="input-group registration-date-time">
               <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
-              <input class="form-control" name="registration_date" id="registration-date" type="date">
+              <input class="form-control" name="fecha_termino" id="registration-date" type="date">
             </div>
           </div>
 

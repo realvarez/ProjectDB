@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col">
       <div class="form-area">
-        <form role="form" method="POST" action="{{route('voluntarios.store')}}">
+        <form role="form" method="POST" action="{{route('apoyos.store')}}">
           {{ csrf_field() }}
           <br style="clear:both">
           <h3 style="margin-bottom: 25px; text-align: center;">Crear Medida Apoyo Economico</h3>

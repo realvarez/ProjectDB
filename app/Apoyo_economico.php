@@ -25,12 +25,12 @@ class Apoyo_economico extends Model
 
     public function depositos(){
 
-    	return $this->hasMany('app\Deposito');
+    	return $this->hasMany('App\Deposito');
     }
 
     public function gastos(){
 
-    	return $this->hasMany('app\Gasto');
+    	return $this->hasMany('App\Gasto');
     }
 
 
