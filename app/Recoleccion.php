@@ -28,6 +28,6 @@ class Recoleccion extends Model
       }
 
 
-
+      
 
 }
