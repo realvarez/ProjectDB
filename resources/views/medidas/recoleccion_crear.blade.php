@@ -37,7 +37,7 @@
           </div>
 
           <h3 style="margin-bottom: 25px; text-align: center;">Elementos a recolectar</h3>
-          <div class="form-group">
+
             <!-- <table class="table">
               <thead>
                   <tr>
@@ -79,8 +79,7 @@
               </div>
           </div>
 
-              <button type="button" id="dinamico" name="submit" class="btn btn-success">agregar</button>
-          </div>
+            
 
 
           <button type="submit" id="submit" name="submit" class="btn btn-success">Enviar</button>
@@ -101,3 +100,5 @@
 
 
 </section>
+
+@stop
