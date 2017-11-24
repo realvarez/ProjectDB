@@ -231,10 +231,10 @@ insert into rnvs("user_id", "ultima_medida", "rut","nombre","correo","created_at
 (1,1,123456789,'Felipe','felipe.vasquez@usach.cl',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Medidas
-insert into "medidas" ("user_id", "admin_id", "organization_id", "catastrove_id", "tipo_medida", "descripcion", "fecha_inicio", "fecha_termino", "estado", "avance", "MorphMedida_id", "MorphMedida_type", "created_at", "updated_at" )
+insert into "medidas" ("user_id", "admin_id", "organization_id", "catastrove_id", "descripcion", "fecha_inicio", "fecha_termino", "estado", "avance", "MorphMedida_id", "MorphMedida_type","titulo", "created_at", "updated_at" )
 values
-(1,NULL,1,1,2,'choripanada','2000-12-17','2000-12-17',1,1,2,'App/Eventos',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
-(2,NULL,2,2,1,'colecta junta vecinos','2000-12-17','2000-12-17',0,0,1,'App/Recolecciones',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
+(1,NULL,1,1,'choripanada','2000-12-17','2000-12-17',1,1,2,'App/Eventos','Venta de Choripanes',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
+(2,NULL,2,2,'colecta junta vecinos','2000-12-17','2000-12-17',0,0,1,'App/Recolecciones','Recoleccion de insumos',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Apoyo economico
 insert into "apoyo_economicos" ("metaMinima", "actual", "numCuenta", "TipoCuenta", "bancoCuenta", "titularCuenta", "correoCuenta", "created_at", "updated_at")values

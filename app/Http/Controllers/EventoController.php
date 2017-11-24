@@ -47,7 +47,8 @@ class EventoController extends Controller
             'actual' => 'required',
             'region_id' => 'required|not_in:0',
             'comuna_id' => 'required|not_in:0',
-            'Direccion' => 'required|string'
+            'Direccion' => 'required|string',
+            'titulo' => 'required|string'
             
 
         ]
@@ -67,10 +68,11 @@ class EventoController extends Controller
 
             'catastrove_id' => 1, //Por ahora constante
             'descripcion' => $request->Descripcion,
+            'titulo' => $request->titulo,
             'user_id' => 1, //Por ahora constante
             'organization_id' =>1, //Por ahora constante
 
-            'tipo_medida' =>1, //Por ahora constante
+           
             'fecha_inicio' => '2017-3-1', //Por ahora constante
             'fecha_termino' => '2018-3-1' //Por ahora constante
 

@@ -42,7 +42,7 @@ class RecoleccionController extends Controller
             'Descripcion' => 'required|string',
             'Region' => 'required|string',
             'metaRecoleccion' => 'required|Integer',
-            
+            'titulo' => 'required|string',
             'Comuna' => 'required|string',
             'Direccion' => 'required|string'
 
@@ -63,10 +63,9 @@ class RecoleccionController extends Controller
 
             'catastrove_id' => 1, //Por ahora constante
             'descripcion' => $request->Descripcion,
+            'titulo' => $required->titulo,
             'user_id' => 1, //Por ahora constante
             'organization_id' =>1, //Por ahora constante
-
-            'tipo_medida' =>1, //Por ahora constante
             'fecha_inicio' => '2017-3-1', //Por ahora constante
             'fecha_termino' => '2018-3-1' //Por ahora constante
 

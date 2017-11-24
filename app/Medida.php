@@ -17,6 +17,7 @@ class Medida extends Model{
     	'estado',
     	'fecha_inicio',
     	'fecha_termino',
+        'titulo',
     ];
 
     public function MorphMedida(){
