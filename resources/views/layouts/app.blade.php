@@ -15,6 +15,7 @@
     {{-- Favicon == Icono --}}
     <link href="/IMG/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Asap:400,600" rel="stylesheet">
     <title>Emergencias Chile</title>
     <!-- Styles -->
     <style>
@@ -23,7 +24,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light padding-top ">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light padding-top border border-right-0 border-left-0 border-top-0 border-secondary">
 
         <!-- Brand -->
         <a class="navbar-brand  p-0 m-0 mx-5" href="{{ route('principal') }}">Chile Emergencias</a>
