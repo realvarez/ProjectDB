@@ -42,7 +42,8 @@ class VoluntariosController extends Controller
             'Descripcion' => 'required|string',
             'region_id' => 'required|not_in:0',
             'comuna_id' => 'required|not_in:0',
-            'Direccion' => 'required|string'
+            'Direccion' => 'required|string',
+            'titulo' => 'required|string'
 
 
         ]);
@@ -59,10 +60,11 @@ class VoluntariosController extends Controller
 
             'catastrove_id' => 1,
             'descripcion' => $request->Descripcion,
+            'titulo' => $request->titulo,
             'user_id' => 1,
             'organization_id' =>1,
 
-            'tipo_medida' =>1,
+      
             'fecha_inicio' => '2017-3-1',
             'fecha_termino' => '2018-3-1'
 

@@ -12,7 +12,7 @@
           <h3 style="margin-bottom: 25px; text-align: center;">Crear Evento a Beneficio</h3>
           <div class="form-group">
             <label for="titulo">Titulo</label>
-            <input type="text" class="form-control" id="titulo" name="Titulo" placeholder="Descripcion" required>
+            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Descripcion" required>
           </div>
           <div class="form-group">
             <label for="Descripcion">Descripcion</label>

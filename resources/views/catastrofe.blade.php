@@ -60,7 +60,7 @@
                     <p>Fecha:----</p>
 
                   </div>
-                  <a class="color2 btn btn-primary" href="{{route('medidas.busqueda',$c->id)}}">Acceder</a>
+                  <a class="color2 btn btn-primary" href="{{route('medidas.show',$m->id)}}">Acceder</a>
                 </div>
               </div>
 
