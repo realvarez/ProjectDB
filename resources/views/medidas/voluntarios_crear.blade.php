@@ -11,8 +11,12 @@
           <br style="clear:both">
           <h3 style="margin-bottom: 25px; text-align: center;">Crear Medida Voluntariado</h3>
           <div class="form-group">
-            <label for="titulo">Descripcion</label>
-            <input type="text" class="form-control" id="titulo" name="Descripcion" placeholder="Descripcion" required>
+            <label for="titulo">Titulo</label>
+            <input type="text" class="form-control" id="titulo" name="Titulo" placeholder="Descripcion" required>
+          </div>
+          <div class="form-group">
+            <label for="Descripcion">Descripcion</label>
+            <input type="text" class="form-control" id="descripcion" name="Descripcion" placeholder="Descripcion" required>
           </div>
           <div class="form-group">
             <label for="titulo">Meta Voluntario</label>
@@ -50,3 +54,4 @@
   <a href="/catastrofes" class="btn-primary">Volver</a>
 
 </section>
+@stop

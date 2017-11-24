@@ -55,6 +55,30 @@ class MedidasController extends Controller
     public function show($id)
     {
 
+        $medida=Medida::find($id);
+
+
+        if($medida->MorphMedida_type=='App\Recoleccion'){
+            
+
+            return redirect()->route('recoleccion.show',['recoleccion' =>$medida->MorphMedida_id]);
+        }
+        else if($medida->MorphMedida_type=='App\Apoyo_economico'){
+
+            return redirect()->route('apoyos.show',['apoyos' =>$medida->MorphMedida_id]);
+        }
+
+          else if($medida->MorphMedida_type=='App\Evento'){
+
+            return redirect()->route('eventos.show',['eventos' =>$medida->MorphMedida_id]);
+        }
+        
+          else if($medida->MorphMedida_type=='App\Voluntariado'){
+
+            return redirect()->route('voluntarios.show',['voluntarios' =>$medida->MorphMedida_id]);
+        }
+        
+
     }
 
     /**
@@ -98,7 +122,7 @@ class MedidasController extends Controller
         $c=Catastrove::find($catastrofe_id);
         //$tipoC=Tipo_catastrove::all();
 
-        $medidas=Medida::where('catastrove_id',$catastrofe_id)->get();
+        $medidas=Medida::where('catastrove_id',$catastrofe_id)->paginate(4);
 
 
         return view('catastrofe',compact('c','medidas'));

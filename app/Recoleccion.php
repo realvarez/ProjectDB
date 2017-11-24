@@ -22,6 +22,12 @@ class Recoleccion extends Model
       }
 
 
+      public function comuna(){
+
+        return $this->belongsTo('App\Comuna');
+      }
+
+
 
 
 }

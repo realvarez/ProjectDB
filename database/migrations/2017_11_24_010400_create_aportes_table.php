@@ -15,17 +15,17 @@ class CreateAportesTable extends Migration
     {
         Schema::create('aportes', function (Blueprint $table) {
             $table->increments('id');
-            $table->int('id_recoleccion')
+            $table->integer('recoleccion_id');
             $table->string('nombre');
-            $table->int('requeridos');
-            $table->int('recolectado');
+            $table->integer('requeridos');
+            $table->integer('recolectado');
             $table->timestamps();
-        });
 
-        $table->foreign('id_recoleccion')
+            $table->foreign('recoleccion_id')
             ->references('id')
-            ->on('recoleccion')
+            ->on('recoleccions')
             ->onDelete('cascade');
+        });
     }
 
     /**

@@ -84,6 +84,8 @@ class VoluntariosController extends Controller
     public function show($id)
     {
         $voluntario=Voluntariado::find($id);
+
+        //dd($voluntario->medida[0]);
         
         return view('medidas.vista_voluntario',compact('voluntario'));
     }
@@ -96,7 +98,7 @@ class VoluntariosController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**

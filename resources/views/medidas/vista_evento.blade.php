@@ -8,28 +8,28 @@
     </div>
     <div class="col-md-12">
       <h3>Meta del Evento:</h3>
-      <p>{{$meta}}</p>
+      <p>{{$evento->metaDinero}}</p>
     </div>
     <div class="col-md-12">
       <h3>Dinero recolectado:</h3>
-      <p>{{$recolectado}}</p>
+      <p>{{$evento->actualDinero}}</p>
     </div>
     <div class="col-md-12">
       <h3>Descripcion:</h3>
-      <p>{{$descripcion}}</p>
+      <p>{{$evento->medida->descripcion}}</p>
     </div>
     <div class="col-md-12">
       <h3>Datos Eventos:</h3>
       <h4>Region:</h4>
-      <p>{{$region}}</p>
+      <p>{{$evento->comuna->region->nombre}}</p>
       <h4>Comuna:</h4>
-      <p>{{$comuna}}</p>
+      <p>{{$evento->comuna->nombre}}</p>
       <h4>Direccion:</h4>
-      <p>{{$direccion}}</p>
+      <p>{{$evento->direccion}}</p>
       <h4>Fecha Inicio:</h4>
-      <p>{{$fecha_i}}</p>
+      <p>{{$evento->medida->fecha_inicio}}</p>
       <h4>Fecha Termino:</h4>
-      <p>{{$fecha_f}}</p>
+      <p>{{$evento->medida->fecha_termino}}</p>
     </div>
 
   </div>
@@ -37,3 +37,4 @@
 
 
 </section>
+@stop

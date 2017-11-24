@@ -9,32 +9,32 @@
     </div>
     <div class="col-md-12">
       <h3>Meta del Evento:</h3>
-      <p>{{$meta}}</p>
+      <p>{{$apoyo->metaMinima}}</p>
     </div>
     <div class="col-md-12">
       <h3>Dinero recolectado:</h3>
-      <p>{{$recolectado}}</p>
+      <p>{{$apoyo->actual}}</p>
     </div>
     <div class="col-md-12">
       <h3>Descripcion:</h3>
-      <p>{{$descripcion}}</p>
+      <p>{{$apoyo->medida->descripcion}}</p>
     </div>
     <div class="col-md-6">
       <h3>Datos Eventos:</h3>
       <h4>Banco:</h4>
-      <p>{{$banco}}</p>
+      <p>{{$apoyo->bancoCuenta}}</p>
       <h4>Tipo de Cuenta:</h4>
-      <p>{{$tipo}}</p>
+      <p>{{$apoyo->TipoCuenta}}</p>
       <h4>Numero de Cuenta:</h4>
-      <p>{{$numero}}</p>
+      <p>{{$apoyo->numCuenta}}</p>
       <h4>titular:</h4>
-      <p>{{$titular}}</p>
+      <p>{{$apoyo->titularCuenta}}</p>
       <h4>Correo:</h4>
-      <p>{{$correo}}</p>
+      <p>{{$apoyo->correoCuenta}}</p>
       <h4>Fecha Inicio:</h4>
-      <p>{{$fecha_i}}</p>
+      <p>{{$apoyo->medida->fecha_inicio}}</p>
       <h4>Fecha Termino:</h4>
-      <p>{{$fecha_f}}</p>
+      <p>{{$apoyo->medida->fecha_termino}}</p>
     </div>
     <div class="col-md-6">
       <form role="form" method="POST" action="{{route('recoleccion.store')}}">
@@ -93,3 +93,5 @@
 
 
 </section>
+
+@stop

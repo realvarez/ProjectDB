@@ -4,9 +4,9 @@
 
   <section class="container-fluid justify-content-around mb-0 py-0 px-3 fonta color1">
 
-      <div class="row  justify-content-between"  >
+      <div class="row  justify-content-between">
 
-        <div class="col-md-2  color2 px-0 border border-bottom-0 border-right-0 border-top-0 border-secondary text-white">
+        <div class="col-md-2  bt color2 px-0 border  border-right-0 border-top-0 border-secondary text-white">
           <div class="Enlace  my-3 mx-1 p-2">
             Opcion1
           </div>
@@ -26,7 +26,7 @@
 
         </div>
 
-        <div class="col-md-7  px-5  bt">
+        <div class="col-md-7  px-5 ">
 
 
 
@@ -35,7 +35,7 @@
             <div class="col m-2 p-2"> -->
               <div class="card my-2" >
                 <div class="card-body">
-                  <h4 class="card-title border border-left-0 border-right-0 border-top-0 border-secondary"> {{$c->titulo}} </h4>
+                  <h4 class="card-title text-uppercase border border-left-0 border-right-0 border-top-0 border-secondary"> {{$c->titulo}} </h4>
                   <h6 class="card-subtitle mb-2 text-muted">{{$c->tipo_catastrove->tipo}}</h6>
                   <!-- <p class="card-text">{{$c->descripcion}}</p> -->
                   <div class="d-flex justify-content-between">

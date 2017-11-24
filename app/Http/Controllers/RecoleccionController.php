@@ -84,7 +84,9 @@ class RecoleccionController extends Controller
      */
     public function show($id)
     {
-        //
+        $recoleccion=Recoleccion::find($id);
+
+        return 'Trabajando en vista recoleccion';
     }
 
     /**

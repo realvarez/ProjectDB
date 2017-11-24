@@ -15,6 +15,12 @@ class Evento extends Model
     ];
 
     public function medida(){
-      return $this->morphMany('App\Medida','MorphMedida');
+      return $this->morphOne('App\Medida','MorphMedida');
+    }
+
+
+    public function comuna(){
+
+        return $this->belongsTo('App\Comuna');
     }
 }
