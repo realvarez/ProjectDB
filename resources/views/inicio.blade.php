@@ -6,8 +6,8 @@
 
       <div class="row  justify-content-between"  >
 
-        <div class="col-md-2 mt-5 color2 px-0 EnlG">
-          <div class="Enlace mt-5 my-2 p-2">
+        <div class="col-md-2  color2 px-0 EnlG">
+          <div class="Enlace  my-2 p-2">
             Opcion1
           </div>
 
@@ -26,7 +26,7 @@
 
         </div>
 
-        <div class="col-md-7 mt-5 px-5  bt">
+        <div class="col-md-7  px-5  bt">
 
 
 
@@ -53,7 +53,7 @@
 
           <!-- </div>
       </div> -->
-      <div class="col-md-2  mt-5 p-0 tt">
+      <div class="col-md-2  p-0 tt">
 
           <a class="twitter-timeline" href="https://twitter.com/pruebadbd1?ref_src=twsrc%5Etfw">Tweets by pruebadbd1</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
               <a href="https://twitter.com/pruebadbd1?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @pruebadbd1</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
