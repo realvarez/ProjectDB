@@ -27,5 +27,24 @@ class Comuna extends Model
     	return $this->hasMany('App\Catastrofe');
     }
 
+    public function voluntariado(){
+
+        return $this->hasMany('App\Voluntariado');
+    }
+
+    public function evento(){
+
+        return $this->hasMany('App\Evento');
+    }
+
+    public function recoleccion(){
+
+
+        return $this->hasMany('App\Recoleccion');
+    }
+
+
+
+
 
 }
