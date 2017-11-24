@@ -15,12 +15,9 @@ class CreateRecoleccionsTable extends Migration
     {
         Schema::create('recoleccions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('metaRecoleccion');
-            $table->integer('recoleccionActual')->default(0);
             $table->string('region');
             $table->integer('comuna_id');
             $table->string('direccion');
-            $table->integer('tipoRecoleccion');
             $table->timestamps();
 
             $table->foreign('comuna_id')

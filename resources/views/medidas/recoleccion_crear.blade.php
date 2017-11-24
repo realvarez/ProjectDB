@@ -12,7 +12,7 @@
           <h3 style="margin-bottom: 25px; text-align: center;">Crear Medida Recoleccion</h3>
           <div class="form-group">
             <label for="titulo">Titulo</label>
-            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Descripcion" required>
+            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="titulo" required>
           </div>
           <div class="form-group">
             <label for="Descripcion">Descripcion</label>
@@ -79,7 +79,7 @@
               </div>
           </div>
 
-            
+
 
 
           <button type="submit" id="submit" name="submit" class="btn btn-success">Enviar</button>
