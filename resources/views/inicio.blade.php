@@ -4,7 +4,7 @@
 
   <section class="container-fluid justify-content-around mb-0 py-0 px-3 fonta color1">
 
-      <div class="row  justify-content-between"  >
+      <div class="row  justify-content-between">
 
         <div class="col-md-2  bt color2 px-0 border  border-right-0 border-top-0 border-secondary text-white">
           <div class="Enlace  my-3 mx-1 p-2">

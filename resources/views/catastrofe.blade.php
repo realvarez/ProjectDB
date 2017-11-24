@@ -39,18 +39,21 @@
         </div>
       </div> -->
 
-    </div
+    </div>
 
     <div class="col-md-6   medidas justify-content-center d-flex">
       <div class="row">
 
-        <div class=" col ">
-            <table class="table">>
-            <tbody>
+        <div class=" col my-3 ">
+            <table class="table table-striped">
+            <tbody class="my-3">
               @foreach ($medidas as $m)
               <tr>
 
                 <td>{{$m->descripcion}}</td>
+                <td>Dato2</td>
+                <td>Dato3</td>
+                <td>Dato4<td>
                 <td><div class="d-flex  justify-content-center mt-3">
                 </div>
                 <a class="color2 btn btn-primary" href="{{route('medidas.show',$m->id)}}">Acceder</a>
@@ -67,7 +70,7 @@
 
 
       </div>
-      </div>
+
 
 
   </div>
