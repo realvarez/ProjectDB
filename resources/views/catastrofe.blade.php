@@ -42,33 +42,32 @@
     </div
 
     <div class="col-md-6   medidas justify-content-center d-flex">
-      @foreach ($medidas as $m)
       <div class="row">
 
         <div class=" col ">
             <table class="table">>
             <tbody>
+              @foreach ($medidas as $m)
               <tr>
-                <th scope="row">1</th>
-                <td>{{$m->tipo_medida}}</td>
+
                 <td>{{$m->descripcion}}</td>
                 <td><div class="d-flex  justify-content-center mt-3">
                 </div>
                 <a class="color2 btn btn-primary" href="{{route('medidas.show',$m->id)}}">Acceder</a>
               </div>
-                </div></td>
+                </td>
               </tr>
+              @endforeach
             </tbody>
           </table>
           </div>
+
 
         </div>
 
 
       </div>
       </div>
-      @endforeach
-
 
 
   </div>
