@@ -38,7 +38,7 @@
 
           <h3 style="margin-bottom: 25px; text-align: center;">Elementos a recolectar</h3>
           <div class="form-group">
-            <table class="table">
+            <!-- <table class="table">
               <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -53,8 +53,31 @@
                   <td><input type="text" class="form-control" id="dir" name="elemento"  required></td>
                   <td><input type="number" class="form-control" id="dir" name="cantidad"  required></td>
                 </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td><input type="text" class="form-control" id="dir" name="elemento"  required></td>
+                  <td><input type="number" class="form-control" id="dir" name="cantidad"  required></td>
+                </tr>
               </tbody>
-            </table>
+            </table> -->
+              <div class="form-group fieldGroup">
+                  <div class="input-group">
+                    <input type="text" name="elemento" class="form-control" placeholder="Ingrese el nombre del elemento"/>
+                    <input type="number" name="cantidad" class="form-control" placeholder="Ingresar cantidad requerida"/>
+                      <div class="input-group-addon">
+                          <a href="javascript:void(0)" class="btn btn-success addMore"><span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span> Add</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group fieldGroupCopy" style="display: none;" >
+              <div class="input-group">
+                  <input type="text" name="elemento" class="form-control" placeholder="Ingrese el nombre del elemento"/>
+                  <input type="number" name="cantidad" class="form-control" placeholder="Ingresar cantidad requeridal"/>
+                  <div class="input-group-addon">
+                      <a href="javascript:void(0)" class="btn btn-danger remove"><span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span> Remove</a>
+                  </div>
+              </div>
+          </div>
 
               <button type="button" id="dinamico" name="submit" class="btn btn-success">agregar</button>
           </div>
