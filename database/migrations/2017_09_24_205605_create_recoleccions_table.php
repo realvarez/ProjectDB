@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRecoleccionTable extends Migration
+class CreateRecoleccionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateRecoleccionTable extends Migration
      */
     public function up()
     {
-        Schema::create('recolecciones', function (Blueprint $table) {
+        Schema::create('recoleccions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('metaRecoleccion');
             $table->integer('recoleccionActual')->default(0);
@@ -32,6 +32,6 @@ class CreateRecoleccionTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('recolecciones');
+        Schema::dropIfExists('recoleccions');
     }
 }

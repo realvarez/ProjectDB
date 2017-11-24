@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col">
       <div class="form-area">
-        <form role="form" method="POST" action="{{route('voluntarios.store')}}">
+        <form role="form" method="POST" action="{{route('apoyos.store')}}">
           {{ csrf_field() }}
           <br style="clear:both">
           <h3 style="margin-bottom: 25px; text-align: center;">Crear Medida Apoyo Economico</h3>
@@ -16,15 +16,15 @@
           </div>
           <div class="form-group">
             <label for="titulo">Meta Minima</label>
-            <input type="number" class="form-control" id="number" name="Meta" placeholder="Cantidad requeriada de ayuda" required>
+            <input type="number" class="form-control" id="number" name="metaMinima" placeholder="Cantidad requeriada de ayuda" required>
           </div>
           <div class="form-group">
             <label for="exampleFormControlSelect1">Numero Cuenta</label>
-            <input type="text" class="form-control" id="" name="Region" placeholder="Indique la region " required>
+            <input type="number" class="form-control" id="" name="numCuenta" placeholder="Indique la region " required>
           </div>
           <div class="form-group">
             <label for="exampleFormControlSelect1">Banco Cuenta</label>
-            <select class="form-control" name='comuna' id="exampleFormControlSelect1">
+            <select class="form-control" name='bancoCuenta' id="exampleFormControlSelect1">
 
               <option value="027*CORP-BANCA">CORP-BANCA</option>
               <option value="012*BancoEstado">BANCOESTADO</option>
@@ -50,7 +50,7 @@
 
           <div class="form-group">
             <label for="exampleFormControlSelect1">Tipo Cuenta</label>
-            <select class="form-control" name='comuna' id="exampleFormControlSelect1">
+            <select class="form-control" name='tipoCuenta' id="exampleFormControlSelect1">
 
               <option value="CCT">Cuenta Corriente</option>
               <option value="CTV">Chequera Electrónica</option>
@@ -63,14 +63,14 @@
 
 
           <div class="form-group">
-            <label for="exampleFormControlSelect1">Tituluar Cuenta</label>
-            <input type="text" class="form-control" id="dir" name="Direccion" placeholder="Indique la Direccion " required>
+            <label for="exampleFormControlSelect1">Titular Cuenta</label>
+            <input type="text" class="form-control" id="dir" name="titularCuenta" placeholder="Indique la Direccion " required>
 
           </div>
 
           <div class="form-group">
             <label for="exampleFormControlSelect1">Correo Cuenta</label>
-            <input type="email" class="form-control" id="dir" name="Direccion" placeholder="Indique la Direccion " required>
+            <input type="email" class="form-control" id="dir" name="correoCuenta" placeholder="Indique la Direccion " required>
 
           </div>
 

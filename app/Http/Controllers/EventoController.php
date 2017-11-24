@@ -39,10 +39,11 @@ class EventoController extends Controller
     public function store(Request $request)
     {
         
+        
         $this->validate($request,[
 
             'Descripcion' => 'required|string',
-            'Meta' => 'required',
+            'metaDinero' => 'required',
             'actual' => 'required',
             'region_id' => 'required|not_in:0',
             'comuna_id' => 'required|not_in:0',
@@ -53,7 +54,7 @@ class EventoController extends Controller
     );
 
         $evento = new Evento;
-        $evento->metaDinero=$request->Meta;
+        $evento->metaDinero=$request->metaDinero;
         $evento->actualDinero=$request->actual;
         $evento->comuna_id=$request->comuna_id;
         $evento->direccion=$request->Direccion;
