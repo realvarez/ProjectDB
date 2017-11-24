@@ -41,6 +41,8 @@ class RecoleccionController extends Controller
 
             'Descripcion' => 'required|string',
             'Region' => 'required|string',
+            'metaRecoleccion' => 'required|Integer',
+            
             'Comuna' => 'required|string',
             'Direccion' => 'required|string'
 
@@ -48,13 +50,14 @@ class RecoleccionController extends Controller
 
 
          $recoleccion=new Recoleccion;
-         $recoleccion->metaRecoleccion=$request->Meta;
-         $recoleccion->tipoRecoleecion=1; //Para que es este atributo
+         $recoleccion->metaRecoleccion=$request->metaRecoleccion;
+         $recoleccion->tipoRecoleccion=1; //Para que es este atributo
          $recoleccion->region=$request->Region;
-         $recoleccion->comuna=$request->Comuna;
+         $recoleccion->comuna_id=2; //Por ahora constante
          $recoleccion->direccion=$request->Direccion;
 
        
+        $recoleccion->save();
 
          $medida=array(
 
@@ -68,7 +71,6 @@ class RecoleccionController extends Controller
             'fecha_termino' => '2018-3-1' //Por ahora constante
 
             );
-          $recoleccion->save();
          $recoleccion->medida()->create($medida);
          
          return  redirect()->route('medidas.busqueda',1);

@@ -6,7 +6,7 @@ ALTER SEQUENCE catastroves_id_seq RESTART WITH 1;
 ALTER SEQUENCE organizations_id_seq RESTART WITH 1;
 ALTER SEQUENCE apoyo_economicos_id_seq RESTART WITH 1;
 ALTER SEQUENCE organization_users_id_seq RESTART WITH 1;
-ALTER SEQUENCE recolecciones_id_seq RESTART WITH 1;
+ALTER SEQUENCE recoleccions_id_seq RESTART WITH 1;
 ALTER SEQUENCE historias_id_seq RESTART WITH 1;
 ALTER SEQUENCE "tipo_catastroves_id_seq" RESTART WITH 1;
 
@@ -246,7 +246,7 @@ insert into gastos("medida_id","descripcion","comuna_id","created_at","updated_a
 (1,'pago ayudantia',30,CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Recoleccion
-insert into recolecciones("metaRecoleccion","recoleccionActual","region","comuna_id","direccion","tipoRecoleccion","created_at","updated_at") values
+insert into recoleccions("metaRecoleccion","recoleccionActual","region","comuna_id","direccion","tipoRecoleccion","created_at","updated_at") values
 (1000000,500,'Region Metropolitana',120,'San Juan 456',1,CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 
 --Depositos

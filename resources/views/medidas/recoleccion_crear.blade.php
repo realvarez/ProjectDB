@@ -15,6 +15,7 @@
             <input type="text" class="form-control" id="titulo" name="Descripcion" placeholder="Descripcion" required>
           </div>
 
+
           <div class="form-group">
             <label for="exampleFormControlSelect1">Region</label>
             <input type="text" class="form-control" id="" name="Region" placeholder="Indique la region " required>

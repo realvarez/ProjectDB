@@ -36,15 +36,15 @@ class ApoyoEconomicoController extends Controller
      */
     public function store(Request $request)
     {
-                $this->validate($request,[
+
+            //return 'creo apoyo';
+        $this->validate($request,[
 
             'Descripcion' => 'required|string',
-            'Region' => 'required|string',
-            'Comuna' => 'required|string',
-            'Direccion' => 'required|string',
-             'metaMinima' => 'required|Integer',
-            'numCuenta' => 'required|string',
-            'TipoCuenta' => 'required|string',
+         
+            //'metaMinima' => 'required|Integer',
+            //'numCuenta' => 'required|string',
+            'tipoCuenta' => 'required|string',
             'bancoCuenta' => 'required|string',
             'titularCuenta' => 'required|string',
             'correoCuenta' => 'required|string'
@@ -57,15 +57,14 @@ class ApoyoEconomicoController extends Controller
          $apoyo=new Apoyo_economico;
          $apoyo->metaMinima=$request->metaMinima;
          $apoyo->numCuenta=$request->numCuenta;
-         $apoyo->TipoCuenta=$request->TipoCuenta;
+         $apoyo->TipoCuenta=$request->tipoCuenta;
          $apoyo->bancoCuenta=$request->bancoCuenta;
          $apoyo->titularCuenta=$request->titularCuenta;
          $apoyo->correoCuenta=$request->correoCuenta;
-         $apoyo->region=$request->Region;
-         $apoyo->comuna=$request->Comuna;
-         $apoyo->direccion=$request->Direccion;
-
+      
+        
        
+         $apoyo->save();
 
          $medida=array(
 
@@ -79,7 +78,7 @@ class ApoyoEconomicoController extends Controller
             'fecha_termino' => '2018-3-1' //Por ahora constante
 
             );
-        $apoyo->save();
+        
         $apoyo->medida()->create($medida);
          
         return  redirect()->route('medidas.busqueda',1);
