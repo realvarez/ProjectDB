@@ -6,7 +6,7 @@
 
       <div class="row  justify-content-between">
 
-        <div class="col-md-2  bt color2 px-0 border  border-right-0 border-top-0 border-secondary text-white">
+        <!-- <div class="col-md-2  bt color2 px-0 border  border-right-0 border-top-0 border-secondary text-white">
           <div class="Enlace  my-3 mx-1 p-2">
             Opcion1
           </div>
@@ -24,7 +24,7 @@
 
           <a class="btn btn-default" href="catastrofes/create">Crear</a>
 
-        </div>
+        </div> -->
 
         <div class="col-md-7  px-5 ">
 

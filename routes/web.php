@@ -34,6 +34,7 @@ Route::resource('voluntarios','VoluntariosController');
 Route::resource('apoyos','ApoyoEconomicoController');
 Route::resource('eventos','EventoController');
 Route::resource('recoleccion','RecoleccionController');
+Route::resource('users','UserController');
 /*Medidas*/
 
 
@@ -57,3 +58,8 @@ Route::post('select-ajax', ['as'=>'select-ajax','uses'=>'CatastrovesController@s
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('register',['as'=>'registro','uses'=>'Auth\RegisterController@register']);
 //Route::post('register', 'Auth\RegisterController@register');
+
+
+Route::get('administrador', ['as' => 'admin' ,'uses'=> function () {
+    return view('admin');
+}]);

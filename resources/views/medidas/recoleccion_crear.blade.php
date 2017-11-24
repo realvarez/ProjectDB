@@ -76,17 +76,5 @@
 
   <a href="/catastrofes" class="btn-primary">Volver</a>
 
-  <script>
-  alert('adasd');
-  $('#dinamico').onclick(function (event){
-    var form = $("<tr>");
-    var input1 = $("<input>").attr("type","text").attr("name","elemento");
-    var input2 = $($("<input>").attr("type","number").attr("name","cantidad");
-    form.append(input1);
-    form.append(input2);
-    $('#formc').append(form);
-  });
-
-  </script>
 
 </section>

@@ -29,7 +29,7 @@
             <label>Add Tweet Text:</label>
             <textarea class="form-control" name="tweet"></textarea>
         </div>
-        <div class="form-group">
+        <div class="form-group my-3">
             <label>Add Multiple Images:</label>
             <input type="file" name="images[]" multiple class="form-control">
         </div>
