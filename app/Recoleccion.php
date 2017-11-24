@@ -27,7 +27,10 @@ class Recoleccion extends Model
         return $this->belongsTo('App\Comuna');
       }
 
-
+      public function aportes()
+      {
+        return this->hasMany('App\Aporte');
+      }
 
 
 }
