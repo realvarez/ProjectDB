@@ -9,28 +9,28 @@
     </div>
     <div class="col-md-12">
       <h3>Meta de Voluntarios:</h3>
-      <p>{{$meta}}</p>
+      <p>{{$voluntario->metaVoluntarios}}</p>
     </div>
     <div class="col-md-12">
       <h3>Voluntarios Actuales:</h3>
-      <p>{{$actuales}}</p>
+      <p>{{$voluntario->voluntariosActuales}}</p>
     </div>
     <div class="col-md-12">
       <h3>Descripcion:</h3>
-      <p>{{$descripcion}}</p>
+      <p>{{$voluntario->meidida->descripcion}}</p>
     </div>
     <div class="col-md-12">
       <h3>Datos Eventos:</h3>
       <h4>Region</h4>
-      <p>{{$region}}</p>
+      <p>nada</p>
       <h4>Comuna:</h4>
-      <p>{{$comuna}}</p>
+      <p>nada</p>
       <h4>Direccion:</h4>
-      <p>{{$direccion}}</p>
+      <p>{{$voluntario->direccion}}</p>
       <h4>Fecha Inicio:</h4>
-      <p>{{$fecha_i}}</p>
+      <p>{{$voluntario->medida->fecha_inicio}}</p>
       <h4>Fecha Termino:</h4>
-      <p>{{$fecha_f}}</p>
+      <p>{{$voluntario->medida->fecha_Termino}}</p>
     </div>
 
     <div class="col">
