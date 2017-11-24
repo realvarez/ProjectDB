@@ -1,6 +1,8 @@
 /*@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";/*!
 */
-
+.body{
+  /*font-family: 'Asap', sans-serif;*/
+}
 .elemento{
   /*margin: 50px;
 
@@ -23,13 +25,16 @@
   box-shadow:  0px 0px 10px 2px #368bff;
 
 }
+.fonta{
+  font-family: 'Asap', sans-serif;
+}
 
 .color2{
-  background:#e4e4e4;
+  background:#7376df;
 
 }
 .color1{
-  background: #7de7ff;
+  background: #ebebeb;
 }
 .color3{
   background: #368bff;
@@ -47,27 +52,30 @@
   background:#135abb;
 }
 .EnlG{
-  border-right: 7px solid  #4ed95c;
+  border-right: 1px solid  #ababab;
+  /*box-shadow: 2px 0px 3px #b4b4b4;*/
+  /*font-family: 'Asap', sans-serif;*/*/
 }
 
 .Enlace{
-  border-bottom: 2px solid #093575;
+
 }
 .bt{
-  border-top: 7px solid  #4ed95c;
+
 }
 .Enlace:hover{
-  border-left: 5px solid#093575;
-  background: #9ee2a5;
+
+  background:#4c50c8;
 
 }
 .tt{
   /*background:rgb(207, 207, 207);*/
-  overflow: scroll;
+  overflow-y:  scroll;
   height: 500px;
   width: 100%;
   margin: 0px;
-  border-left: 7px solid #4ed95c;
+  border-left: 1px solid  #ababab;
+  border-bottom: 1px solid  #ababab;
 }
 
 
