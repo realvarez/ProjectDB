@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Recoleccion;
 use App\Medida;
+use App\Aporte;
 
 class RecoleccionController extends Controller
 {
@@ -36,34 +37,38 @@ class RecoleccionController extends Controller
      */
     public function store(Request $request)
     {
+
+
         
            $this->validate($request,[
 
             'Descripcion' => 'required|string',
             'Region' => 'required|string',
-            'metaRecoleccion' => 'required|Integer',
+            
             'titulo' => 'required|string',
             'Comuna' => 'required|string',
             'Direccion' => 'required|string'
+            
 
             ]);
-
+                
 
          $recoleccion=new Recoleccion;
-         $recoleccion->metaRecoleccion=$request->metaRecoleccion;
-         $recoleccion->tipoRecoleccion=1; //Para que es este atributo
+    
+        
          $recoleccion->region=$request->Region;
          $recoleccion->comuna_id=2; //Por ahora constante
          $recoleccion->direccion=$request->Direccion;
 
        
+
         $recoleccion->save();
 
          $medida=array(
 
             'catastrove_id' => 1, //Por ahora constante
             'descripcion' => $request->Descripcion,
-            'titulo' => $required->titulo,
+            'titulo' => $request->titulo,
             'user_id' => 1, //Por ahora constante
             'organization_id' =>1, //Por ahora constante
             'fecha_inicio' => '2017-3-1', //Por ahora constante
@@ -71,6 +76,24 @@ class RecoleccionController extends Controller
 
             );
          $recoleccion->medida()->create($medida);
+
+         $contador=0;
+
+         //Se agrega los aportes a la base de datos t se vincula con recoleecion.
+         foreach ($request->elemento as $e) {
+            
+            if($e==null)break;
+
+            $aporte=new Aporte;
+            $aporte->nombre=$e;
+            $aporte->requeridos=$request->cantidad[$contador];
+            $aporte->recolectado=0;
+            $aporte->recoleccion_id=$recoleccion->id;
+            $aporte->save();
+            $contador++;
+         }
+         
+
          
          return  redirect()->route('medidas.busqueda',1);
     }

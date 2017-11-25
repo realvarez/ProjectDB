@@ -8,12 +8,12 @@ class Recoleccion extends Model
 {
     protected $fillable= [
 
-    	'metaRecoleccion',
-    	'recoleccionActual',
+    	
+    	
     	'region',
     	'comuna',
     	'direccion',
-    	'tipoRecoleccion',
+    	
       ];
 
 
@@ -27,9 +27,10 @@ class Recoleccion extends Model
         return $this->belongsTo('App\Comuna');
       }
 
-      public function aportes()
+
+      public function aporte()
       {
-        return this->hasMany('App\Aporte');
+        return $this->hasMany('App\Aporte');
       }
 
 

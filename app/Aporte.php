@@ -9,14 +9,14 @@ class Aporte extends Model
   protected $fillable = [
      'recoleccion_id',
      'nombre',
-     'numCuenta',
+ 
      'requeridos',
      'recolectados',
 
  ];
 
  public function recoleccion(){
-   return $this->belongsTo('App\Recoleccion')
+   return $this->belongsTo('App\Recoleccion');
  }
 
 }
