@@ -22,37 +22,6 @@
         </select>
       </div>
 
-      <script src="http://momentjs.com/downloads/moment-with-locales.js"></script>
-      <script src="http://momentjs.com/downloads/moment-timezone-with-data.js"></script>
-
-
-
-
-      <div class="container" style="margin-top:70px;">
-        <div class="row">
-          <div class="form-group registration-date">
-            <label class="control-label col-sm-3" for="registration-date">Fecha Inicio:</label>
-            <div class="input-group registration-date-time">
-              <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
-              <input class="form-control" name="fecha_inicio" id="registration-date" type="date">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container" style="margin-top:70px;">
-        <div class="row">
-
-          <div class="form-group registration-date">
-            <label class="control-label col-sm-3" for="registration-date">Fecha Termino:</label>
-            <div class="input-group registration-date-time">
-              <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
-              <input class="form-control" name="fecha_termino" id="registration-date" type="date">
-            </div>
-          </div>
-        </div>
-      </div>
-
 
       <button type="submit" id="submit" name="submit" class="btn btn-success">siguiente</button>
     </form>
@@ -68,6 +37,6 @@
 
 
 
-<a href="/catastrofes" class="btn-primary">Volver</a>
+<a href="/medidas_info/{{$catastrofe_id}}" class="btn btn-info mb-3">Volver</a>
 
 </section>

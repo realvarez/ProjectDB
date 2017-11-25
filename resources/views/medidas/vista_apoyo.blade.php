@@ -74,7 +74,7 @@
         </div>
         <div class="form-group">
           <label for="titulo">Cantidad</label>
-          <input type="number" class="form-control" id="titulo" name="monto" placeholder="Descripcion" required>
+          <input type="number" class="form-control" id="titulo" name="monto" min="1" placeholder="Descripcion" required>
         </div>
 
         <button type="submit" id="submit" name="submit" class="btn btn-success">Enviar</button>
@@ -82,7 +82,6 @@
     </div>
 
   </div>
-
 
 
 </section>

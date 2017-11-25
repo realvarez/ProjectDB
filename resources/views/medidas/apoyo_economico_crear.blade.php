@@ -20,15 +20,15 @@
           </div>
           <div class="form-group">
             <label for="titulo">Meta Minima</label>
-            <input type="number" class="form-control" id="number" name="metaMinima" placeholder="Cantidad requeriada de ayuda" required>
+            <input type="number" class="form-control" id="number" min="1" name="metaMinima" placeholder="Cantidad requeriada de ayuda" required>
           </div>
           <div class="form-group">
             <label for="exampleFormControlSelect1">Numero Cuenta</label>
-            <input type="number" class="form-control" id="" name="numCuenta" placeholder="Indique la region " required>
+            <input type="number" class="form-control" id="" name="numCuenta" min="0" placeholder="Indique la region " required>
           </div>
           <div class="form-group">
             <label for="exampleFormControlSelect1">Banco Cuenta</label>
-            <select class="form-control" name='bancoCuenta' id="exampleFormControlSelect1">
+            <select class="form-control" name='bancoCuenta' min="0" id="exampleFormControlSelect1">
 
               <option value="027*CORP-BANCA">CORP-BANCA</option>
               <option value="012*BancoEstado">BANCOESTADO</option>

@@ -78,7 +78,7 @@
             <div class="form-group fieldGroup">
               <div class="input-group">
                 <input type="text" name="elemento[]" class="form-control" placeholder="Ingrese el nombre del elemento"/>
-                <input type="number" name="cantidad[]" class="form-control" placeholder="Ingresar cantidad requerida"/>
+                <input type="number" name="cantidad[]" min="1" class="form-control" placeholder="Ingresar cantidad requerida"/>
                 <div class="input-group-addon">
                   <a href="javascript:void(0)" class="btn btn-success addMore"><span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span> Add</a>
                 </div>
@@ -87,7 +87,7 @@
             <div class="form-group fieldGroupCopy" style="display: none;" >
               <div class="input-group">
                 <input type="text" name="elemento[]" class="form-control" placeholder="Ingrese el nombre del elemento"/>
-                <input type="number" name="cantidad[]" class="form-control" placeholder="Ingresar cantidad requeridal"/>
+                <input type="number" name="cantidad[]" min="1" class="form-control" placeholder="Ingresar cantidad requeridal"/>
                 <div class="input-group-addon">
                   <a href="javascript:void(0)" class="btn btn-danger remove"><span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span> Remove</a>
                 </div>
