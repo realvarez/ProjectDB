@@ -32,7 +32,7 @@ class MedidasController extends Controller
 
 
 
-        return view('medidas.crear');
+        //return view('medidas.crear');
     }
 
     /**
@@ -153,12 +153,15 @@ class MedidasController extends Controller
             return  redirect()->route('eventos.create');
         }
 
+    }
 
 
 
-        return view('medidas.crear');
-        
 
+    public function crearMedidas($catastrofe_id){
+
+
+        return view('medidas.crear',compact('catastrofe_id'));
     }
 
 

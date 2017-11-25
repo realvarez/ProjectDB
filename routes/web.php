@@ -26,6 +26,11 @@ Route::get('medidas_info/{catastrofe_id}',
 Route::post('/medidasForm',
 	['uses' => 'MedidasController@createFormulario',
 	'as' => 'medidas.createFormulario' ]);
+
+
+Route::post('/medidasCrear/{catastrofe_id}',
+	['uses'  => 'MedidasController@CrearMedidas',
+	'as'  =>  'medidas.crear']);
 /*Catastrofes*/
 
 Route::resource('catastrofes','CatastrovesController');
