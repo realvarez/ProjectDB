@@ -5,36 +5,29 @@
 <section class="container-fluid border border-primary p-3 mb-2 bg-light text-dark w-50">
   <div class="row">
     <div class="col-md-12">
-      <h2>Apoyo Economico</h2>
+      <h3>Apoyo Economico</h3>
     </div>
     <div class="col-md-12">
-      <h3>Meta del Evento:</h3>
+      <h4>Meta del Evento:</h4>
       <p>{{$apoyo->metaMinima}}</p>
     </div>
     <div class="col-md-12">
-      <h3>Dinero recolectado:</h3>
+      <h4>Dinero recolectado:</h4>
       <p>{{$apoyo->actual}}</p>
     </div>
     <div class="col-md-12">
-      <h3>Descripcion:</h3>
+      <h4>Descripcion:</h4>
       <p>{{$apoyo->medida->descripcion}}</p>
     </div>
     <div class="col-md-6">
-      <h3>Datos Eventos:</h3>
-      <h4>Banco:</h4>
-      <p>{{$apoyo->bancoCuenta}}</p>
-      <h4>Tipo de Cuenta:</h4>
-      <p>{{$apoyo->TipoCuenta}}</p>
-      <h4>Numero de Cuenta:</h4>
-      <p>{{$apoyo->numCuenta}}</p>
-      <h4>titular:</h4>
-      <p>{{$apoyo->titularCuenta}}</p>
-      <h4>Correo:</h4>
-      <p>{{$apoyo->correoCuenta}}</p>
-      <h4>Fecha Inicio:</h4>
-      <p>{{$apoyo->medida->fecha_inicio}}</p>
-      <h4>Fecha Termino:</h4>
-      <p>{{$apoyo->medida->fecha_termino}}</p>
+      <h4>Datos Eventos:</h4>
+      <p>Banco: {{$apoyo->bancoCuenta}}</p>
+      <p>Tipo de Cuenta: {{$apoyo->TipoCuenta}}</p>
+      <p>Numero de Cuenta: {{$apoyo->numCuenta}}</p>
+      <p>Titular: {{$apoyo->titularCuenta}}</p>
+      <p>Correo: {{$apoyo->correoCuenta}}</p>
+      <p>Fecha Inicio:{{$apoyo->medida->fecha_inicio}}</p>
+      <p>Fecha Termino: {{$apoyo->medida->fecha_termino}}</p>
     </div>
     <div class="col-md-6">
       <form role="form" method="POST" action="{{route('recoleccion.store')}}">
