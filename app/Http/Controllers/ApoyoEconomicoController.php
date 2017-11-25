@@ -51,7 +51,9 @@ class ApoyoEconomicoController extends Controller
             'bancoCuenta' => 'required|string',
             'titularCuenta' => 'required|string',
             'correoCuenta' => 'required|string',
-            'titulo' => 'required|string'
+            'titulo' => 'required|string',
+            'fecha_inicio' => 'required',
+            'fecha_termino' => 'required|after_or_equal:fecha_inicio'
 
 
 
@@ -65,6 +67,7 @@ class ApoyoEconomicoController extends Controller
          $apoyo->bancoCuenta=$request->bancoCuenta;
          $apoyo->titularCuenta=$request->titularCuenta;
          $apoyo->correoCuenta=$request->correoCuenta;
+         $apoyo->created_at = $request->fecha_inicio;
       
         
        
@@ -79,8 +82,8 @@ class ApoyoEconomicoController extends Controller
             'organization_id' =>1, //Por ahora constante
 
             
-            'fecha_inicio' => '2017-3-1', //Por ahora constante
-            'fecha_termino' => '2018-3-1' //Por ahora constante
+            'fecha_inicio' => date_create($request->fecha_inicio),
+            'fecha_termino' => date_create($request->fecha_termino)
 
             );
          

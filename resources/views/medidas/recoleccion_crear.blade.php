@@ -21,19 +21,34 @@
 
 
           <div class="form-group">
-            <label for="exampleFormControlSelect1">Region</label>
-            <input type="text" class="form-control" id="" name="Region" placeholder="Indique la region " required>
-
+            <label>Seleccione la Region:</label>
+            {!! Form::select('region_id',[''=>'--- Selecciona Region ---']+$regiones,null,['class'=>'form-control']) !!}
           </div>
 
           <div class="form-group">
-            <label for="exampleFormControlSelect1">Comuna</label>
-            <input type="text" class="form-control" id="" name="Comuna" placeholder="Indique la Comuna " required>
-
+            <label>Seleccione la Comuna:</label>
+            {!! Form::select('comuna_id',[''=>'--- Selecciona Comuna ---'],null,['class'=>'form-control']) !!}
           </div>
+
           <div class="form-group">
             <label for="exampleFormControlSelect1">Direccion</label>
             <input type="text" class="form-control" id="dir" name="Direccion" placeholder="Indique la Direccion " required>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label" for="registration-date">Fecha Inicio:</label>
+            <div class="input-group registration-date-time">
+              <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+              <input class="form-control" name="fecha_inicio" id="theDate" type="date">
+            </div>
+          </div>
+
+          <div class="form-group registration-date">
+            <label class="control-label" for="registration-date">Fecha Termino:</label>
+            <div class="input-group registration-date-time">
+              <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+              <input class="form-control" name="fecha_termino" id="registration-date" type="date">
+            </div>
           </div>
 
           <h3 style="margin-bottom: 25px; text-align: center;">Elementos a recolectar</h3>
@@ -60,35 +75,35 @@
                 </tr>
               </tbody>
             </table> -->
-              <div class="form-group fieldGroup">
-                  <div class="input-group">
-                    <input type="text" name="elemento[]" class="form-control" placeholder="Ingrese el nombre del elemento"/>
-                    <input type="number" name="cantidad[]" class="form-control" placeholder="Ingresar cantidad requerida"/>
-                      <div class="input-group-addon">
-                          <a href="javascript:void(0)" class="btn btn-success addMore"><span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span> Add</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="form-group fieldGroupCopy" style="display: none;" >
+            <div class="form-group fieldGroup">
               <div class="input-group">
-                  <input type="text" name="elemento[]" class="form-control" placeholder="Ingrese el nombre del elemento"/>
-                  <input type="number" name="cantidad[]" class="form-control" placeholder="Ingresar cantidad requeridal"/>
-                  <div class="input-group-addon">
-                      <a href="javascript:void(0)" class="btn btn-danger remove"><span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span> Remove</a>
-                  </div>
+                <input type="text" name="elemento[]" class="form-control" placeholder="Ingrese el nombre del elemento"/>
+                <input type="number" name="cantidad[]" class="form-control" placeholder="Ingresar cantidad requerida"/>
+                <div class="input-group-addon">
+                  <a href="javascript:void(0)" class="btn btn-success addMore"><span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span> Add</a>
+                </div>
               </div>
-          </div>
+            </div>
+            <div class="form-group fieldGroupCopy" style="display: none;" >
+              <div class="input-group">
+                <input type="text" name="elemento[]" class="form-control" placeholder="Ingrese el nombre del elemento"/>
+                <input type="number" name="cantidad[]" class="form-control" placeholder="Ingresar cantidad requeridal"/>
+                <div class="input-group-addon">
+                  <a href="javascript:void(0)" class="btn btn-danger remove"><span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span> Remove</a>
+                </div>
+              </div>
+            </div>
 
 
 
 
-          <button type="submit" id="submit" name="submit" class="btn btn-success">Enviar</button>
+            <button type="submit" id="submit" name="submit" class="btn btn-success">Enviar</button>
 
-        </form>
+          </form>
 
+        </div>
       </div>
     </div>
-  </div>
 
 
 
@@ -96,9 +111,9 @@
 
 
 
-  <a href="/catastrofes" class="btn-primary">Volver</a>
+    <a href="/catastrofes" class="btn-primary">Volver</a>
 
 
-</section>
+  </section>
 
-@stop
+  @stop

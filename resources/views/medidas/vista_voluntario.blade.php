@@ -23,7 +23,7 @@
       <p>Comuna: {{$voluntario->comuna->nombre}}</p>
       <p>Direccion: {{$voluntario->direccion}}</p>
       <p>Fecha Inicio: {{$voluntario->medida->fecha_inicio}}</p>
-      <p>Fecha Termino: {{$voluntario->medida->fecha_Termino}}</p>
+      <p>Fecha Termino: {{$voluntario->medida->fecha_termino}}</p>
     </div>
 
     <div class="col">

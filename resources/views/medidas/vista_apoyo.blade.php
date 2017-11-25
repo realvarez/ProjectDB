@@ -26,7 +26,7 @@
       <p>Numero de Cuenta: {{$apoyo->numCuenta}}</p>
       <p>Titular: {{$apoyo->titularCuenta}}</p>
       <p>Correo: {{$apoyo->correoCuenta}}</p>
-      <p>Fecha Inicio:{{$apoyo->medida->fecha_inicio}}</p>
+      <p>Fecha Inicio: {{$apoyo->medida->fecha_inicio}}</p>
       <p>Fecha Termino: {{$apoyo->medida->fecha_termino}}</p>
     </div>
     <div class="col-md-6">
