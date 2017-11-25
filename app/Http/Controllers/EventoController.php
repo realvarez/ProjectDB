@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Evento;
 use App\Medida;
 use DB;
@@ -38,7 +39,7 @@ class EventoController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $value=Session::get('c_id','No existe');
         
         $this->validate($request,[
 
@@ -66,7 +67,7 @@ class EventoController extends Controller
 
         $medida=array(
 
-            'catastrove_id' => 1, //Por ahora constante
+            'catastrove_id' => $value, //Por ahora constante
             'descripcion' => $request->Descripcion,
             'titulo' => $request->titulo,
             'user_id' => 1, //Por ahora constante
@@ -79,7 +80,8 @@ class EventoController extends Controller
         );
         
         $evento->medida()->create($medida);
-        return  redirect()->route('medidas.busqueda',1);
+        Session::forget('c_id'); 
+        return  redirect()->route('medidas.busqueda',$evento->medida->catastrove_id);
         
 
     }

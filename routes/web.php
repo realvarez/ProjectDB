@@ -28,8 +28,8 @@ Route::post('/medidasForm',
 	'as' => 'medidas.createFormulario' ]);
 
 
-Route::post('/medidasCrear/{catastrofe_id}',
-	['uses'  => 'MedidasController@CrearMedidas',
+Route::get('medidasCrear/{catastrofe_id}',
+	['uses'  => 'MedidasController@crearMedidas',
 	'as'  =>  'medidas.crear']);
 /*Catastrofes*/
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Medida;
 use App\Catastrove;
 use App\Tipo_catastrove;
@@ -118,7 +119,7 @@ class MedidasController extends Controller
 
     public function buscarMedidas($catastrofe_id)
 
-    {
+    {   
         $c=Catastrove::find($catastrofe_id);
         //$tipoC=Tipo_catastrove::all();
 
@@ -134,7 +135,8 @@ class MedidasController extends Controller
         //dd($request);
         //return view('catastrofes');
 
-        
+        //$value=Session::get('c_id','No existe');
+        //dd($value);
         if($request->tipo=="c1"){
 
             return redirect()->route('apoyos.create');
@@ -161,6 +163,8 @@ class MedidasController extends Controller
     public function crearMedidas($catastrofe_id){
 
 
+        Session::put('c_id',$catastrofe_id);
+        
         return view('medidas.crear',compact('catastrofe_id'));
     }
 

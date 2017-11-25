@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Apoyo_economico;
 use App\Medida;
 
@@ -37,6 +38,8 @@ class ApoyoEconomicoController extends Controller
     public function store(Request $request)
     {
 
+        $value=Session::get('c_id','No existe');
+        //dd($value);
             //return 'creo apoyo';
         $this->validate($request,[
 
@@ -69,7 +72,7 @@ class ApoyoEconomicoController extends Controller
 
          $medida=array(
 
-            'catastrove_id' => 1, //Por ahora constante
+            'catastrove_id' => $value, //Por ahora constante
             'descripcion' => $request->Descripcion,
             'titulo' =>$request->titulo,
             'user_id' => 1, //Por ahora constante
@@ -82,9 +85,11 @@ class ApoyoEconomicoController extends Controller
             );
          
         
+        
         $apoyo->medida()->create($medida);
-         
-        return  redirect()->route('medidas.busqueda',1);
+        
+        Session::forget('c_id'); 
+        return  redirect()->route('medidas.busqueda',$apoyo->medida->catastrove_id);
     }
 
     /**

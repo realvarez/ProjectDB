@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Recoleccion;
 use App\Medida;
 use App\Aporte;
@@ -37,7 +38,7 @@ class RecoleccionController extends Controller
      */
     public function store(Request $request)
     {
-
+            $value=Session::get('c_id','No existe');
 
         
            $this->validate($request,[
@@ -66,7 +67,7 @@ class RecoleccionController extends Controller
 
          $medida=array(
 
-            'catastrove_id' => 1, //Por ahora constante
+            'catastrove_id' => $value, //Por ahora constante
             'descripcion' => $request->Descripcion,
             'titulo' => $request->titulo,
             'user_id' => 1, //Por ahora constante
@@ -93,9 +94,9 @@ class RecoleccionController extends Controller
             $contador++;
          }
          
-
+         Session::forget('c_id'); 
          
-         return  redirect()->route('medidas.busqueda',1);
+         return  redirect()->route('medidas.busqueda',$recoleccion->medida->catastrove_id);
     }
 
     /**
