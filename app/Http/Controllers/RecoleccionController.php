@@ -108,7 +108,9 @@ class RecoleccionController extends Controller
     {
         $recoleccion=Recoleccion::find($id);
 
-        return 'Trabajando en vista recoleccion';
+
+        
+        return view('medidas.vista_recoleccion',compact('recoleccion'));
     }
 
     /**

@@ -12,11 +12,11 @@
     </div>
     <div class="col-md-12">
       <h4>Datos Eventos:</h4>
-      <p>{{Region: $recoleccion->comuna->region->nombre}}</p>
-      <p>{{Comuna: $recoleccion->comuna->nombre}}</p>
-      <p>{{Direccion: $recoleccion->direccion}}</p>
-      <p>{{Fecha Inicio: $recoleccion->medida->fecha_inicio}}</p>
-      <p>{{Fecha Termino: $recoleccion->medida->fecha_termino}}</p>
+      <p>Region: Por ahora vacio</p>
+      <p>Comuna:{{ $recoleccion->comuna_id}}</p>
+      <p>Direccion:{{ $recoleccion->direccion}}</p>
+      <p>Fecha Inicio:{{ $recoleccion->medida->fecha_inicio}}</p>
+      <p>Fecha Termino:{{ $recoleccion->medida->fecha_termino}}</p>
     </div>
 
   </div>
@@ -33,11 +33,11 @@
     </tr>
   </thead>
   <tbody>
-    @foreach($elementos as $a)
+    @foreach($recoleccion->aporte as $aporte)
     <tr>
-      <th scope="row">{{}}</th>
-      <td>{{}}</td>
-      <td>{{}}</td>
+      <th scope="row">{{$aporte->nombre}}</th>
+      <td>{{$aporte->recolectado}}</td>
+      <td>{{$aporte->requeridos}}</td>
     </tr>
     @endforeach
   </tbody>
