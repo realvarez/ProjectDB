@@ -14,7 +14,7 @@
 Route::get('/', ['as' => 'principal' ,'uses'=> function () {
     return view('welcome');
 }]);
-Route::get('/home',['as'=> 'home','HomeController@index']);
+Route::get('/inicio',['as'=> 'inicio','uses'=>'CatastrovesController@inicio']);
 
 Auth::routes();
 
@@ -33,6 +33,9 @@ Route::get('medidasCrear/{catastrofe_id}',
 	'as'  =>  'medidas.crear']);
 /*Catastrofes*/
 
+
+
+
 Route::resource('catastrofes','CatastrovesController');
 Route::resource('medidas','MedidasController');
 Route::resource('voluntarios','VoluntariosController');
@@ -40,6 +43,7 @@ Route::resource('apoyos','ApoyoEconomicoController');
 Route::resource('eventos','EventoController');
 Route::resource('recoleccion','RecoleccionController');
 Route::resource('users','UserController');
+Route::resource('admin/rol','RolController');
 /*Medidas*/
 
 

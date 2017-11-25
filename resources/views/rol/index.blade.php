@@ -1,36 +1,27 @@
 @extends('layouts.admin')
 @section('content')
 <div class="col-md-8 ml-5 center">
-	<h1 class="display-4 text-center">Administracion Medidas del Sistema</h1>
+	<h1 class="display-4 text-center">Administracion Roles del Sistema</h1>
 	<div class="card mb-5">
+    <div class="card-header"></div>
       <div class="card-block p-0">
         <table class="table table-bordered table-sm m-0">
           <thead class="">
             <tr>
                 <th>#</th>
-                <th>Nombre</th>
-                <th>Tipo</th>
-                <th>Region</th>
-                <th>Estado</th>
-                <th>Acciones</th>
+                <th>Rol</th>
+                {{-- <th>Acciones</th> --}}
             </tr>
           </thead>
           <tbody>
           	@foreach($roles as $item)
               <tr>
               		<td>{{ $item->id }}</td>
-                  <td>{{ $item->titulo }}</td>
-                  <td>{{ $item->tipo_catastrove->tipo }}</td>
-                  <td>{{ $item->comuna->region->nombre}}</td>
-                  @if({{$item->activa}} == 1)
-                    <td>Activa</td>
-                  @else
-                    <td>Desactiva</td>
-                  @endif
-                  <td class="text-center">
+                  <td>{{ $item->nombre }}</td>
+                  {{-- <td class="text-center">
                   	<a href="" class="btn btn-danger btn-sm" role="button">Ver</a>
                   	<a href="" class="btn btn-danger btn-sm" role="button">Eliminar</a>
-                  </td>
+                  </td> --}}
               </tr>
              @endforeach
           </tbody>

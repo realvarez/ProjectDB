@@ -85,17 +85,77 @@
             </div>
         </div>
     </nav>
-    @yield('content')
+
+
+
+    {{-- Contenido Admin --}}
+		<div class="container-fluid mt-3">
+			
+			<div class="row">
+				<div class="ml-3 col-md-3 mt-2 border text-center">
+					<h2 class="display-4 ">Bienvenido Administrador</h2>
+					<p class="ml-2 mt-2 mb-3">Seleccione para ingresar al menu correspondiente</p>
+						<a href="twitter" class="btn btn-info btn-block mb-3" role="button">
+							Twitter
+						</a>
+						<a href="{{ route('users.index') }} " class="btn btn-info btn-block mb-3" role="button">
+							Usuarios
+						</a>
+						<a href="{{ route('catastrofes.index') }}" class="btn btn-info btn-block mb-3" role="button">
+							Catastrofes
+						</a>
+						<a href="" class="btn btn-info btn-block mb-3" role="button">
+							Medidas
+						</a>
+						<a href="" class="btn btn-info btn-block mb-3" role="button">
+							Organizaciones
+						</a>
+						<a href="{{ route('rol.index') }}" class="btn btn-info btn-block mb-3" role="button">
+							Rol
+						</a>
+						<a href="" class="btn btn-info btn-block mb-3" role="button">
+							Panel de Historial
+						</a>
+						<a href="" class="btn btn-info btn-block mb-3" role="button">
+							Regiones
+						</a>
+						<a href="" class="btn btn-info btn-block mb-3" role="button">
+							Comunas 
+						</a>
+				</div>
+		 		@yield('content')
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <footer class="mt-0 p-0">
-        <div class="container mt-5 ">
-            <div>
+        <div class="container-fluid mt-5 ">
+            <div class="offset-1">
+
                 <div class="copyright-box">
                     2017 Universidad de Santiago de Chile.
                 </div>
             </div>
         </div>
     </footer>
-
     <!-- Scripts -->
 
 
@@ -103,9 +163,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script language="javascript" type="text/javascript"></script>
-    <script src="{{ asset('js/form_recoleccion.js')}}" ></script>
-    <script src="{{ asset('js/fecha_hoy.js')}}" ></script>
-
+    <script src="public/js/form_recoleccion.js" ></script>
     <script type="text/javascript">
       $("select[name='region_id']").change(function(){
           var region_id = $(this).val();
@@ -121,6 +179,6 @@
           });
       });
     </script>
-
+ 
 </body>
 </html>
