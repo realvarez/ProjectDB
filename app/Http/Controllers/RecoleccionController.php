@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Recoleccion;
 use App\Medida;
 use App\Aporte;
+use DB;
 
 class RecoleccionController extends Controller
 {
@@ -25,8 +26,9 @@ class RecoleccionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('medidas.recoleccion_crear');
+    {   
+        $regiones = DB::table('regions')->pluck("nombre","id")->all();
+        return view('medidas.recoleccion_crear',compact('regiones'));
     }
 
     /**
@@ -37,51 +39,51 @@ class RecoleccionController extends Controller
      */
     public function store(Request $request)
     {
-
-
         
-           $this->validate($request,[
+        $this->validate($request,[
 
-            'Descripcion' => 'required|string',
-            'Region' => 'required|string',
-            
             'titulo' => 'required|string',
-            'Comuna' => 'required|string',
-            'Direccion' => 'required|string'
-            
+            'Descripcion' => 'required|string',
+            'region_id' => 'required|int|not_in:0',
+            'comuna_id' => 'required|int|not_in:0',
+            'Direccion' => 'required|string',
+            'fecha_inicio' => 'required',
+            'fecha_termino' => 'required|after_or_equal:fecha_inicio',
+        //validar la lista de cosas que trae.
 
-            ]);
-                
+        ]);
 
-         $recoleccion=new Recoleccion;
-    
-        
-         $recoleccion->region=$request->Region;
-         $recoleccion->comuna_id=2; //Por ahora constante
-         $recoleccion->direccion=$request->Direccion;
+        $duracion = date_diff(date_create($request->fecha_inicio),date_create($request->fecha_termino))->format('%d');
+        //Si se borra atributo region de recoleccion hay que cambiar esta linea
+        $nombre_region = DB::table('regions')->pluck("nombre","id")->where('id',$request->region_id);
+        $recoleccion=new Recoleccion;
+        $recoleccion->region = $nombre_region;
+        $recoleccion->comuna_id=$request->comuna_id; //Por ahora constante
+        $recoleccion->direccion=$request->Direccion;
+        $recoleccion->created_at = $request->fecha_inicio;
 
-       
+
 
         $recoleccion->save();
 
-         $medida=array(
+        $medida=array(
 
             'catastrove_id' => 1, //Por ahora constante
             'descripcion' => $request->Descripcion,
             'titulo' => $request->titulo,
             'user_id' => 1, //Por ahora constante
             'organization_id' =>1, //Por ahora constante
-            'fecha_inicio' => '2017-3-1', //Por ahora constante
-            'fecha_termino' => '2018-3-1' //Por ahora constante
+            'fecha_inicio' => date_create($request->fecha_inicio),
+            'fecha_termino' => date_create($request->fecha_termino)
 
-            );
-         $recoleccion->medida()->create($medida);
+        );
+        $recoleccion->medida()->create($medida);
 
-         $contador=0;
+        $contador=0;
 
          //Se agrega los aportes a la base de datos t se vincula con recoleecion.
-         foreach ($request->elemento as $e) {
-            
+        foreach ($request->elemento as $e) {
+
             if($e==null)break;
 
             $aporte=new Aporte;
@@ -91,11 +93,12 @@ class RecoleccionController extends Controller
             $aporte->recoleccion_id=$recoleccion->id;
             $aporte->save();
             $contador++;
-         }
-         
+        }
 
-         
-         return  redirect()->route('medidas.busqueda',1);
+
+
+        return  redirect()->route('medidas.busqueda',1);
+        
     }
 
     /**

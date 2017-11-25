@@ -10,11 +10,11 @@
           <h4>Descripcion:</h4>
           <p>{{$recoleccion->medida->descripcion}}</p>
           <h4>Datos Eventos:</h4>
-          <p>Region: Por ahora vacio</p>
-          <p>Comuna:{{ $recoleccion->comuna_id}}</p>
-          <p>Direccion:{{ $recoleccion->direccion}}</p>
-          <p>Fecha Inicio:{{ $recoleccion->medida->fecha_inicio}}</p>
-          <p>Fecha Termino:{{ $recoleccion->medida->fecha_termino}}</p>
+          <p>Region: {{ $recoleccion->region}}</p>
+          <p>Comuna: {{ $recoleccion->comuna_id}}</p>
+          <p>Direccion: {{$recoleccion->direccion}}</p>
+          <p>Fecha Inicio: {{ $recoleccion->medida->fecha_inicio}}</p>
+          <p>Fecha Termino: {{ $recoleccion->medida->fecha_termino}}</p>
 
 
 

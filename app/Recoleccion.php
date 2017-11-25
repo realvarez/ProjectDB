@@ -9,9 +9,8 @@ class Recoleccion extends Model
     protected $fillable= [
 
     	
-    	
     	'region',
-    	'comuna',
+    	'comuna_id',
     	'direccion',
     	
       ];
