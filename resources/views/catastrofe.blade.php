@@ -23,6 +23,7 @@
             </div>
 
           </div>
+          <a class="btn btn-primary" href="medidas/create">Agregar Medida</a>
         </div>
         <!-- <div class="col-md-4 d-flex justify-content-center align-items-center">
 
@@ -41,20 +42,28 @@
 
     </div>
 
-    <div class="col-md-6   medidas justify-content-center d-flex">
-      <div class="row">
-        <div class=" card col-md-12 mt-3 border border-primary py-2">
+    <div class="col-md-6   ">
+      <div class="row d-flex justify-content-between  medidas">
+        <div class=" col-md-12  card align-self-start mt-3 border border-primary">
           <h4>Medidas de Ayuda</h4>
         </div>
         @foreach ($medidas as $m)
-        <div class=" col-md-6 mt-3 ">
+        <div class=" col-md-6 w-50">
 
 
-              <div class="card my-2 border border-primary" >
+              <div class="card   border border-primary" >
                 <div class="card-body">
                   <h4 class="card-title text-uppercase border border-left-0 border-right-0 border-top-0 border-succses"> {{$m->titulo}} </h4>
-                  <h6 class="card-subtitle mb-2 text-muted">tipo</h6>
-                  <p class="card-text">{{$m->descripcion}}</p>
+                  @if($m->MorphMedida_type=="App\Evento")
+                  <h6 class="card-subtitle mb-2 text-success">Evento a beneficio</h6>
+                  @elseif($m->MorphMedida_type=="App\Apoyo_economico")
+                  <h6 class="card-subtitle mb-2 text-danger">Apoyo Economico</h6>
+                  @elseif($m->MorphMedida_type=="App\Voluntariado")
+                  <h6 class="card-subtitle mb-2 text-info">Solicitud de Voluntarios</h6>
+                  @else
+                  <h6 class="card-subtitle mb-2 text-secondary">Recoleccion Centro de Acopio</h6>
+                  @endif
+                  <!-- <p class="card-text">{{$m->descripcion}}</p> -->
                   <div class="d-flex justify-content-between">
 
                     <p>Fecha:----</p>
@@ -67,8 +76,10 @@
 
           </div>
           @endforeach
-           {!!$medidas->links('pagination')!!}
+          <div class="col-md-12">
+            {!!$medidas->links('pagination')!!}
 
+          </div>
         </div>
 
 
