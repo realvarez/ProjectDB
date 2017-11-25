@@ -1,29 +1,30 @@
+@extends('layouts.app')
+@section('content')
 
-<section class="container-fluid border border-primary p-3 mb-2 bg-light text-dark w-50">
-  <div class="row">
-    <div class="col-md-6 card row border border-primary">
+<section class="container-fluid  ">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-5 card mr-3  border border-primary">
 
-    <div class="col-md-12">
-      <h3>Recoleccion de Insumos</h3>
-    </div>
-    <div class="col-md-12">
-      <h4>Descripcion:</h4>
-      <p>{{$recoleccion->medida->descripcion}}</p>
-    </div>
-    <div class="col-md-12">
-      <h4>Datos Eventos:</h4>
-      <p>Region: Por ahora vacio</p>
-      <p>Comuna:{{ $recoleccion->comuna_id}}</p>
-      <p>Direccion:{{ $recoleccion->direccion}}</p>
-      <p>Fecha Inicio:{{ $recoleccion->medida->fecha_inicio}}</p>
-      <p>Fecha Termino:{{ $recoleccion->medida->fecha_termino}}</p>
-    </div>
 
-  </div>
+          <h3>Recoleccion de Insumos</h3>
+          <h4>Descripcion:</h4>
+          <p>{{$recoleccion->medida->descripcion}}</p>
+          <h4>Datos Eventos:</h4>
+          <p>Region: Por ahora vacio</p>
+          <p>Comuna:{{ $recoleccion->comuna_id}}</p>
+          <p>Direccion:{{ $recoleccion->direccion}}</p>
+          <p>Fecha Inicio:{{ $recoleccion->medida->fecha_inicio}}</p>
+          <p>Fecha Termino:{{ $recoleccion->medida->fecha_termino}}</p>
 
-  <div class="col-md-6 card border border-primary">
+
+
+      </div>
+
+
+
+  <div class="col-md-5 card border  bt border-primary">
     <h3>Lista De Elementos</h3>
-    <table class="table">
+    <table class="table table-striped">
   <thead>
     <tr>
 
@@ -48,3 +49,4 @@
 
 
 </section>
+@stop
