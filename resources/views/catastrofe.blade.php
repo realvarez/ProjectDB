@@ -66,7 +66,8 @@
                   <!-- <p class="card-text">{{$m->descripcion}}</p> -->
                   <div class="d-flex justify-content-between">
 
-                    <p>Fecha:----</p>
+                    <p>Fecha:</p>
+                    <p>{{$m->fecha_inicio}}</p>
 
                   </div>
                   <a class="color2 btn btn-primary" href="{{route('medidas.show',$m->id)}}">Acceder</a>

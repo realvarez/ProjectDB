@@ -104,6 +104,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script language="javascript" type="text/javascript"></script>
     <script src="{{ asset('js/form_recoleccion.js')}}" ></script>
+    <script src="{{ asset('js/fecha_hoy.js')}}" ></script>
+
     <script type="text/javascript">
   $("select[name='region_id']").change(function(){
       var region_id = $(this).val();

@@ -50,7 +50,6 @@
               <input class="form-control" name="fecha_termino" id="registration-date" type="date">
             </div>
           </div>
-
         </div>
       </div>
 
