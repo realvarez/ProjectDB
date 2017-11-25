@@ -48,7 +48,9 @@ class EventoController extends Controller
             'region_id' => 'required|not_in:0',
             'comuna_id' => 'required|not_in:0',
             'Direccion' => 'required|string',
-            'titulo' => 'required|string'
+            'titulo' => 'required|string',
+            'fecha_inicio' => 'required',
+            'fecha_termino' => 'required|after_or_equal:fecha_inicio',
             
 
         ]
@@ -59,6 +61,7 @@ class EventoController extends Controller
         $evento->actualDinero=$request->actual;
         $evento->comuna_id=$request->comuna_id;
         $evento->direccion=$request->Direccion;
+        $evento->created_at = $request->fecha_inicio;
         
         
         $evento->save();
@@ -73,8 +76,8 @@ class EventoController extends Controller
             'organization_id' =>1, //Por ahora constante
 
            
-            'fecha_inicio' => '2017-3-1', //Por ahora constante
-            'fecha_termino' => '2018-3-1' //Por ahora constante
+            'fecha_inicio' => date_create($request->fecha_inicio),
+            'fecha_termino' => date_create($request->fecha_termino)
 
         );
         

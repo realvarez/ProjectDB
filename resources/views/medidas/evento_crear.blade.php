@@ -41,6 +41,21 @@
             <input type="text" class="form-control" id="dir" name="Direccion" placeholder="Indique la Direccion " required>
 
           </div>
+          <div class="form-group">
+            <label class="control-label" for="registration-date">Fecha Inicio:</label>
+            <div class="input-group registration-date-time">
+              <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+              <input class="form-control" name="fecha_inicio" id="theDate" type="date">
+            </div>
+          </div>
+
+          <div class="form-group registration-date">
+            <label class="control-label" for="registration-date">Fecha Termino:</label>
+            <div class="input-group registration-date-time">
+              <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+              <input class="form-control" name="fecha_termino" id="registration-date" type="date">
+            </div>
+          </div>
 
           <button type="submit" id="submit" name="submit" class="btn btn-success">Enviar</button>
 
