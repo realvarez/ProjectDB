@@ -37,11 +37,11 @@
                         <td>Activada</td>
                       @endif
                       <td class="text-center">
-                        <a href="{{route('medida.show',$item->id)}}" class="btn btn-primary btn-sm" role="button">Ver</a>
+                        <a href="{{route('medidas.show',$item->id)}}" class="btn btn-primary btn-sm" role="button">Ver</a>
 
-                        <a href="{{route('medida.aprobar',$item->id)}}" class="btn btn-warning disabled btn-sm" role="button">Aprobar</a>
+                        <a href="{{route('medidas.aprobar',$item->id)}}" class="btn btn-warning  btn-sm" role="button">Aprobar</a>
                         
-                        <a href="{{route('medida.destroy',$item->id)}}" class="btn btn-danger btn-sm" role="button">Eliminar</a>
+                        <a href="{{route('medidas.destroy',$item->id)}}" class="btn btn-danger btn-sm" role="button">Eliminar</a>
                       </td>
                   </tr>
                  @endforeach

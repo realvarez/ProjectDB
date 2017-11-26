@@ -131,7 +131,10 @@ class VoluntariosController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $voluntario=Voluntariado::find($id);
+
+        $voluntario->delete();
+        return redirect()->route('medidas.index');
     }
 
     public function selectAjax(Request $request)
