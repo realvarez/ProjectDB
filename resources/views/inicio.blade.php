@@ -2,7 +2,7 @@
 @extends('layouts.app')
 @section('content')
 
-  <section class="container-fluid justify-content-around mb-0 py-0 px-3 fonta color1">
+  <section class="container justify-content-around mb-0 py-0 px-3 fonta color1">
 
       <div class="row  justify-content-between">
 
@@ -26,14 +26,14 @@
 
         </div> -->
 
-        <div class="col-md-7  px-5 ">
+        <div class="col-md-8 mt-3 px-5 ">
 
 
 
           @forelse($catastroves as $c)
           <!-- <div class="row ">
             <div class="col m-2 p-2"> -->
-              <div class="card my-2" >
+              <div class="card mb-2" >
                 <div class="card-body">
                   <h4 class="card-title text-uppercase border border-left-0 border-right-0 border-top-0 border-secondary"> {{$c->titulo}} </h4>
                   <h6 class="card-subtitle mb-2 text-muted">{{$c->tipo_catastrove->tipo}}</h6>
@@ -57,7 +57,7 @@
 
           <!-- </div>
       </div> -->
-      <div class="col-md-2  p-0 tt">
+      <div class="col-md-4  p-0 tt">
 
           <a class="twitter-timeline" href="https://twitter.com/pruebadbd1?ref_src=twsrc%5Etfw">Tweets by pruebadbd1</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
               <a href="https://twitter.com/pruebadbd1?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @pruebadbd1</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
