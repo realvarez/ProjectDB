@@ -28,8 +28,8 @@
                     <td>Desactiva</td>
                   @endif
                   <td class="text-center">
-                  	<a href="" class="btn btn-danger btn-sm" role="button">Ver</a>
-                  	<a href="" class="btn btn-danger btn-sm" role="button">Eliminar</a>
+                  	<a href="{{route('medidas.busqueda',$item->id)}}"  class="btn btn-danger btn-sm" role="button">Ver</a>
+                  	<a method='DELETE' href="{{route('catastrofes.destroy',$item->id)}}"  class="btn btn-danger btn-sm" role="button">Eliminar</a>
                   </td>
               </tr>
              @endforeach
@@ -39,6 +39,6 @@
       </div>
     </div>
 		
-				<a href="catastrofes/create" class="offset-8 col-md-2 btn btn-outline-primary btn-sm" role="button">Crear</a>
+				<a href="{{route('catastrofes.create')}}" class="offset-8 col-md-2 btn btn-outline-primary btn-sm" role="button">Crear</a>
   </div>
 @stop

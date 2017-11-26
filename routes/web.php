@@ -34,9 +34,13 @@ Route::get('medidasCrear/{catastrofe_id}',
 /*Catastrofes*/
 
 
+Route::get('catastrofes/delete/{catastrofe_id}',
+	['uses' => 'CatastrovesController@destroy',
+	'as' => 'catastrofes.destroy']);
 
 
-Route::resource('catastrofes','CatastrovesController');
+
+Route::resource('catastrofes','CatastrovesController',['except' => ['destroy']]);
 Route::resource('medidas','MedidasController');
 Route::resource('voluntarios','VoluntariosController');
 Route::resource('apoyos','ApoyoEconomicoController');

@@ -101,6 +101,7 @@ class CatastrovesController extends Controller
      */
     public function show($id)
     {
+        
         $catastrofe=Catastrove::find($id);
 
         return view ('catastrofe',compact('catastrofe'));
@@ -148,6 +149,7 @@ class CatastrovesController extends Controller
 
         $catastrofe->delete();
 
+        
         return redirect()->route('catastrofes.index');
 
     }
