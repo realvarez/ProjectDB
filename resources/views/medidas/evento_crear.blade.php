@@ -20,12 +20,12 @@
           </div>
           <div class="form-group">
             <label for="titulo">Meta De dinero</label>
-            <input type="number" class="form-control" id="number" min="1" name="metaDinero" placeholder="Cantidad requeriada de Voluntarios" required>
+            <input type="number" class="form-control" id="number" min="1" name="metaDinero" placeholder="Cantidad requeriada de dinero" required>
           </div>
 
           <div class="form-group">
             <label for="titulo">Dinero Juntado</label>
-            <input type="number" class="form-control" id="number" min="0" name="actual" placeholder="Cantidad requeriada de Voluntarios" required>
+            <input type="number" class="form-control" id="number" min="0" name="actual" placeholder="Cantidad requeriada de dinero" required>
           </div>
           <div class="form-group">
             <label>Seleccione la Region:</label>

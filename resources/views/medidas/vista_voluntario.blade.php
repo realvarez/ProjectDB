@@ -8,7 +8,7 @@
       <h3>Solicitud De Voluntarios</h2>
     </div>
     <div class="col-md-12">
-      <p>Meta Volntarios :{{$voluntario->metaVoluntarios}}</p>
+      <p>Meta Volntarios: {{$voluntario->metaVoluntarios}}</p>
     </div>
     <div class="col-md-12">
       <p>Voluntarios Actuales: {{$voluntario->voluntariosActuales}}</p>

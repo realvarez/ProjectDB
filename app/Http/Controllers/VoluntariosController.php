@@ -42,12 +42,12 @@ class VoluntariosController extends Controller
         $value=Session::get('c_id','No existe');
 
         $this->validate($request,[
-
+            'titulo' => 'required|string',
             'Descripcion' => 'required|string',
+            'Meta' => 'required|integer',
             'region_id' => 'required|not_in:0',
             'comuna_id' => 'required|not_in:0',
             'Direccion' => 'required|string',
-            'titulo' => 'required|string',
             'fecha_inicio' => 'required',
             'fecha_termino' => 'required|after_or_equal:fecha_inicio',
         ]);

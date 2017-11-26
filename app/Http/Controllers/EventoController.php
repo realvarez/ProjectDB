@@ -40,14 +40,15 @@ class EventoController extends Controller
     public function store(Request $request)
     {
         $value=Session::get('c_id','No existe');
+
         
         $this->validate($request,[
 
             'Descripcion' => 'required|string',
             'metaDinero' => 'required',
             'actual' => 'required',
-            'region_id' => 'required|not_in:0',
-            'comuna_id' => 'required|not_in:0',
+            'region_id' => 'required|integer|not_in:0',
+            'comuna_id' => 'required|integer|not_in:0',
             'Direccion' => 'required|string',
             'titulo' => 'required|string',
             'fecha_inicio' => 'required',

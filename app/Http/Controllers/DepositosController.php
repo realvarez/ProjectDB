@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Deposito;
 
 class DepositosController extends Controller
 {
@@ -13,7 +14,7 @@ class DepositosController extends Controller
      */
     public function index()
     {
-        //
+        return view('medidas.depositos_vista');
     }
 
     /**
@@ -21,9 +22,20 @@ class DepositosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        
+        $deposito = new Deposito;
+        $deposito->user_id = 1; //depende del usuario conectado
+        $deposito->medida_id = $request->id;
+        $deposito->rut = 123456789; //depende del usuario conectado
+        $deposito->cantidad = $request->monto;
+        $deposito->fechaDeposito = '2000-01-01';
+        $deposito->documento = "deposito";
+        $deposito->save();
+        
+        return view('welcome');
+    
     }
 
     /**
@@ -68,7 +80,7 @@ class DepositosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd($request);
     }
 
     /**

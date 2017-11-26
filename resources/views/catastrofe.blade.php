@@ -19,7 +19,7 @@
               <h5>Categoria:</h5>
               <p>{{$c->tipo_catastrove->tipo}}  </p>
               <h5>Fecha de Inicio:</h5>
-              <p>------------------</p>
+              <p>{{$c->created_at}}</p>
             </div>
 
           </div>

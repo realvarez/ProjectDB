@@ -44,6 +44,15 @@ Route::resource('eventos','EventoController');
 Route::resource('recoleccion','RecoleccionController');
 Route::resource('users','UserController');
 Route::resource('admin/rol','RolController');
+Route::resource('depositos','DepositosController');
+
+Route::post('welcome',
+	['uses' => 'DepositosController@create',
+	'as' => 'deposito.create' ]);
+
+Route::get('depositos',
+	['uses' => 'DepositosController@index',
+	'as' => 'deposito.index' ]);
 /*Medidas*/
 
 

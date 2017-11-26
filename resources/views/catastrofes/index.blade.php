@@ -38,6 +38,6 @@
 
       </div>
     </div>
-        <a href="{{ route('catastrofes.create') }}" class="offset-8 col-md-2 btn btn-outline-primary btn-sm" role="button">Crear</a>
+        <a href="{{ route('deposito.index') }}" class="offset-8 col-md-2 btn btn-outline-primary btn-sm" role="button">Crear</a>
   </div>
 @stop
