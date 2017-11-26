@@ -54,7 +54,7 @@
                 </li>
                 
             </div>
-            <div class="navbar-nav text-center">
+            <div class="navbar-nav text-center ">
                 @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">Entrar</a>
@@ -63,25 +63,25 @@
                         <a class="nav-link" href="{{ route('register') }}">Registrarse</a>
                     </li>
                 @else
-                    
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                    Logout
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                @endguest
+	                  <li class="dropdown mr-5">
+	                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> {{ Auth::User()->nombre }} <span class="caret"></span>
+	                      </a>
+
+	                      <ul class="dropdown-menu" role="menu">
+	                          <li>
+	                              <a href="{{ route('logout') }}"
+	                                  onclick="event.preventDefault();
+	                                           document.getElementById('logout-form').submit();">
+	                                  Salir
+	                              </a>
+
+	                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+	                                  {{ csrf_field() }}
+	                              </form>
+	                          </li>
+	                      </ul>
+	                  </li>
+	              @endif
             </div>
         </div>
     </nav>
@@ -92,7 +92,7 @@
 		<div class="container-fluid mt-3">
 			
 			<div class="row">
-				<div class="ml-3 col-md-3 mt-2 border text-center">
+				<div class="ml-3 col-md-3 mt-2 text-center">
 					<h2 class="display-4 ">Bienvenido Administrador</h2>
 					<p class="ml-2 mt-2 mb-3">Seleccione para ingresar al menu correspondiente</p>
 						<a href="twitter" class="btn btn-info btn-block mb-3" role="button">
@@ -104,7 +104,7 @@
 						<a href="{{ route('catastrofes.index') }}" class="btn btn-info btn-block mb-3" role="button">
 							Catastrofes
 						</a>
-						<a href="" class="btn btn-info btn-block mb-3" role="button">
+						<a href="{{ route('medidas.index') }} " class="btn btn-info btn-block mb-3" role="button">
 							Medidas
 						</a>
 						<a href="" class="btn btn-info btn-block mb-3" role="button">
