@@ -20,11 +20,11 @@
     </div>
     <div class="col-md-12">
       <h4>Datos Eventos:</h4>
-      <p>{{Region: $evento->comuna->region->nombre}}</p>
-      <p>{{Comuna: $evento->comuna->nombre}}</p>
-      <p>{{Direccion: $evento->direccion}}</p>
-      <p>{{Fecha Inicio: $evento->medida->fecha_inicio}}</p>
-      <p>{{Fecha Termino: $evento->medida->fecha_termino}}</p>
+      <p>Region: {{$evento->comuna->region->nombre}}</p>
+      <p>Comuna: {{$evento->comuna->nombre}}</p>
+      <p>Direccion: {{$evento->direccion}}</p>
+      <p>Fecha Inicio: {{$evento->medida->fecha_inicio}}</p>
+      <p>Fecha Termino: {{$evento->medida->fecha_termino}}</p>
     </div>
 
   </div>

@@ -19,11 +19,11 @@
               <h5>Categoria:</h5>
               <p>{{$c->tipo_catastrove->tipo}}  </p>
               <h5>Fecha de Inicio:</h5>
-              <p>------------------</p>
+              <p>{{$c->created_at}}</p>
             </div>
 
           </div>
-          <a class="btn btn-primary" href="medidas/create">Agregar Medida</a>
+          <a class="btn btn-primary" href="{{route('medidas.crear',$c->id)}}">Agregar Medida</a>
         </div>
         <!-- <div class="col-md-4 d-flex justify-content-center align-items-center">
 
@@ -66,7 +66,8 @@
                   <!-- <p class="card-text">{{$m->descripcion}}</p> -->
                   <div class="d-flex justify-content-between">
 
-                    <p>Fecha:----</p>
+                    <p>Fecha:</p>
+                    <p>{{$m->fecha_inicio}}</p>
 
                   </div>
                   <a class="color2 btn btn-primary" href="{{route('medidas.show',$m->id)}}">Acceder</a>

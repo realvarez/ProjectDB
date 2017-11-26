@@ -11,12 +11,8 @@ use Twitter;
 use DB;
 class CatastrovesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function inicio()
     {
       $catastroves= Catastrove::paginate(3);
       $comunas = Comuna::all();
@@ -25,6 +21,22 @@ class CatastrovesController extends Controller
       return view('inicio',compact('catastroves','comunas','regiones','numero'));
 
     }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public function index()
+    {
+      $catastroves= Catastrove::paginate(3);
+      $numero=12;
+      return view('catastrofes.index',compact('catastroves'));
+    }
+
+
 
     /**
      * Show the form for creating a new resource.

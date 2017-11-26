@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Voluntariado;
 use App\Medida;
 use App\Region;
@@ -37,42 +38,49 @@ class VoluntariosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
-        $this->validate($request,[
 
+        $value=Session::get('c_id','No existe');
+
+        $this->validate($request,[
+            'titulo' => 'required|string',
             'Descripcion' => 'required|string',
+            'Meta' => 'required|integer',
             'region_id' => 'required|not_in:0',
             'comuna_id' => 'required|not_in:0',
             'Direccion' => 'required|string',
-            'titulo' => 'required|string'
-
-
+            'fecha_inicio' => 'required',
+            'fecha_termino' => 'required|after_or_equal:fecha_inicio',
         ]);
 
+        $duracion = date_diff(date_create($request->fecha_inicio),date_create($request->fecha_termino))->format('%d');
         $voluntario=new Voluntariado;
         $voluntario->metaVoluntarios=$request->Meta;
-        $voluntario->duracionDias=10;
+        $voluntario->duracionDias=$duracion;
         $voluntario->comuna_id=$request->comuna_id;
         $voluntario->direccion=$request->Direccion;
+        $voluntario->created_at = $request->fecha_inicio;
 
 
 
         $medida=array(
 
-            'catastrove_id' => 1,
+            'catastrove_id' => $value,
             'descripcion' => $request->Descripcion,
             'titulo' => $request->titulo,
             'user_id' => 1,
             'organization_id' =>1,
 
       
-            'fecha_inicio' => '2017-3-1',
-            'fecha_termino' => '2018-3-1'
+            'fecha_inicio' => date_create($request->fecha_inicio),
+            'fecha_termino' => date_create($request->fecha_termino)
 
         );
         $voluntario->save();
         $voluntario->medida()->create($medida);
+        Session::forget('c_id'); 
 
-        return  redirect()->route('medidas.busqueda',1);
+        return  redirect()->route('medidas.busqueda',$voluntario->medida->catastrove_id);
+        
         
 
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Evento;
 use App\Medida;
 use DB;
@@ -38,17 +39,20 @@ class EventoController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $value=Session::get('c_id','No existe');
+
         
         $this->validate($request,[
 
             'Descripcion' => 'required|string',
             'metaDinero' => 'required',
             'actual' => 'required',
-            'region_id' => 'required|not_in:0',
-            'comuna_id' => 'required|not_in:0',
+            'region_id' => 'required|integer|not_in:0',
+            'comuna_id' => 'required|integer|not_in:0',
             'Direccion' => 'required|string',
-            'titulo' => 'required|string'
+            'titulo' => 'required|string',
+            'fecha_inicio' => 'required',
+            'fecha_termino' => 'required|after_or_equal:fecha_inicio',
             
 
         ]
@@ -59,6 +63,7 @@ class EventoController extends Controller
         $evento->actualDinero=$request->actual;
         $evento->comuna_id=$request->comuna_id;
         $evento->direccion=$request->Direccion;
+        $evento->created_at = $request->fecha_inicio;
         
         
         $evento->save();
@@ -66,20 +71,21 @@ class EventoController extends Controller
 
         $medida=array(
 
-            'catastrove_id' => 1, //Por ahora constante
+            'catastrove_id' => $value, //Por ahora constante
             'descripcion' => $request->Descripcion,
             'titulo' => $request->titulo,
             'user_id' => 1, //Por ahora constante
             'organization_id' =>1, //Por ahora constante
 
            
-            'fecha_inicio' => '2017-3-1', //Por ahora constante
-            'fecha_termino' => '2018-3-1' //Por ahora constante
+            'fecha_inicio' => date_create($request->fecha_inicio),
+            'fecha_termino' => date_create($request->fecha_termino)
 
         );
         
         $evento->medida()->create($medida);
-        return  redirect()->route('medidas.busqueda',1);
+        Session::forget('c_id'); 
+        return  redirect()->route('medidas.busqueda',$evento->medida->catastrove_id);
         
 
     }

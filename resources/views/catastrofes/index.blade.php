@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="col-md-8 ml-5 center">
-	<h1 class="display-4 text-center">Administracion Medidas del Sistema</h1>
+	<h1 class="display-4 text-center">Administracion Catastrofes del Sistema</h1>
 	<div class="card mb-5">
       <div class="card-block p-0">
         <table class="table table-bordered table-sm m-0">
@@ -16,13 +16,13 @@
             </tr>
           </thead>
           <tbody>
-          	@foreach($roles as $item)
+          	@foreach($catastroves as $item)
               <tr>
               		<td>{{ $item->id }}</td>
                   <td>{{ $item->titulo }}</td>
                   <td>{{ $item->tipo_catastrove->tipo }}</td>
                   <td>{{ $item->comuna->region->nombre}}</td>
-                  @if({{$item->activa}} == 1)
+                  @if($item->activa == 1)
                     <td>Activa</td>
                   @else
                     <td>Desactiva</td>
@@ -38,6 +38,6 @@
 
       </div>
     </div>
-        <a href="{{ route('rol.index') }}" class="offset-8 col-md-2 btn btn-outline-primary btn-sm disabled" role="button">Crear</a>
+        <a href="{{ route('deposito.index') }}" class="offset-8 col-md-2 btn btn-outline-primary btn-sm" role="button">Crear</a>
   </div>
 @stop

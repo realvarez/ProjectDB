@@ -14,7 +14,7 @@
 Route::get('/', ['as' => 'principal' ,'uses'=> function () {
     return view('welcome');
 }]);
-Route::get('/home',['as'=> 'home','HomeController@index']);
+Route::get('/inicio',['as'=> 'inicio','uses'=>'CatastrovesController@inicio']);
 
 Auth::routes();
 
@@ -26,7 +26,15 @@ Route::get('medidas_info/{catastrofe_id}',
 Route::post('/medidasForm',
 	['uses' => 'MedidasController@createFormulario',
 	'as' => 'medidas.createFormulario' ]);
+
+
+Route::get('medidasCrear/{catastrofe_id}',
+	['uses'  => 'MedidasController@crearMedidas',
+	'as'  =>  'medidas.crear']);
 /*Catastrofes*/
+
+
+
 
 Route::resource('catastrofes','CatastrovesController');
 Route::resource('medidas','MedidasController');
@@ -35,6 +43,16 @@ Route::resource('apoyos','ApoyoEconomicoController');
 Route::resource('eventos','EventoController');
 Route::resource('recoleccion','RecoleccionController');
 Route::resource('users','UserController');
+Route::resource('admin/rol','RolController');
+Route::resource('depositos','DepositosController');
+
+Route::post('welcome',
+	['uses' => 'DepositosController@create',
+	'as' => 'deposito.create' ]);
+
+Route::get('depositos',
+	['uses' => 'DepositosController@index',
+	'as' => 'deposito.index' ]);
 /*Medidas*/
 
 

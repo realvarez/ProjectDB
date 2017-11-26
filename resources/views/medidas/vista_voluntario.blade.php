@@ -8,7 +8,7 @@
       <h3>Solicitud De Voluntarios</h2>
     </div>
     <div class="col-md-12">
-      <p>Meta Volntarios :{{$voluntario->metaVoluntarios}}</p>
+      <p>Meta Volntarios: {{$voluntario->metaVoluntarios}}</p>
     </div>
     <div class="col-md-12">
       <p>Voluntarios Actuales: {{$voluntario->voluntariosActuales}}</p>
@@ -23,7 +23,7 @@
       <p>Comuna: {{$voluntario->comuna->nombre}}</p>
       <p>Direccion: {{$voluntario->direccion}}</p>
       <p>Fecha Inicio: {{$voluntario->medida->fecha_inicio}}</p>
-      <p>Fecha Termino: {{$voluntario->medida->fecha_Termino}}</p>
+      <p>Fecha Termino: {{$voluntario->medida->fecha_termino}}</p>
     </div>
 
     <div class="col">

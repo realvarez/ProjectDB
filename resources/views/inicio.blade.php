@@ -41,7 +41,7 @@
                   <div class="d-flex justify-content-between">
                     <p>Region: {{$c->comuna->region->nombre}}</p>
                     <p class="card-subtittle">Comuna: {{$c->comuna->nombre}}</p>
-                    <p>Felcha:----</p>
+                    <p>Fecha:{{$c->created_at}}</p>
 
                   </div>
                   <a class="color2 btn btn-primary" href="{{route('medidas.busqueda',$c->id)}}">Acceder</a>

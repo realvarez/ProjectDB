@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 <div class="container">
-
+	<h1 class="display-4 text-center">Administracion Usuarios</h1>
 	<div class="card mb-5">
-    <div class="card-header">Fearures</div>
+    <div class="card-header"></div>
       <div class="card-block p-0">
           <table class="table table-bordered table-sm m-0">
               <thead class="">
@@ -31,13 +31,8 @@
               </tbody>
           </table>
       </div>
-                      {{-- <td>
-                          <label class="custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input">
-                              <span class="custom-control-indicator"></span>
-                          </label>
-                      </td> --}}
-      <div class="card-footer p-0">
+  
+ 	      <div class="card-footer p-0">
           <nav aria-label="...">
               <ul class="pagination justify-content-end mt-3 mr-3">
                   <li class="page-item disabled">
