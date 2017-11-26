@@ -168,6 +168,18 @@ class MedidasController extends Controller
         return view('medidas.crear',compact('catastrofe_id'));
     }
 
+    public function activarMedida($id){
+
+
+        $medida=Medida::find($id);
+
+        $medida->estado=1;
+
+        $medida->save();
+
+        return redirect()->route('admin');
+    }
+
 
 
 }
