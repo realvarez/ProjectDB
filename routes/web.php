@@ -31,8 +31,15 @@ Route::post('/medidasForm',
 Route::get('medidasCrear/{catastrofe_id}',
 	['uses'  => 'MedidasController@crearMedidas',
 	'as'  =>  'medidas.crear']);
+
+
+Route::get('medidasAprobar/{medida_id}',
+	['uses' => 'MedidasController@activarMedida',
+	'as' => 'medidas.aprobar']);
 /*Catastrofes*/
 
+
+//Destroy
 
 Route::get('catastrofes/delete/{catastrofe_id}',
 	['uses' => 'CatastrovesController@destroy',
@@ -41,16 +48,27 @@ Route::get('catastrofes/delete/{catastrofe_id}',
 Route::get('users/delete/{users_id}',['uses' => 'UserController@destroy',
 	'as' => 'users.destroy']);
 
+Route::get('medidas/delete/{medida_id}',['uses' =>'MedidasController@destroy',
+	'as'  =>'medidas.destroy']);
 
+Route::get('voluntarios/delete/{voluntarios_id}',['uses' =>'VoluntariosController@destroy',
+	'as'  =>'voluntarios.destroy']);
+
+Route::get('apoyos/delete/{apoyos_id}',['uses' =>'ApoyoEconomicoController@destroy',
+	'as'  =>'apoyos.destroy']);
+Route::get('eventos/delete/{eventos_id}',['uses' =>'EventoController@destroy',
+	'as'  =>'eventos.destroy']);
+
+Route::get('recoleccion/delete/{recoleccion_id}',['uses' =>'RecoleccionController@destroy',
+	'as'  =>'recoleccion.destroy']);
 
 Route::resource('catastrofes','CatastrovesController',['except' => ['destroy']]);
-
 Route::resource('organizaciones','OrganizacionController');
-Route::resource('medidas','MedidasController');
-Route::resource('voluntarios','VoluntariosController');
-Route::resource('apoyos','ApoyoEconomicoController');
-Route::resource('eventos','EventoController');
-Route::resource('recoleccion','RecoleccionController');
+Route::resource('recoleccion','RecoleccionController',['except' => ['destroy']]);
+Route::resource('eventos','EventoController',['except' => ['destroy']]);
+Route::resource('apoyos','ApoyoEconomicoController',['except' => ['destroy']]);
+Route::resource('voluntarios','VoluntariosController',['except' => ['destroy']]);
+Route::resource('medidas','MedidasController',['except' =>['destroy']]);
 Route::resource('users','UserController',['except' => ['destroy']]);
 Route::resource('admin/rol','RolController');
 Route::resource('depositos','DepositosController');

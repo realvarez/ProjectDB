@@ -133,6 +133,10 @@ class ApoyoEconomicoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $apoyo=Apoyo_economico::find($id);
+
+        $apoyo->delete();
+        return redirect()->route('medidas.index');
+
     }
 }

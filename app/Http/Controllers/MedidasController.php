@@ -90,7 +90,9 @@ class MedidasController extends Controller
      */
     public function edit($id)
     {
-        //
+
+
+
     }
 
     /**
@@ -113,7 +115,33 @@ class MedidasController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+       
+        $medida=Medida::find($id);
+
+
+        if($medida->MorphMedida_type=='App\Recoleccion'){
+            
+            $medida->delete();
+            return redirect()->route('recoleccion.destroy',['recoleccion' =>$medida->MorphMedida_id]);
+        }
+        else if($medida->MorphMedida_type=='App\Apoyo_economico'){
+
+            $medida->delete();
+            return redirect()->route('apoyos.destroy',['apoyos' =>$medida->MorphMedida_id]);
+        }
+
+          else if($medida->MorphMedida_type=='App\Evento'){
+
+            $medida->delete();
+            return redirect()->route('eventos.destroy',['eventos' =>$medida->MorphMedida_id]);
+        }
+        
+          else if($medida->MorphMedida_type=='App\Voluntariado'){
+
+            $medida->delete();
+            return redirect()->route('voluntarios.destroy',['voluntarios' =>$medida->MorphMedida_id]);
+        }
     }
 
 
@@ -166,6 +194,18 @@ class MedidasController extends Controller
         Session::put('c_id',$catastrofe_id);
         
         return view('medidas.crear',compact('catastrofe_id'));
+    }
+
+    public function activarMedida($id){
+
+
+        $medida=Medida::find($id);
+
+        $medida->estado=1;
+
+        $medida->save();
+
+        return redirect()->route('medidas.index');
     }
 
 

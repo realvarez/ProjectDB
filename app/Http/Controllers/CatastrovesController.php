@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Catastrove;
 use App\Comuna;
 use App\Region;
@@ -59,6 +60,11 @@ class CatastrovesController extends Controller
     public function store(Request $request)
     {
 
+        $user=Auth::user();
+        if($user==null){
+
+            return 'Debes ingresar para crear catastrofe';
+        }
         //Validacion
         //Completar, alguien puso en la validacion que fuera string el comuna_id y estuve
         //pegado como 2 horas viendo porque no funcionaba.
@@ -72,11 +78,12 @@ class CatastrovesController extends Controller
         
         //Crear
         
+        //dd($user);
         $catastrofe = new Catastrove;
         $catastrofe->titulo=$request->titulo;
         $catastrofe->descripcion=$request->descripcion;
         $catastrofe->tipo_catastrove_id=$request->tipo_id;
-        $catastrofe->user_id=2; // Por ahora constante
+        $catastrofe->user_id=$user->id; // Por ahora constante
         $catastrofe->comuna_id = $request->comuna_id;
 
         $catastrofe->save();

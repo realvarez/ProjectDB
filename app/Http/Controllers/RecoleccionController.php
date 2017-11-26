@@ -157,6 +157,9 @@ class RecoleccionController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $recoleccion=Recoleccion::find($id);
+
+        $recoleccion->delete();
+        return redirect()->route('medidas.index');
     }
 }
