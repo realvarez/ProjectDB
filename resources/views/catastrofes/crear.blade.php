@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
 <section class="container mt-5"><br>
   <div class="row">
     <div class="col">
@@ -8,7 +9,7 @@
         
         {!! Form::open(array('route' => 'testeo', 'class' => 'form')) !!}
           {{ csrf_field() }}
-          <h3 style="margin-bottom: 25px; text-align: center;">Crear Catastrofe</h3>
+          <h3 style="margin-bottom: 25px; text-align: center;">Ingresar Catastrofe</h3>
             <div class="form-group">
             <label for="titulo">Titulo</label>
             <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo" required>
@@ -51,3 +52,4 @@
 
 </section>
 
+@stop
