@@ -5,39 +5,49 @@
 	<div class="card mb-5">
       <div class="card-block p-0">
         <table class="table table-bordered table-sm m-0">
-          <thead class="">
-            <tr>
-                <th>#</th>
-                <th>Nombre</th>
-                <th>Tipo</th>
-                <th>Region</th>
-                <th>Estado</th>
-                <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-          	@foreach($roles as $item)
-              <tr>
-              		<td>{{ $item->id }}</td>
-                  <td>{{ $item->titulo }}</td>
-                  <td>{{ $item->tipo_catastrove->tipo }}</td>
-                  <td>{{ $item->comuna->region->nombre}}</td>
-                  @if({{$item->activa}} == 1)
-                    <td>Activa</td>
-                  @else
-                    <td>Desactiva</td>
-                  @endif
-                  <td class="text-center">
-                  	<a href="" class="btn btn-danger btn-sm" role="button">Ver</a>
-                  	<a href="" class="btn btn-danger btn-sm" role="button">Eliminar</a>
-                  </td>
-              </tr>
-             @endforeach
-          </tbody>
-        </table>
+              <thead class="">
+                  <tr>
+                      <th>#</th>
+                      <th>Titulo</th>
+                      <th>Categoria</th>
+                      <th>Estado</th>
+                      <th>Avance</th>
+                      <th>Accion</th>
+                  </tr>
+              </thead>
+              <tbody>
+                @foreach($medidas as $item)
+                  <tr>
+                      <td>{{ $item->id }}</td>
+                      <td>{{ $item->titulo }}</td>
 
+                      @if($item->MorphMedida_type =='App\Recoleccion')
+                        <td>Rocoleccion</td>
+                      @elseif($item->MorphMedida_type =='App\Apoyo_economico')
+                        <td>Apoyo Economico</td>
+                      @elseif($item->MorphMedida_type =='App\Evento')
+                        <td>Evento A Beneficio</td>
+                      @elseif($item->MorphMedida_type =='App\Voluntariado')
+                        <td>Voluntariado</td>
+                      @endif
+
+                      @if($item->estado == 0)
+                        <td>Desactivada</td>
+                      @else
+                        <td>Activada</td>
+                      @endif
+                      <td class="text-center">
+                        <a href="{{route('medida.show',$item->id)}}" class="btn btn-primary btn-sm" role="button">Ver</a>
+
+                        <a href="{{route('medida.aprobar',$item->id)}}" class="btn btn-warning disabled btn-sm" role="button">Aprobar</a>
+                        
+                        <a href="{{route('medida.destroy',$item->id)}}" class="btn btn-danger btn-sm" role="button">Eliminar</a>
+                      </td>
+                  </tr>
+                 @endforeach
+              </tbody>
+          </table>
       </div>
     </div>
-        <a href="{{ route('rol.index') }}" class="offset-8 col-md-2 btn btn-outline-primary btn-sm disabled" role="button">Crear</a>
   </div>
 @stop

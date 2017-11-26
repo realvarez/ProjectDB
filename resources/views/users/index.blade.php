@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-<div class="container">
+<div class="container col-md-8">
 	<h1 class="display-4 text-center">Administracion Usuarios</h1>
 	<div class="card mb-5">
     <div class="card-header"></div>
@@ -23,7 +23,7 @@
                       <td>{{ $item->email }}</td>
                       <td>{{ $item->estado}}</td>
                       <td class="text-center">
-                      	<a href="{{route('users.show',$item->id)}}" class="btn btn-danger btn-sm" role="button">Ver</a>
+                      	<a href="{{route('users.show',$item->id)}}" class="btn btn-primary btn-sm" role="button">Ver</a>
                       	<a href="{{route('users.destroy',$item->id)}}" class="btn btn-danger btn-sm" role="button">Eliminar</a>
                       </td>
                   </tr>

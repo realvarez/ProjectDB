@@ -15,10 +15,10 @@ class MedidasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-       $medida = Medida::all();
+       $medidas = Medida::all();
 
 
-       return view('medidas.index', compact('medida'));
+       return view('medidas.index', compact('medidas'));
 
 
    }
