@@ -23,8 +23,8 @@
                       <td>{{ $item->email }}</td>
                       <td>{{ $item->estado}}</td>
                       <td class="text-center">
-                      	<a href="" class="btn btn-danger btn-sm" role="button">Ver</a>
-                      	<a href="" class="btn btn-danger btn-sm" role="button">Eliminar</a>
+                      	<a href="{{route('users.show',$item->id)}}" class="btn btn-danger btn-sm" role="button">Ver</a>
+                      	<a href="{{route('users.destroy',$item->id)}}" class="btn btn-danger btn-sm" role="button">Eliminar</a>
                       </td>
                   </tr>
                  @endforeach

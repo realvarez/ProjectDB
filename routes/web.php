@@ -38,6 +38,9 @@ Route::get('catastrofes/delete/{catastrofe_id}',
 	['uses' => 'CatastrovesController@destroy',
 	'as' => 'catastrofes.destroy']);
 
+Route::get('users/delete/{users_id}',['uses' => 'UserController@destroy',
+	'as' => 'users.destroy']);
+
 
 
 Route::resource('catastrofes','CatastrovesController',['except' => ['destroy']]);
@@ -46,7 +49,7 @@ Route::resource('voluntarios','VoluntariosController');
 Route::resource('apoyos','ApoyoEconomicoController');
 Route::resource('eventos','EventoController');
 Route::resource('recoleccion','RecoleccionController');
-Route::resource('users','UserController');
+Route::resource('users','UserController',['except' => ['destroy']]);
 Route::resource('admin/rol','RolController');
 Route::resource('depositos','DepositosController');
 
