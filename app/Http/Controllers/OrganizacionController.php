@@ -35,7 +35,21 @@ class OrganizacionController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $this->validate($request,[
+            'titulo'=>'required',
+            'descripcion'=>'required',
+            'logo'=>'requiered|image',
+        ]);
+
+        $logo = $request->file('logo');
+
+        $organi = Organization::create([
+            'nombre' =>  $request->nombre,
+            'logo' => $logo->store('organizaciones'),
+            'descripcion' =>$request->descripcion,
+        ]);
+
+        return redirect()->route('organizacion.index'); 
     }
 
     /**
