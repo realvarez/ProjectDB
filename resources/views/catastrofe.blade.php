@@ -23,7 +23,9 @@
             </div>
 
           </div>
-          <a class="btn btn-primary" href="{{route('medidas.crear',$c->id)}}">Agregar Medida</a>
+          
+            <a class="btn btn-primary" href="{{route('medidas.crear',$c->id)}}">Agregar Medida</a>
+         
         </div>
         <!-- <div class="col-md-4 d-flex justify-content-center align-items-center">
 
