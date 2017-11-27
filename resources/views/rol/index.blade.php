@@ -1,9 +1,8 @@
 @extends('layouts.admin')
 @section('content')
-<div class="col-md-8 ml-5 center">
-	<h1 class="display-4 text-center">Administracion Roles del Sistema</h1>
+<div class="col-md-8 ml-5 center mt-5">
+	<h2 >Administracion Roles del Sistema</h2>
 	<div class="card mb-5">
-    <div class="card-header"></div>
       <div class="card-block p-0">
         <table class="table table-bordered table-sm m-0">
           <thead class="">
@@ -18,10 +17,6 @@
               <tr>
               		<td>{{ $item->id }}</td>
                   <td>{{ $item->nombre }}</td>
-                  {{-- <td class="text-center">
-                  	<a href="" class="btn btn-danger btn-sm" role="button">Ver</a>
-                  	<a href="" class="btn btn-danger btn-sm" role="button">Eliminar</a>
-                  </td> --}}
               </tr>
              @endforeach
           </tbody>

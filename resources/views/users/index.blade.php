@@ -1,9 +1,8 @@
 @extends('layouts.admin')
 @section('content')
-<div class="container col-md-8">
-	<h1 class="display-4 text-center">Administracion Usuarios</h1>
-	<div class="card mb-5">
-    <div class="card-header"></div>
+<div class="container col-md-8 mt-5">
+	<h2 >Administracion Usuarios</h2>
+	<div class="card mb-5 mt-3">
       <div class="card-block p-0">
           <table class="table table-bordered table-sm m-0">
               <thead class="">
@@ -30,25 +29,6 @@
                  @endforeach
               </tbody>
           </table>
-      </div>
-  
- 	      <div class="card-footer p-0">
-          <nav aria-label="...">
-              <ul class="pagination justify-content-end mt-3 mr-3">
-                  <li class="page-item disabled">
-                      <span class="page-link">Previous</span>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item active">
-                      <span class="page-link">2<span class="sr-only">(current)</span>
-                      </span>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                      <a class="page-link" href="#">Next</a>
-                  </li>
-              </ul>
-          </nav>
       </div>
   </div>
 	
