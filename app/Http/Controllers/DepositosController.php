@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 use App\Deposito;
 
 class DepositosController extends Controller
@@ -40,7 +42,7 @@ class DepositosController extends Controller
 
 
         $this->validate($request,[
-            'cantidad' => 'required|string',
+            'monto' => 'required|string',
             'rut' => 'required|string',
             'email' => 'required|string',
             'nombre' => 'required|string',
@@ -52,19 +54,24 @@ class DepositosController extends Controller
 
 
 
-
-
+        $user=Auth::user();
         $deposito = new Deposito;
 
-        $deposito->user_id = 1; //depende del usuario conectado
-        $deposito->medida_id = $request->id;
-        $deposito->rut = 123456789; //depende del usuario conectado
+        if($user!=null){
+
+        $deposito->user_id = $user->id; //depende del usuario conectado
+
+        }
+
+        $deposito->medida_id =$id;
+        $deposito->rut = $request->rut; //depende del usuario conectado
         $deposito->cantidad = $request->monto;
-        $deposito->fechaDeposito = '2000-01-01';
-        $deposito->documento = "deposito";
+        $deposito->nombre=$request->nombre;
+        $deposito->apellido=$request->apellido;
+        $deposito->email=$request->email;
         $deposito->save();
 
-        
+
         return redirect()->route('inicio');
     
     }
