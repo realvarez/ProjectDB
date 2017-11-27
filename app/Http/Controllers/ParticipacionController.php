@@ -124,7 +124,8 @@ class ParticipacionController extends Controller
             $Voluntariado=Voluntariado::find($medida->MorphMedida_id);
             $Voluntariado->voluntariosActuales++;
             $porcentaje=(($Voluntariado->voluntariosActuales)*100)/$Voluntariado->metaVoluntarios;
-            $Voluntariado->medida->avance=$porcentaje;
+            $medida->avance=$porcentaje;
+            $medida->save();
             $Voluntariado->save();
         }
 
@@ -171,7 +172,8 @@ class ParticipacionController extends Controller
             $Voluntariado=Voluntariado::find($medida->MorphMedida_id);
             $Voluntariado->voluntariosActuales++;
             $porcentaje=(($Voluntariado->voluntariosActuales)*100)/$Voluntariado->metaVoluntarios;
-            $Voluntariado->medida->avance=$porcentaje;
+            $medida->avance=$porcentaje;
+            $medida->save();
             $Voluntariado->save();
         }
 
