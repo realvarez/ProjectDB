@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Comuna;
 class UserController extends Controller
 {
     /**
@@ -20,7 +21,8 @@ class UserController extends Controller
 
     public function show($id)
     {
-        return 'Trabajando en la vista user';  
+        $usuario = User::find($id);
+        return view('users.info',compact('usuario'));
     }
 
     /**
@@ -43,7 +45,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return "vista acrualizar datos usuario";
     }
 
     /**
@@ -58,7 +60,7 @@ class UserController extends Controller
 
         $user->delete();
 
-        
+
         return redirect()->route('users.index');
     }
 }

@@ -52,7 +52,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="administrador">Administrador</a>
                 </li>
-                
+
             </div>
             <div class="navbar-nav text-center ">
                 @guest
@@ -90,7 +90,7 @@
 
     {{-- Contenido Admin --}}
 		<div class="container-fluid mt-3">
-			
+
 			<div class="row">
 				<div class="ml-3 col-md-3 mt-2 text-center">
 					<h2 class="display-4 ">Bienvenido Administrador</h2>
@@ -107,7 +107,7 @@
 						<a href="{{ route('medidas.index') }} " class="btn btn-info btn-block mb-3" role="button">
 							Medidas
 						</a>
-						<a href="" class="btn btn-info btn-block mb-3" role="button">
+						<a href="{{route('organizaciones.index')}}" class="btn btn-info btn-block mb-3" role="button">
 							Organizaciones
 						</a>
 						<a href="{{ route('rol.index') }}" class="btn btn-info btn-block mb-3" role="button">
@@ -120,7 +120,7 @@
 							Regiones
 						</a>
 						<a href="" class="btn btn-info btn-block mb-3" role="button">
-							Comunas 
+							Comunas
 						</a>
 				</div>
 		 		@yield('content')
@@ -179,6 +179,6 @@
           });
       });
     </script>
- 
+
 </body>
 </html>
