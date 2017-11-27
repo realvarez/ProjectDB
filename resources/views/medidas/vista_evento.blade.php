@@ -26,7 +26,7 @@
       <p>Fecha Inicio: {{$evento->medida->fecha_inicio}}</p>
       <p>Fecha Termino: {{$evento->medida->fecha_termino}}</p>
     </div>
-
+    <a class="btn btn-primary" href="{{route('participa.create',$evento->medida->id)}}"> Participar</a>
   </div>
 
 

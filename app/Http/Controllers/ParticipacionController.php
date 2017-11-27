@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Collection;
 use App\Medida;
 use App\Participa;
 use App\Voluntariado;
@@ -27,7 +28,7 @@ class ParticipacionController extends Controller
     public function createP($id)
     {
 
-        $user=Auth::user();
+        $user=Auth::user();    
         //dd($user);
 
         if($user!=null){
@@ -101,12 +102,25 @@ class ParticipacionController extends Controller
     public function inscribirUsuarioR($id){
 
         $participante=new Participa;
-
         $medida=Medida::find($id);
-
-
         $user=Auth::user();
 
+       //Comprobar que el usuario no este inscrito.
+        $comprobacion= Participa::all();
+
+        foreach ($comprobacion as $c) {
+
+            if($c->medida_id==$id and $c->email==$user->email){
+
+
+                return 'datos repetidos ya estas registrado';
+            }
+
+            
+        }
+
+
+        //Fin comprobacion.
 
         $participante->nombre=$user->nombre;
         $participante->apellido=$user->apellido;
@@ -124,7 +138,7 @@ class ParticipacionController extends Controller
             $Voluntariado=Voluntariado::find($medida->MorphMedida_id);
             $Voluntariado->voluntariosActuales++;
             $porcentaje=(($Voluntariado->voluntariosActuales)*100)/$Voluntariado->metaVoluntarios;
-            $medida->avance=$porcentaje;
+            $medida->avance=(int) $porcentaje;
             $medida->save();
             $Voluntariado->save();
         }
@@ -133,7 +147,11 @@ class ParticipacionController extends Controller
 
     }
 
-      public function inscribirUsuario(Request $request,$id){
+
+
+
+    public function inscribirUsuario(Request $request,$id){
+
 
 
 
@@ -153,7 +171,26 @@ class ParticipacionController extends Controller
             
         ]);
 
+        //Verificar que no este inscrito
 
+        $comprobacion= Participa::all();
+
+        foreach ($comprobacion as $c) {
+
+            if($c->medida_id==$id and $c->email==$request->email){
+
+
+                return 'datos repetidos ya estas registrado';
+            }
+
+            
+        }
+
+        //Fin verificar que no este inscrito
+
+
+
+        //Definir campos y guardar en base de datos
 
 
         $participante->nombre=$request->nombre;
@@ -166,13 +203,17 @@ class ParticipacionController extends Controller
 
         $participante->save();
 
+        //Fin guardar en base de datos.
+
+        //Actualizar campos para medir avance
+
         if($medida->MorphMedida_type=='App\Voluntariado'){
 
 
             $Voluntariado=Voluntariado::find($medida->MorphMedida_id);
             $Voluntariado->voluntariosActuales++;
             $porcentaje=(($Voluntariado->voluntariosActuales)*100)/$Voluntariado->metaVoluntarios;
-            $medida->avance=$porcentaje;
+            $medida->avance=(int) $porcentaje;
             $medida->save();
             $Voluntariado->save();
         }
