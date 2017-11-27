@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Medida;
 use App\Participa;
+use App\Voluntariado;
 class ParticipacionController extends Controller
 {
     /**
@@ -36,7 +37,7 @@ class ParticipacionController extends Controller
 
         else {
 
-            return 'No estas log, llena el formulario';
+            return  view('medidas.formulario_participa',compact('id'));
 
         }
     }
@@ -116,6 +117,59 @@ class ParticipacionController extends Controller
        
 
         $participante->save();
+
+        if($medida->MorphMedida_type=='App\Voluntariado'){
+
+
+            $Voluntariado=Voluntariado::find($medida->MorphMedida_id);
+            $Voluntariado->voluntariosActuales++;
+            $Voluntariado->save();
+        }
+
+        return redirect()->route('inicio');
+
+    }
+
+      public function inscribirUsuario(Request $request,$id){
+
+
+
+        $participante=new Participa;
+
+        $medida=Medida::find($id);
+
+
+        
+        $this->validate($request,[
+            'nombre' => 'required|string',
+            'apellido' => 'required|string',
+            'email' => 'required|string',
+            'rut' => 'required|string',
+
+
+            
+        ]);
+
+
+
+
+        $participante->nombre=$request->nombre;
+        $participante->apellido=$request->apellido;
+        $participante->email=$request->email;
+        $participante->rut=$request->rut;
+        $participante->user_id=null;
+        $participante->medida_id=$medida->id;
+       
+
+        $participante->save();
+
+        if($medida->MorphMedida_type=='App\Voluntariado'){
+
+
+            $Voluntariado=Voluntariado::find($medida->MorphMedida_id);
+            $Voluntariado->voluntariosActuales++;
+            $Voluntariado->save();
+        }
 
         return redirect()->route('inicio');
 

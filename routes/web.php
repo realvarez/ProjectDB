@@ -41,9 +41,13 @@ Route::get('participa/create/{medida_id}',
 	['uses'=> 'ParticipacionController@createP',
 	'as' =>'participa.create']);
 
-Route::get('participa/inscribir/{medida_id}',
+Route::get('participa/inscribirU/{medida_id}',
 	['uses' => 'ParticipacionController@inscribirUsuarioR',
 	'as' => 'participa.usuarioR']);
+
+Route::post('participa/inscribir/{medida_id}',
+	['uses' => 'ParticipacionController@inscribirUsuario',
+	'as' => 'participa.usuario']);
 /*Catastrofes*/
 
 
