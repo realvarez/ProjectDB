@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 
-<div class="container col-md-8">
+<div class="container col-md-8 mt-5">
     <h2>Laravel 5 - Twitter API</h2>
 
     <form method="POST" action="{{ route('post.tweet') }}" enctype="multipart/form-data">

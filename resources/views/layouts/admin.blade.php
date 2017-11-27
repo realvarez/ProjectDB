@@ -8,7 +8,6 @@
     {{-- Boostrap --}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     {{-- Jquery --}}
-
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -16,154 +15,97 @@
     <link href="/IMG/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Asap:400,600" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/sideBar.css') }}" rel="stylesheet">
+
     <title>Emergencias Chile</title>
     <!-- Styles -->
+
     <style>
 
     </style>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light padding-top border border-right-0 border-left-0 border-top-0 border-secondary mb-3">
-        <!-- Brand -->
-        <a class="navbar-brand  p-0 m-0 mx-5" href="{{ route('principal') }}">Chile Emergencias</a>
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-          <!-- Navbar links -->
-        <div class="collapse navbar-collapse  p-0 m-0 " id="collapsibleNavbar">
-            <div class="navbar-nav mr-auto text-center">
-                <li class="nav-item">
-                    <a class="nav-link" href="/inicio">Catastrofes</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="{{ route('medidas.index') }}" id="DropdownMedidas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Medidas</a>
-                    <div class="dropdown-menu" aria-labelledby="DropdownMedidas">
-                        <a class="dropdown-item" href="#">Centros de Acopio</a>
-                        <a class="dropdown-item" href="#">Voluntariados</a>
-                        <a class="dropdown-item" href="#">Evento a Beneficio</a>
-                        <a class="dropdown-item" href="#">Donaciones</a>
-                    </div>
-                </li>
-                {{-- Aqui ver bien que id tendra cada rol --}}
-                {{-- @if(Auth::user()->rol_id ==3) --}}
-                {{-- @endif --}}
-                <li class="nav-item">
-                    <a class="nav-link" href="administrador">Administrador</a>
-                </li>
-
-            </div>
-            <div class="navbar-nav text-center ">
-                @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Entrar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">Registrarse</a>
-                    </li>
-                @else
-	                  <li class="dropdown mr-5">
-	                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> {{ Auth::User()->nombre }} <span class="caret"></span>
-	                      </a>
-
-	                      <ul class="dropdown-menu" role="menu">
-	                          <li>
-	                              <a href="{{ route('logout') }}"
-	                                  onclick="event.preventDefault();
-	                                           document.getElementById('logout-form').submit();">
-	                                  Salir
-	                              </a>
-
-	                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-	                                  {{ csrf_field() }}
-	                              </form>
-	                          </li>
-	                      </ul>
-	                  </li>
-	              @endif
-            </div>
-        </div>
-    </nav>
-
-
-
+   
     {{-- Contenido Admin --}}
-		<div class="container-fluid mt-3">
-
+		<div class="container-fluid ">
 			<div class="row">
-				<div class="ml-3 col-md-3 mt-2 text-center">
-					<h2 class="display-4 ">Bienvenido Administrador</h2>
-					<p class="ml-2 mt-2 mb-3">Seleccione para ingresar al menu correspondiente</p>
-						<a href="twitter" class="btn btn-info btn-block mb-3" role="button">
-							Twitter
-						</a>
-						<a href="{{ route('users.index') }} " class="btn btn-info btn-block mb-3" role="button">
-							Usuarios
-						</a>
-						<a href="{{ route('catastrofes.index') }}" class="btn btn-info btn-block mb-3" role="button">
-							Catastrofes
-						</a>
-						<a href="{{ route('medidas.index') }} " class="btn btn-info btn-block mb-3" role="button">
-							Medidas
-						</a>
-						<a href="{{route('organizaciones.index')}}" class="btn btn-info btn-block mb-3" role="button">
-							Organizaciones
-						</a>
-						<a href="{{ route('rol.index') }}" class="btn btn-info btn-block mb-3" role="button">
-							Rol
-						</a>
-						<a href="" class="btn btn-info btn-block mb-3" role="button">
-							Panel de Historial
-						</a>
-						<a href="" class="btn btn-info btn-block mb-3" role="button">
-							Regiones
-						</a>
-						<a href="" class="btn btn-info btn-block mb-3" role="button">
-							Comunas
-						</a>
-				</div>
-		 		@yield('content')
-			</div>
-		</div>
+                <div class="col-sm-3">
+                    <div class="nav-side-menu ml-0">
+                        <div class="brand">Menu Administracion</div>
+                        <div class="menu-list">
+                            <ul id="menu-content" class="">
+                                <li data-toggle="collapse" data-target="#User" class="collapsed">
+                                    <a > Nombre{{-- {{ Auth::User()->nombre }} --}} <span class="arrow"></span></a>
+                                </li>
+                                <ul class="sub-menu collapse" id="User">
+                                    <li>
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                               document.getElementById('logout-form').submit();">
+                                      Salir
+                                        </a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <footer class="mt-0 p-0">
-        <div class="container-fluid mt-5 ">
-            <div class="offset-1">
-
-                <div class="copyright-box">
-                    2017 Universidad de Santiago de Chile.
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <a href="/inicio">
+                                            Salir de Modo Administracion
+                                        </a>
+                                    </li>
+                                </ul>
+  
+                                <li>
+                                    <a href="twitter">
+                                        Twitter
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('users.index') }}">
+                                        Usuarios
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('catastrofes.index') }}">
+                                        Catastrofes
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('medidas.index') }}">
+                                        Medidas
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('organizaciones.index')}}">
+                                        Organizaciones
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('rol.index') }}">
+                                        Roles del Sistema
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('historial.index') }}">
+                                        Panel de Historial
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+                @yield('content')
             </div>
-        </div>
-    </footer>
-    <!-- Scripts -->
-
+		</div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script language="javascript" type="text/javascript"></script>
     <script src="public/js/form_recoleccion.js" ></script>
+
     <script type="text/javascript">
       $("select[name='region_id']").change(function(){
           var region_id = $(this).val();

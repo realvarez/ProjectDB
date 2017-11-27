@@ -3,18 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Organization;
-class OrganizacionController extends Controller
+use App\Historia;
+class HistorialController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $organizacion = Organization::all();
-        return view('organizacion.index',compact('organizacion'));
+        $historias = Historia::all();
+        return view('historial.index',compact('historias'));
     }
 
     /**
@@ -24,7 +19,7 @@ class OrganizacionController extends Controller
      */
     public function create()
     {
-        return view('organizacion.create');
+        //
     }
 
     /**
@@ -35,22 +30,7 @@ class OrganizacionController extends Controller
      */
     public function store(Request $request)
     {
-
-        // $this->validate($request,[
-        //     'titulo'=>'required',
-        //     'descripcion'=>'required',
-        //     'logo'=>'requiered|image',
-        // ]);
-
-        $logo = $request->file('logo');
-
-        $organi = Organization::create([
-            'nombre' =>  $request->nombre,
-            'logo' => $logo->store('organizaciones'),
-            'descripcion' =>$request->descripcion,
-        ]);
-
-        return redirect()->route('organizaciones'); 
+        //
     }
 
     /**

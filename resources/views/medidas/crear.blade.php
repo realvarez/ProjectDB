@@ -40,3 +40,4 @@
 <a href="/medidas_info/{{$catastrofe_id}}" class="btn btn-info mb-3">Volver</a>
 
 </section>
+@stop
