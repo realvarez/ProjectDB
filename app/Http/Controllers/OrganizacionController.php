@@ -35,11 +35,12 @@ class OrganizacionController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'titulo'=>'required',
-            'descripcion'=>'required',
-            'logo'=>'requiered|image',
-        ]);
+
+        // $this->validate($request,[
+        //     'titulo'=>'required',
+        //     'descripcion'=>'required',
+        //     'logo'=>'requiered|image',
+        // ]);
 
         $logo = $request->file('logo');
 
@@ -49,7 +50,7 @@ class OrganizacionController extends Controller
             'descripcion' =>$request->descripcion,
         ]);
 
-        return redirect()->route('organizacion.index'); 
+        return redirect()->route('organizaciones'); 
     }
 
     /**

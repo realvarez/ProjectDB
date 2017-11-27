@@ -15,4 +15,7 @@ class Organization extends Model
     public function miembros(){
         return $this -> hasMany('App\Organization_user');
     }
+    public function medida(){
+        return $this -> hasMany('App\Medida');
+    }
 }

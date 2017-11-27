@@ -66,10 +66,21 @@
                   <!-- <p class="card-text">{{$m->descripcion}}</p> -->
                   <div class="d-flex justify-content-between">
 
-                    <p>Fecha:</p>
+                    <p>Fecha Inicio:</p>
                     <p>{{$m->fecha_inicio}}</p>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <p>Fecha Termino:</p>
+                    <p>{{$m->fecha_termino }}</p>
 
                   </div>
+                  <div class="d-flex justify-content-between">
+                    <p>Organizacion:</p>
+                    <p>{{$m->organization->nombre}}</p>
+
+                  </div>
+
+
                   <a class="color2 btn btn-primary" href="{{route('medidas.show',$m->id)}}">Acceder</a>
                 </div>
               </div>

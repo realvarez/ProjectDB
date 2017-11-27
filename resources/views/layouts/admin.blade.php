@@ -46,12 +46,13 @@
                         <a class="dropdown-item" href="#">Donaciones</a>
                     </div>
                 </li>
-                {{-- Aqui ver bien que id tendra cada rol --}}
-                {{-- @if(Auth::user()->rol_id ==3) --}}
-                {{-- @endif --}}
+                @auth
+                @if(Auth::User()->rol_id == 1)
                 <li class="nav-item">
-                    <a class="nav-link" href="administrador">Administrador</a>
+                    <a class="nav-link" href="admin">Administrador</a>
                 </li>
+                @endif
+                @endauth
 
             </div>
             <div class="navbar-nav text-center ">
