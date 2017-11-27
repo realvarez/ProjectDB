@@ -23,9 +23,9 @@
             </div>
 
           </div>
-          
+
             <a class="btn btn-primary" href="{{route('medidas.crear',$c->id)}}">Agregar Medida</a>
-         
+
         </div>
         <!-- <div class="col-md-4 d-flex justify-content-center align-items-center">
 
@@ -80,7 +80,7 @@
                   </div>
 
                   <div class="progress m-1 ">
-                      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{$m->avance}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$m->avance}}%">{{$m->avance}}%</div>
                   </div>
 
                   <div class="d-flex justify-content-center">
