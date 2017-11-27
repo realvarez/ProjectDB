@@ -10,6 +10,7 @@
 	            <th>Titulo</th>
 	            <th>Categoria</th>
 	            <th>Avance</th>
+              <th>Fecha Termino</th>
 	          </tr>
           </thead>
           <tbody>
@@ -29,7 +30,17 @@
                 </td>
                 <td>
                   {{ $item->avance }}
-                </td>                      
+                </td>
+                <td>
+                  {{ $item->fecha_termino }}
+                </td> 
+                <td>
+                  @if ($item->diarestantes > 0)
+                    {{ $item->diarestantes }}
+                  @else
+                    0
+                  @endif
+                </td>                    
               </tr>
           	@endforeach
           </tbody>
