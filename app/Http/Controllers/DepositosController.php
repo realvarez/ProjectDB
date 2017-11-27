@@ -14,7 +14,7 @@ class DepositosController extends Controller
      */
     public function index()
     {
-        return view('medidas.depositos_vista');
+       
     }
 
     /**
@@ -22,20 +22,10 @@ class DepositosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
         
-        $deposito = new Deposito;
-        $deposito->user_id = 1; //depende del usuario conectado
-        $deposito->medida_id = $request->id;
-        $deposito->rut = 123456789; //depende del usuario conectado
-        $deposito->cantidad = $request->monto;
-        $deposito->fechaDeposito = '2000-01-01';
-        $deposito->documento = "deposito";
-        $deposito->save();
-        
-        return view('welcome');
-    
+         
     }
 
     /**
@@ -44,9 +34,39 @@ class DepositosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
-        //
+
+
+
+        $this->validate($request,[
+            'cantidad' => 'required|string',
+            'rut' => 'required|string',
+            'email' => 'required|string',
+            'nombre' => 'required|string',
+            'apellido' => 'required|string',
+
+
+            
+        ]);
+
+
+
+
+
+        $deposito = new Deposito;
+
+        $deposito->user_id = 1; //depende del usuario conectado
+        $deposito->medida_id = $request->id;
+        $deposito->rut = 123456789; //depende del usuario conectado
+        $deposito->cantidad = $request->monto;
+        $deposito->fechaDeposito = '2000-01-01';
+        $deposito->documento = "deposito";
+        $deposito->save();
+
+        
+        return redirect()->route('inicio');
+    
     }
 
     /**

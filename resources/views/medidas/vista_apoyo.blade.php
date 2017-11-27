@@ -32,7 +32,7 @@
 
     </div>
     <div class="col-md-6">
-      <form role="form" method="POST" action="{{route('deposito.create')}}">
+      <form role="form" method="POST" action="{{route('deposito.create',$apoyo->medida->id)}}">
         {{ csrf_field() }}
         <br style="clear:both">
         <h3 style="margin-bottom: 25px; text-align: center;">Donar</h3>
