@@ -27,8 +27,7 @@
 </head>
 <body>
    
-    {{-- Contenido Admin --}}
-		<div class="container-fluid ">
+		<div class="container-fluid">
 			<div class="row">
                 <div class="col-sm-3">
                     <div class="nav-side-menu ml-0">

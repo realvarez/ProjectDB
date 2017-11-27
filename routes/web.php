@@ -126,6 +126,4 @@ Route::post('register',['as'=>'registro','uses'=>'Auth\RegisterController@regist
 //Route::post('register', 'Auth\RegisterController@register');
 
 
-Route::get('administrador', ['as' => 'admin' ,'uses'=> function () {
-    return view('admin');
-}]);
+Route::get('administrador', ['as'=>'admin' ,'uses'=>'MedidasController@mcrits']);
