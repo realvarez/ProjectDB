@@ -54,7 +54,11 @@ class User extends Authenticatable
 
     public function depositos(){
       return $this -> hasMany('App\Deposito');
-  }
+    }
+
+    public function comentarios(){
+      return $this -> hasMany('App\Comentario');
+    }
 
   public function comuna(){
 

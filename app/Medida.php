@@ -39,4 +39,8 @@ class Medida extends Model{
     public function catastrofe(){
     	return $this ->belongto('App\Catastrofe');
     }
+
+    public function comentario(){
+      return $this -> hasMany('App\Comentario');
+    }
 }
