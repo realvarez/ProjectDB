@@ -23,7 +23,9 @@
             </div>
 
           </div>
-          <a class="btn btn-primary" href="{{route('medidas.crear',$c->id)}}">Agregar Medida</a>
+          
+            <a class="btn btn-primary" href="{{route('medidas.crear',$c->id)}}">Agregar Medida</a>
+         
         </div>
         <!-- <div class="col-md-4 d-flex justify-content-center align-items-center">
 
@@ -44,14 +46,14 @@
 
     <div class="col-md-6   ">
       <div class="row d-flex justify-content-between  medidas">
-        <div class=" col-md-12  card align-self-start mt-3 border border-primary">
-          <h4>Medidas de Ayuda</h4>
+        <div class=" col-md-12  bg-primary text-white rounded d-flex justify-content-center align-self-start mt-3 border border-primary">
+            <h4>Medidas de Ayuda</h4>
         </div>
         @foreach ($medidas as $m)
         <div class=" col-md-6 w-50">
 
 
-              <div class="card   border border-primary" >
+              <div class="card  m-1 border border-primary" >
                 <div class="card-body">
                   <h4 class="card-title text-uppercase border border-left-0 border-right-0 border-top-0 border-succses"> {{$m->titulo}} </h4>
                   @if($m->MorphMedida_type=="App\Evento")
@@ -65,23 +67,26 @@
                   @endif
                   <!-- <p class="card-text">{{$m->descripcion}}</p> -->
                   <div class="d-flex justify-content-between">
-
-                    <p>Fecha Inicio:</p>
-                    <p>{{$m->fecha_inicio}}</p>
+                    <p>sInicio: {{$m->fecha_inicio}}</p>
+                    <p>Termino: {{$m->fecha_termino }}</p>
                   </div>
-                  <div class="d-flex justify-content-between">
-                    <p>Fecha Termino:</p>
-                    <p>{{$m->fecha_termino }}</p>
+                  <!-- <div class="d-flex justify-content-between">
 
-                  </div>
-                  <div class="d-flex justify-content-between">
-                    <p>Organizacion:</p>
+                  </div> -->
+                  <div class="d-flex mt-0 justify-content-start">
+                    <p>Organizacion: </p>
                     <p>{{$m->organization->nombre}}</p>
 
                   </div>
 
+                  <div class="progress m-1 ">
+                      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                  </div>
 
-                  <a class="color2 btn btn-primary" href="{{route('medidas.show',$m->id)}}">Acceder</a>
+                  <div class="d-flex justify-content-center">
+
+                    <a class="color2 btn btn-primary" href="{{route('medidas.show',$m->id)}}">Acceder</a>
+                  </div>
                 </div>
               </div>
 

@@ -25,18 +25,18 @@ class Medida extends Model{
     }
 
     public function creador(){
-    	return $this -> belongsTo('app\User');
+    	return $this -> belongsTo('App\User');
     }
 
     public function administrador(){
-    	return $this -> belongsTo('app\User');
+    	return $this -> belongsTo('App\User');
     }
 
-    public function organizacion(){
-    	return $this -> belongsTo('app\Organization');
+    public function organization(){
+    	return $this -> belongsTo('App\Organization');
     }
 
     public function catastrofe(){
-    	return $this ->belongto('app\Catastrofe');
+    	return $this ->belongto('App\Catastrofe');
     }
 }

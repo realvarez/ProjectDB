@@ -13,10 +13,10 @@ class Organization_user extends Model
     ];
 
     public function usuario(){
-    	return $this ->belongsTo('app\User');
+    	return $this ->belongsTo('App\User');
     }
 
     public function organization(){
-    	return $this ->belongsTo('app\Organization');
+    	return $this ->belongsTo('App\Organization');
     }
 }
