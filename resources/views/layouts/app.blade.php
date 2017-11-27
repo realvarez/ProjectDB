@@ -50,7 +50,7 @@
                 {{-- @if(Auth::user()->rol_id ==3) --}}
                 {{-- @endif --}}
                 <li class="nav-item">
-                    <a class="nav-link" href="administrador">Administrador</a>
+                    <a class="nav-link" href="admin">Administrador</a>
                 </li>
 
             </div>
