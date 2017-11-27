@@ -3,8 +3,8 @@
 
 
 <section class="container-fluid ">
-  <div class="row d-flex justify-content-center ">
-    <div class=" col-md-6 bg-light card mr-3  border border-primary">
+  <div class="row d-flex justify-content-start ">
+    <div class=" col-md-6 bg-light card my-3 mx-2  border border-primary">
       <h3>Solicitud De Voluntarios</h2>
       <p>Meta Volntarios: {{$voluntario->metaVoluntarios}}</p>
       <p>Voluntarios Actuales: {{$voluntario->voluntariosActuales}}</p>
@@ -22,6 +22,23 @@
 
     </div>
 
+    <div class="col-md-5">
+      <div class="">
+
+      </div>
+      <h4>Imagen </h4>
+
+    </div>
+
+
+</div>
+
+
+<div class="row">
+
+  <div class="col-md-12">
+      <h4>Comentarios</h4>
+  </div>
 
 </div>
 

@@ -36,6 +36,18 @@
         {{ csrf_field() }}
         <br style="clear:both">
         <h3 style="margin-bottom: 25px; text-align: center;">Donar</h3>
+        <div>
+          <label for="titulo2 ">Nombre</label>
+          <input type="number" class="form-control" id="nombre" name ="nombre" id value = "{{$apoyo->id}}" required>
+        </div>
+        <div>
+          <label for="titulo2 ">Apellido</label>
+          <input type="text" class="form-control" id="apellido" name ="apellido" value = "{{$apoyo->id}}" required>
+        </div>
+        <div>
+          <label for="titulo2 ">Email</label>
+          <input type="email" class="form-control" id="email" name ="email" id value = "{{$apoyo->id}}" required>
+        </div>
         <div class="form-group">
           <label for="exampleFormControlSelect1">Banco Cuenta</label>
           <select class="form-control" name='banco' id="exampleFormControlSelect1">

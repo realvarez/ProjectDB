@@ -49,7 +49,7 @@
                 @auth
                     @if(Auth::User()->rol_id == 1)
                     <li class="nav-item">
-                        <a class="nav-link" href="admin">Administrador</a>
+                        <a class="nav-link" href="administrador">Administrador</a>
                     </li>
                     @endif
                 @endauth

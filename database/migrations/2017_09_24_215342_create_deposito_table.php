@@ -15,9 +15,12 @@ class CreateDepositoTable extends Migration
     {
         Schema::create('depositos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
             $table->integer('medida_id');
             $table->integer('rut');
+            $table->string('nombre');
+            $table->string('apellido');
+            $table->string('email');
             $table->integer('cantidad');
             $table->date('fechaDeposito');
             $table->string('documento');
