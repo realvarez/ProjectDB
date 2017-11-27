@@ -17,7 +17,7 @@ class CreateRnvTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('ultima_medida');
-            $table->integer('rut');
+            $table->string('rut');
             $table->string('nombre');
             $table->string('correo');
             $table->timestamps();

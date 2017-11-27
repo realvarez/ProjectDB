@@ -9,50 +9,31 @@ use App\Catastrove;
 use App\Tipo_catastrove;
 class MedidasController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function mcrits(){
+        $carbon = new \Carbon\Carbon();
+        $to = $carbon->now();
+        $medidas = Medida::all()
+            ->where('avance','>',60)
+            ->where('estado',"=",1)
+            ->where(date_diff($to,'fecha_termino',true),'>','2015-07-20 10:00:00');
+        return view('admin', compact('medidas'));
+    }
+
     public function index(){
        $medidas = Medida::all();
-
-
        return view('medidas.index', compact('medidas'));
+    }
 
-
-   }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
 
-
-
-        //return view('medidas.crear');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
 
