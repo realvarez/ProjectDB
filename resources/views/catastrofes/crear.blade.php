@@ -7,7 +7,7 @@
       <div class="form-area">
 
         
-        {!! Form::open(array('route' => 'testeo', 'class' => 'form')) !!}
+        {!! Form::open(array('route' => 'catastrofe.update', 'class' => 'form')) !!}
           {{ csrf_field() }}
           <h3 style="margin-bottom: 25px; text-align: center;">Ingresar Catastrofe</h3>
             <div class="form-group">
@@ -32,7 +32,7 @@
 
           <div class="form-group">
             <label>Descripcion :</label>
-            <textarea class="form-control" type="textarea" id="descripcion" name="descripcion" placeholder="Escribe aqui una breve descripcion"  rows="7"></textarea>
+            <textarea class="form-control" type="textarea" id="descripcion"  name="descripcion" placeholder="Escribe aqui una breve descripcion"  rows="7"></textarea>
             <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
           </div>
 

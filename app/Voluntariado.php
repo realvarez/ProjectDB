@@ -26,4 +26,5 @@ class Voluntariado extends Model
 
         return $this->belongsTo('App\Comuna');
     }
+
 }

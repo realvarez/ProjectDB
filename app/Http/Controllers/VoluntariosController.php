@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 use App\Voluntariado;
 use App\Medida;
 use App\Region;
@@ -145,4 +146,7 @@ class VoluntariosController extends Controller
             return response()->json(['options'=>$data]);
         }
     }
+
+
+    
 }

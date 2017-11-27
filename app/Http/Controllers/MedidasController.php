@@ -29,7 +29,7 @@ class MedidasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
+    {
 
 
 
@@ -60,7 +60,7 @@ class MedidasController extends Controller
 
 
         if($medida->MorphMedida_type=='App\Recoleccion'){
-            
+
 
             return redirect()->route('recoleccion.show',['recoleccion' =>$medida->MorphMedida_id]);
         }
@@ -73,12 +73,12 @@ class MedidasController extends Controller
 
             return redirect()->route('eventos.show',['eventos' =>$medida->MorphMedida_id]);
         }
-        
+
           else if($medida->MorphMedida_type=='App\Voluntariado'){
 
             return redirect()->route('voluntarios.show',['voluntarios' =>$medida->MorphMedida_id]);
         }
-        
+
 
     }
 
@@ -116,12 +116,12 @@ class MedidasController extends Controller
     public function destroy($id)
     {
 
-       
+
         $medida=Medida::find($id);
 
 
         if($medida->MorphMedida_type=='App\Recoleccion'){
-            
+
             $medida->delete();
             return redirect()->route('recoleccion.destroy',['recoleccion' =>$medida->MorphMedida_id]);
         }
@@ -136,7 +136,7 @@ class MedidasController extends Controller
             $medida->delete();
             return redirect()->route('eventos.destroy',['eventos' =>$medida->MorphMedida_id]);
         }
-        
+
           else if($medida->MorphMedida_type=='App\Voluntariado'){
 
             $medida->delete();
@@ -147,11 +147,11 @@ class MedidasController extends Controller
 
     public function buscarMedidas($catastrofe_id)
 
-    {   
+    {
         $c=Catastrove::find($catastrofe_id);
         //$tipoC=Tipo_catastrove::all();
 
-        $medidas=Medida::where('catastrove_id',$catastrofe_id)->paginate(2);
+        $medidas=Medida::where('catastrove_id',$catastrofe_id)->paginate(4);
 
 
         return view('catastrofe',compact('c','medidas'));
@@ -159,7 +159,7 @@ class MedidasController extends Controller
     }
 
     public function createFormulario(Request $request)
-    {   
+    {
         //dd($request);
         //return view('catastrofes');
 
@@ -192,7 +192,7 @@ class MedidasController extends Controller
 
 
         Session::put('c_id',$catastrofe_id);
-        
+
         return view('medidas.crear',compact('catastrofe_id'));
     }
 

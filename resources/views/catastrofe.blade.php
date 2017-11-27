@@ -88,6 +88,7 @@
 
 
 
+      <a href="/inicio" class="btn-primary btn mx-2 ">Volver</a>
   </div>
 </section>
 
