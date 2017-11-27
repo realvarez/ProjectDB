@@ -14,6 +14,7 @@
 Route::get('/', ['as' => 'principal' ,'uses'=> function () {
     return view('welcome');
 }]);
+
 Route::get('/inicio',['as'=> 'inicio','uses'=>'CatastrovesController@inicio']);
 
 Auth::routes();

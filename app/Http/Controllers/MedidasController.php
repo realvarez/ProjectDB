@@ -152,7 +152,7 @@ class MedidasController extends Controller
         //$tipoC=Tipo_catastrove::all();
 
         $medidas=Medida::where('catastrove_id',$catastrofe_id)->paginate(4);
-
+        //dd($medidas[0]->organization->nombre);
 
         return view('catastrofe',compact('c','medidas'));
 
