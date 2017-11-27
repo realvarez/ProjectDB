@@ -76,7 +76,7 @@
                   </div>
                   <div class="d-flex justify-content-between">
                     <p>Organizacion:</p>
-                    <p>{{$m->organizacion->nombre }}</p>
+                    <p>{{$m->organization->nombre}}</p>
 
                   </div>
 
