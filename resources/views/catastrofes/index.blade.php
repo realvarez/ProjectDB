@@ -30,7 +30,7 @@
                   <td class="text-center">
                   	<a href="{{route('medidas.busqueda',$item->id)}}"  class="btn btn-danger btn-sm" role="button">Ver</a>
                   	<a method='DELETE' href="{{route('catastrofes.destroy',$item->id)}}"  class="btn btn-danger btn-sm" role="button">Eliminar</a>
-										<a href="{{route('medidas.busqueda',$item->id)}}"  class="btn btn-danger btn-sm" role="button">Editar</a>
+										<a href="{{route('catastrofes.edit',$item->id)}}"  class="btn btn-danger btn-sm" role="button">Editar</a>
 
                   </td>
               </tr>

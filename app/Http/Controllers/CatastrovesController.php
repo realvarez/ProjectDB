@@ -122,7 +122,10 @@ class CatastrovesController extends Controller
      */
     public function edit($id)
     {
-        
+         $regiones = DB::table('regions')->pluck("nombre","id")->all();
+        $tipo = DB::table('tipo_catastroves')->pluck("tipo","id")->all();
+        $catastrofe=Catastrove::find($id);
+        return view('catastrofes.editar',compact('catastrofe','regiones','tipo'));
     }
 
     /**
