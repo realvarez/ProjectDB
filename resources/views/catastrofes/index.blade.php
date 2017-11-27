@@ -17,7 +17,7 @@
           </thead>
           <tbody>
           	@foreach($catastroves as $item)
-              <tr>
+              <tr>	
               		<td>{{ $item->id }}</td>
                   <td>{{ $item->titulo }}</td>
                   <td>{{ $item->tipo_catastrove->tipo }}</td>
@@ -30,6 +30,8 @@
                   <td class="text-center">
                   	<a href="{{route('medidas.busqueda',$item->id)}}"  class="btn btn-danger btn-sm" role="button">Ver</a>
                   	<a method='DELETE' href="{{route('catastrofes.destroy',$item->id)}}"  class="btn btn-danger btn-sm" role="button">Eliminar</a>
+										<a href="{{route('medidas.busqueda',$item->id)}}"  class="btn btn-danger btn-sm" role="button">Editar</a>
+
                   </td>
               </tr>
              @endforeach
@@ -38,7 +40,7 @@
 
       </div>
     </div>
-		
+
 				<a href="{{route('catastrofes.create')}}" class="offset-8 col-md-2 btn btn-outline-primary btn-sm" role="button">Crear</a>
   </div>
 @stop
