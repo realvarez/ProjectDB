@@ -16,8 +16,26 @@
              </div>
 
           <div class="form-group">
+            <label>Seleccione el tipo de Catastrofe:</label>
+            <p>Region actual: {{$catastrofe->tipo_catastrove->tipo}}</p>
+            {!! Form::select('tipo_id',[''=>'--- Selecciona Tipo Catastrofe ---']+$tipo,$catastrofe->tipo_catastrove->id,['class'=>'form-control']) !!}
+          </div>
+
+          <div class="form-group">
+            <label>Seleccione la Region:</label>
+            <p>Region actual: {{$catastrofe->comuna->region->nombre}}</p>
+            {!! Form::select('region_id',[''=>'--- Selecciona Region ---']+$regiones,null,['class'=>'form-control']) !!}
+          </div>
+
+          <div class="form-group">
+            <label>Seleccione la Comuna:</label>
+            <p>Comuna actual: {{$catastrofe->comuna->nombre}}</p>
+            {!! Form::select('comuna_id',[''=>'--- Selecciona Comuna ---'],null,['class'=>'form-control']) !!}
+          </div>
+
+          <div class="form-group">
             <label>Descripcion :</label>
-            <textarea class="form-control" type="textarea" id="descripcion" value="$catastrofe->descripcion" name="descripcion" placeholder="Escribe aqui una breve descripcion"  rows="7"></textarea>
+            <textarea class="form-control" type="textarea" id="descripcion" value="$catastrofe->descripcion" name="descripcion" placeholder="Escribe aqui una breve descripcion"  rows="7">{{$catastrofe->descripcion}}</textarea>
             <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
           </div>
 
