@@ -32,6 +32,7 @@
                   	<a method='DELETE' href="{{route('catastrofes.destroy',$item->id)}}"  class="btn btn-danger btn-sm" role="button">Eliminar</a>
 										<a href="{{route('catastrofes.edit',$item->id)}}"  class="btn btn-danger btn-sm" role="button">Editar</a>
 
+
                   </td>
               </tr>
              @endforeach
