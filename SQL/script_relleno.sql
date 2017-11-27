@@ -203,9 +203,9 @@ insert into comunas ("nombre","region_id","created_at","updated_at") values
 --roles
 insert into rols ("nombre","created_at","updated_at") values
 ('Gobierno',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
-('Organizacion',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
-('Usuario',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
-
+('Usuario',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
+('Miembro Organizacion',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
+('Administrador Organizacion',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 --Users
 insert into users ("nombre","apellido","rut","email","password","rol_id","comuna_id","direccion","estado","created_at","updated_at") values
 ('Felipe','Vasquez','195467858','felipe.vasquez.r@usach.cl','123456789Aa',3,29,'San Carlos 274',1,CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
