@@ -11,6 +11,7 @@
 	            <th>Categoria</th>
 	            <th>Avance</th>
               <th>Fecha Termino</th>
+              <th>Dias Restantes</th>
 	          </tr>
           </thead>
           <tbody>
