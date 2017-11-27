@@ -3,7 +3,7 @@
 
 <section class="container-fluid">
   <div class="row d-flex justify-content-center">
-    <div class="col card border  bt border-primary">
+    <div class="col-md-6 bg-light card border  bt border-primary">
       <form role="form" method="POST" action="{{route('eventos.store')}}">
         {{ csrf_field() }}
         <br style="clear:both">
