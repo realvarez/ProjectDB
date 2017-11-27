@@ -65,19 +65,19 @@
                   @endif
                   <!-- <p class="card-text">{{$m->descripcion}}</p> -->
                   <div class="d-flex justify-content-between">
-                    <p> Inicio:{{$m->fecha_inicio}}</p>
-                    <p>Termino:{{$m->fecha_termino }}</p>
+                    <p>sInicio: {{$m->fecha_inicio}}</p>
+                    <p>Termino: {{$m->fecha_termino }}</p>
                   </div>
                   <!-- <div class="d-flex justify-content-between">
 
                   </div> -->
-                  <div class="d-flex mt-0 justify-content-between">
-                    <p>Organizacion:</p>
-                    <p>{{$m->organizacion}}</p>
+                  <div class="d-flex mt-0 justify-content-start">
+                    <p>Organizacion: </p>
+                    <p>{{$m->organization->nombre}}</p>
 
                   </div>
 
-                  <div class="progress ">
+                  <div class="progress m-1 ">
                       <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
                   </div>
 
