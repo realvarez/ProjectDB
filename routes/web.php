@@ -36,6 +36,14 @@ Route::get('medidasCrear/{catastrofe_id}',
 Route::get('medidasAprobar/{medida_id}',
 	['uses' => 'MedidasController@activarMedida',
 	'as' => 'medidas.aprobar']);
+
+Route::get('participa/create/{medida_id}',
+	['uses'=> 'ParticipacionController@createP',
+	'as' =>'participa.create']);
+
+Route::get('participa/inscribir/{medida_id}',
+	['uses' => 'ParticipacionController@inscribirUsuarioR',
+	'as' => 'participa.usuarioR']);
 /*Catastrofes*/
 
 
@@ -71,6 +79,7 @@ Route::resource('recoleccion','RecoleccionController',['except' => ['destroy']])
 Route::resource('users','UserController',['except' => ['destroy']]);
 Route::resource('admin/rol','RolController');
 Route::resource('depositos','DepositosController');
+Route::resource('participa','ParticipacionController',['except' =>['create']]);
 
 Route::post('welcome',
 	['uses' => 'DepositosController@create',
@@ -79,6 +88,9 @@ Route::post('welcome',
 Route::get('depositos',
 	['uses' => 'DepositosController@index',
 	'as' => 'deposito.index' ]);
+
+
+
 /*Medidas*/
 
 

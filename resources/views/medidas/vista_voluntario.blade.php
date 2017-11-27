@@ -27,7 +27,7 @@
     </div>
 
     <div class="col">
-      <button type="submit" id="submit" name="submit" class="btn btn-success">Participar</button>
+       <a class="btn btn-primary" href="{{route('participa.create',$voluntario->medida->id)}}"> Participar</a>
 
     </div>
 

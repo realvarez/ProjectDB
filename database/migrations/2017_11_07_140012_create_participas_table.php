@@ -15,9 +15,12 @@ class CreateParticipasTable extends Migration
     {
         Schema::create('participas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
             $table->integer('medida_id');
-            $table->string('descripcion');
+            $table->string('nombre');
+            $table->string('apellido');
+            $table->string('rut');
+            $table->string('email')->unique();
             $table->timestamps();
 
             $table->foreign('medida_id')
