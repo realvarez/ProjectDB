@@ -22,8 +22,6 @@ class CreateDepositoTable extends Migration
             $table->string('apellido');
             $table->string('email');
             $table->integer('cantidad');
-            $table->date('fechaDeposito');
-            $table->string('documento');
             $table->timestamps();
 
             $table->foreign('user_id')
