@@ -51,7 +51,7 @@
               <input class="form-control" name="fecha_termino" id="registration-date" type="date" required>
             </div>
           </div>
-          
+
           <button type="submit" id="submit" name="submit" class="btn btn-success">Enviar</button>
 
         </form>
