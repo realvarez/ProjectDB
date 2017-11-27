@@ -60,6 +60,9 @@ Route::get('catastrofes/delete/{catastrofe_id}',
 Route::get('users/delete/{users_id}',['uses' => 'UserController@destroy',
 	'as' => 'users.destroy']);
 
+  Route::get('users/edit/{users_id}',['uses' => 'UserController@update',
+  	'as' => 'users.update']);
+
 Route::get('medidas/delete/{medida_id}',['uses' =>'MedidasController@destroy',
 	'as'  =>'medidas.destroy']);
 

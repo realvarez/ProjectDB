@@ -40,36 +40,36 @@ class User extends Authenticatable
 
 
     public function historiales(){
-        return $this -> hasMany('app\Historia');
+        return $this -> hasMany('App\Historia');
     }
 
     public function miembro(){
-        return $this -> hasOne('app\Organization_user');
+        return $this -> hasOne('App\Organization_user');
     }
 
     public function catastrofes(){
-        return $this -> hasMany('app\Catastrofe');
+        return $this -> hasMany('App\Catastrofe');
     }
 
 
     public function depositos(){
-      return $this -> hasMany('app\Deposito');
+      return $this -> hasMany('App\Deposito');
   }
 
   public function comuna(){
 
-    return $this->belongsTo('app\Comuna');
+    return $this->belongsTo('App\Comuna');
 }
 
 public function rol(){
 
-    return $this->belongsTo('app\Rol');
+    return $this->belongsTo('App\Rol');
 }
 
 
 public function rnv(){
 
-    return $this->hasOne('app\rnv');
+    return $this->hasOne('App\rnv');
 
 }
 
