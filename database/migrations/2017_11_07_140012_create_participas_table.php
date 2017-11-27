@@ -20,7 +20,7 @@ class CreateParticipasTable extends Migration
             $table->string('nombre');
             $table->string('apellido');
             $table->string('rut');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->timestamps();
 
             $table->foreign('medida_id')
