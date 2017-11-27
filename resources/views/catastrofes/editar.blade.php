@@ -14,6 +14,21 @@
             <label for="titulo">Titulo</label>
             <input type="text" class="form-control" id="titulo" name="titulo"  value="{{$catastrofe->titulo}}" placeholder="Titulo" required>
              </div>
+             <div class="form-group">
+               <label>Seleccione el tipo de Catastrofe:</label>
+               {!! Form::select('tipo_id',[''=>'--- Selecciona Tipo Catastrofe ---']+$tipo,null,['class'=>'form-control']) !!}
+             </div>
+
+             <div class="form-group">
+               <label>Seleccione la Region:</label>
+               {!! Form::select('region_id',[''=>'--- Selecciona Region ---']+$regiones,null,['class'=>'form-control']) !!}
+             </div>
+
+             <div class="form-group">
+               <label>Seleccione la Comuna:</label>
+               {!! Form::select('comuna_id',[''=>'--- Selecciona Comuna ---'],null,['class'=>'form-control']) !!}
+             </div>
+
 
           <div class="form-group">
             <label>Descripcion :</label>

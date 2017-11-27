@@ -6,8 +6,8 @@
     <div class="col">
       <div class="form-area">
 
-        
-        {!! Form::open(array('route' => 'catastrofe.update', 'class' => 'form')) !!}
+
+        {!! Form::open(array('route' => 'testeo', 'class' => 'form')) !!}
           {{ csrf_field() }}
           <h3 style="margin-bottom: 25px; text-align: center;">Ingresar Catastrofe</h3>
             <div class="form-group">
@@ -48,7 +48,7 @@
     </div>
   </div>
   <a href="/catastrofes" class="btn-primary">Volver</a>
-  
+
 
 </section>
 
