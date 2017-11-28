@@ -38,26 +38,31 @@
         <h3 style="margin-bottom: 25px; text-align: center;">Donar</h3>
         <div>
           <label for="titulo2 ">Nombre</label>
-          <input type="number" class="form-control" id="nombre" name ="nombre" id value = "{{$apoyo->id}}" required>
+          <input type="text" class="form-control" id="nombre" name ="nombre"  required>
         </div>
         <div>
+
+         <div>
+          <label for="titulo2 ">Rut</label>
+          <input type="text" class="form-control" id="nombre" name ="rut"  required>
+        </div>
+        <div>
+
           <label for="titulo2 ">Apellido</label>
-          <input type="text" class="form-control" id="apellido" name ="apellido" value = "{{$apoyo->id}}" required>
+          <input type="text" class="form-control" id="apellido" name ="apellido"  required>
         </div>
         <div>
           <label for="titulo2 ">Email</label>
-          <input type="email" class="form-control" id="email" name ="email" id value = "{{$apoyo->id}}" required>
+          <input type="email" class="form-control" id="email" name ="email"  required>
         </div>
     
-
        
         <div class="form-group">
           <label for="titulo">Cantidad</label>
           <input type="number" class="form-control" id="titulo" name="monto" min="1" required>
         </div>
       
-        <input type="number" class="form-control" id="id_medida" name = id value = "{{$apoyo->id}}" required>
-        <button type="submit" id="submit" name="submit" class="btn btn-success">Enviar</button>
+      <button type="submit" id="submit" name="submit" class="btn btn-success">Enviar</button>
       </form>
     </div>
 
@@ -71,11 +76,11 @@
         <div class="">
             <div class="card">
               <div class="card-header">
-                {{$comentario->usuario->nombre}}
+                {{$c->user->nombre}}
               </div>
               <div class="card-body">
                 <blockquote class="blockquote mb-0">
-                  <p>{{$comentario->comentario}}</p>
+                  <p>{{$c->comentario}}</p>
                   <p>{{$c->created_at}}</p>
                 </blockquote>
               </div>

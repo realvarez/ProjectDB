@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Deposito;
+use App\Medida;
+use App\Apoyo_economico;
 
 class DepositosController extends Controller
 {
@@ -70,6 +72,14 @@ class DepositosController extends Controller
         $deposito->apellido=$request->apellido;
         $deposito->email=$request->email;
         $deposito->save();
+
+        $medida=Medida::find($id);
+        $apoyo=Apoyo_economico::find($medida->MorphMedida_id);
+
+        $porcentaje=($apoyo->actual*100)/$apoyo->metaMinima;
+        $medida->avance=(int)$porcentaje;
+        $medida->save();
+
 
 
         return redirect()->route('inicio');

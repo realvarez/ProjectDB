@@ -100,8 +100,8 @@ class EventoController extends Controller
     public function show($id)
     {
         $evento=Evento::find($id);
-        $comentarios=Comentarios::where('medida_id',$evento->medida->id)->get();
-        return view('medidas.vista_evento',compact('evento,comentarios'));
+        $comentario=Comentario::where('medida_id',$evento->medida->id)->get();
+        return view('medidas.vista_evento',compact('evento','comentario'));
     }
 
     /**

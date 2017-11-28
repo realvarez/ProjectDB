@@ -64,11 +64,11 @@
       <div class="">
           <div class="card">
             <div class="card-header">
-              {{$comentario->usuario->nombre}}
+              {{$c->user->nombre}}
             </div>
             <div class="card-body">
               <blockquote class="blockquote mb-0">
-                <p>{{$comentario->comentario}}</p>
+                <p>{{$c->comentario}}</p>
                 <p>{{$c->created_at}}</p>
               </blockquote>
             </div>

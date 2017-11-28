@@ -123,10 +123,10 @@ class RecoleccionController extends Controller
     public function show($id)
     {
         $recoleccion=Recoleccion::find($id);
-        $comentarios=Comentarios::where('medida_id',$recoleccion->medida->id)->get();
+        $comentario=Comentario::where('medida_id',$recoleccion->medida->id)->get();
 
         
-        return view('medidas.vista_recoleccion',compact('recoleccion,comentarios'));
+        return view('medidas.vista_recoleccion',compact('recoleccion','comentario'));
     }
 
     /**
@@ -186,9 +186,16 @@ class RecoleccionController extends Controller
        
         $user=Auth::user();
         //dd($aportes);
+        $acumulador=0;
+        foreach($aportes as $a){
+
+
+            $acumulador++;
+        }
 
 
         $contador=0;
+
         foreach ($aportes as $a) {
                         
             if($request->aportes[$contador]>=0){
@@ -208,7 +215,18 @@ class RecoleccionController extends Controller
 
                 $a->recolectado=$a->recolectado+$request->aportes[$contador];
                 $a->save();
+
+                if($a->recolectado==$a->requeridos){
+
+                    $medida=$recoleccion->medida;
+                    
+                    $porcentaje=100/$acumulador;
+                    $medida->avance=$medida->avance+((int) $porcentaje);
+                    $medida->save();
+
+                }
             }
+            $contador++;
 
 
         }

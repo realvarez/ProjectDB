@@ -96,13 +96,13 @@ class VoluntariosController extends Controller
     public function show($id)
     {
         $voluntario=Voluntariado::find($id);
-        $comentarios=Comentarios::where('medida_id',$voluntario->medida->id)->get();
+        $comentario=Comentario::where('medida_id',$voluntario->medida->id)->get();
         
-
+        //dd($comentario[0]->comentario);
 
         //dd($voluntario->medida[0]);
         
-        return view('medidas.vista_voluntario',compact('voluntario,comentarios'));
+        return view('medidas.vista_voluntario',compact('voluntario','comentario'));
     }
 
     /**

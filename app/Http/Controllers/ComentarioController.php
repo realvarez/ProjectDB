@@ -48,6 +48,7 @@ class ComentarioController extends Controller
         $comentario->comentario=$request->comentario;
         $comentario->medida_id=$id;
         $comentario->user_id=$user->id;
+        $comentario->save();
 
         return redirect()->route('medidas.show',['medidas_id' => $id]);
     }
