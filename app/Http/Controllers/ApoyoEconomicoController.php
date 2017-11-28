@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 use App\Apoyo_economico;
 use App\Medida;
 use App\Comentario;
@@ -139,7 +140,19 @@ class ApoyoEconomicoController extends Controller
         $apoyo=Apoyo_economico::find($id);
 
         $apoyo->delete();
+          $user=Auth::user();
+        if($user->rol_id==1){
+
+            
         return redirect()->route('medidas.index');
+        }
+
+
+        else{
+
+            return redirect()->route('organizacion.medidas');
+
+        }
 
     }
 }

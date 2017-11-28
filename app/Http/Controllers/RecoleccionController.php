@@ -163,7 +163,21 @@ class RecoleccionController extends Controller
          $recoleccion=Recoleccion::find($id);
 
         $recoleccion->delete();
+
+
+          $user=Auth::user();
+        if($user->rol_id==1){
+
+            
         return redirect()->route('medidas.index');
+        }
+
+
+        else{
+
+            return redirect()->route('organizacion.medidas');
+
+        }
     }
 
     public function crearCooperacion(Request $request, $id){
