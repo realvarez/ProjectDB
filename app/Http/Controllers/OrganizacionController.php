@@ -82,7 +82,7 @@ class OrganizacionController extends Controller
     public function show($id)
     {
         $organizacion = Organization::find($id);
-        
+
         $miembros = Organization_user::all()->where('organization_id',$id);
         $usuarios = User::all();
         return view('organizacion.show',compact('organizacion','miembros','usuarios'));
@@ -93,7 +93,7 @@ class OrganizacionController extends Controller
 
         $organizacion = Organization::find($id);
 
-        if ($organizacion->miembros->where('user_id',Auth::id()) == NULL){
+        if ($organizacion->miembros->where('user_id',Auth::id())->first() != NULL){
             return redirect()->route('organizaciones.show',$id);
         }
 
