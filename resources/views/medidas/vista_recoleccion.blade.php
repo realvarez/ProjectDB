@@ -2,6 +2,7 @@
 @section('content')
 
 <section class="container-fluid  ">
+  <a href="{{route('medidas.busqueda',$recoleccion->medida->catastrove_id)}}" class="btn btn-info mb-3">Volver</a>
   <div class="row d-flex justify-content-center">
     <div class="col-md-5 card mr-3  border border-primary">
 
@@ -89,7 +90,7 @@
   </div>
 
 </div>
-
+<a href="{{route('medidas.busqueda',$recoleccion->medida->catastrove_id)}}" class="btn btn-info mb-3">Volver</a>
 
 </section>
 @stop

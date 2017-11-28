@@ -3,6 +3,7 @@
 
 
 <section class="container-fluid border border-primary p-3 mb-2 bg-light text-dark w-50">
+  <a href="{{route('medidas.busqueda',$apoyo->medida->catastrove_id)}}" class="btn btn-info mb-3">Volver</a>
   <div class="row">
     <div class="col-md-12">
       <h3>Apoyo Economico</h3>
@@ -55,13 +56,13 @@
           <label for="titulo2 ">Email</label>
           <input type="email" class="form-control" id="email" name ="email"  required>
         </div>
-    
-       
+
+
         <div class="form-group">
           <label for="titulo">Cantidad</label>
           <input type="number" class="form-control" id="titulo" name="monto" min="1" required>
         </div>
-      
+
       <button type="submit" id="submit" name="submit" class="btn btn-success">Enviar</button>
       </form>
     </div>
