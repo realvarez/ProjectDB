@@ -9,6 +9,7 @@ use App\Recoleccion;
 use App\Medida;
 use App\Aporte;
 use App\Aportes_usuario;
+use App\Comentario;
 use DB;
 
 class RecoleccionController extends Controller
@@ -122,10 +123,10 @@ class RecoleccionController extends Controller
     public function show($id)
     {
         $recoleccion=Recoleccion::find($id);
-
+        $comentarios=Comentarios::where('medida_id',$recoleccion->medida->id)->get();
 
         
-        return view('medidas.vista_recoleccion',compact('recoleccion'));
+        return view('medidas.vista_recoleccion',compact('recoleccion,comentarios'));
     }
 
     /**

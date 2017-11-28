@@ -99,7 +99,8 @@ class ApoyoEconomicoController extends Controller
     public function show($id)
     {
         $apoyo=Apoyo_economico::find($id);
-        return view('medidas.vista_apoyo',compact('apoyo'));
+          $comentarios=Comentarios::where('medida_id',$apoyo->medida->id)->get();
+        return view('medidas.vista_apoyo',compact('apoyo,comentarios'));
     }
 
     /**
