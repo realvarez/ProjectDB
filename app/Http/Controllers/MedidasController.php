@@ -143,8 +143,12 @@ class MedidasController extends Controller
     {
         $c=Catastrove::find($catastrofe_id);
         //$tipoC=Tipo_catastrove::all();
+        $d=1;
+        $medidas=Medida::where('catastrove_id',$catastrofe_id)
+                        ->where('estado', $d)
+                        ->paginate(4);
 
-        $medidas=Medida::where('catastrove_id',$catastrofe_id)->paginate(4);
+
         //dd($medidas[0]->organization->nombre);
 
         return view('catastrofe',compact('c','medidas'));
