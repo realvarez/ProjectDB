@@ -99,6 +99,9 @@ Route::post('depositos/{medida_id}',
 	['uses' => 'DepositosController@store',
 	'as' => 'deposito.store' ]);
 
+Route::post('recoleccion/cooperar/{aportes}',
+	['uses' => 'RecoleccionController@crearCooperacion',
+	'as' =>'recoleccion.cooperacion']);
 
 
 /*Medidas*/

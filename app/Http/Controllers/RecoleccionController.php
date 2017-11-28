@@ -162,4 +162,36 @@ class RecoleccionController extends Controller
         $recoleccion->delete();
         return redirect()->route('medidas.index');
     }
+
+    public function crearCooperacion(Request $request, $id){
+
+        $recoleccion=Recoleccion::find($id);
+
+        $aportes=$recoleccion->aporte;
+        //dd($aportes);
+
+        $contador=0;
+        foreach ($aportes as $a) {
+            
+
+            if($request->aportes[$contador]>=0){
+
+
+                $aporte_usuario=new Aporte_Usuario;
+
+                $aporte_usuario->cantidad=$request->aportes[$contador];
+                $aporte_usuario->email=$request->email;
+                $aporte_usuario->aporte_id=$a->id;
+                $aporte_usuario->save();
+
+                $aporte->requeridos--;
+                $aporte->save();
+            }
+
+
+        }
+        
+
+
+    }
 }

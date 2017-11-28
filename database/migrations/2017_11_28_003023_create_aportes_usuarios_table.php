@@ -15,10 +15,10 @@ class CreateAportesUsuariosTable extends Migration
     {
         Schema::create('aportes_usuarios', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_usuario')->nuelleable();
+            $table->integer('id_usuario')->nullable();
             $table->integer('id_aporte');
             $table->integer('cantidad');
-            $table->string('email')->nuelleable();
+            $table->string('email');
             $table->timestamps();
         });
 
