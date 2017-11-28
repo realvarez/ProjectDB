@@ -9,7 +9,7 @@ class Aporte extends Model
   protected $fillable = [
      'recoleccion_id',
      'nombre',
- 
+
      'requeridos',
      'recolectados',
 
@@ -17,6 +17,10 @@ class Aporte extends Model
 
  public function recoleccion(){
    return $this->belongsTo('App\Recoleccion');
+ }
+
+ public function aporte_usuario(){
+   return $this->belongsTo('App\Aporte_Usuario');
  }
 
 }
