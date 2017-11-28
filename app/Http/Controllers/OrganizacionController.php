@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Organization;
+use App\Organization_user;
 class OrganizacionController extends Controller
 {
     /**
@@ -14,6 +15,10 @@ class OrganizacionController extends Controller
     public function index()
     {
         $organizacion = Organization::all();
+        // foreach ($organizacion as $key) {
+
+        //     dd($key->miembros->count);
+        // }
         return view('organizacion.index',compact('organizacion'));
     }
 
@@ -50,7 +55,14 @@ class OrganizacionController extends Controller
             'descripcion' =>$request->descripcion,
         ]);
 
-        return redirect()->route('organizaciones'); 
+        $new = Organization_user::create([
+            'organization_id' => $organi->id,
+            'user_id' => Auth::id(),
+            'rol' => 4,
+        ]);
+
+
+        return redirect()->route('organizaciones.index'); 
     }
 
     /**

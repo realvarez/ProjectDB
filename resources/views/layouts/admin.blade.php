@@ -26,82 +26,81 @@
     </style>
 </head>
 <body>
-   
-		<div class="container-fluid">
-			<div class="row">
-                <div class="col-sm-3">
-                    <div class="nav-side-menu ml-0">
-                        <div class="brand">Menu Administracion</div>
-                        <div class="menu-list">
-                            <ul id="menu-content" class="">
-                                <li data-toggle="collapse" data-target="#User" class="collapsed">
-                                    <a > Nombre{{-- {{ Auth::User()->nombre }} --}} <span class="arrow"></span></a>
-                                </li>
-                                <ul class="sub-menu collapse" id="User">
-                                    <li>
-                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                               document.getElementById('logout-form').submit();">
-                                      Salir
-                                        </a>
+	<div class="container-fluid">
+		<div class="row">
+            <div class="col-sm-3">
+                <div class="nav-side-menu ml-0">
+                    <div class="brand">Menu Administracion</div>
+                    <div class="menu-list">
+                        <ul id="menu-content" class="">
+                            <li data-toggle="collapse" data-target="#User" class="collapsed">
+                                <a > {{ Auth::User()->nombre }} <span class="arrow"></span></a>
+                            </li>
+                            <ul class="sub-menu collapse" id="User">
+                                <li>
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                           document.getElementById('logout-form').submit();">
+                                  Salir
+                                    </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                    <li>
-                                        <a href="/inicio">
-                                            Salir de Modo Administracion
-                                        </a>
-                                    </li>
-                                </ul>
-                                <li>
-                                    <a href="administrador">
-                                        Medidas Criticas
-                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
                                 </li>
                                 <li>
-                                    <a href="twitter">
-                                        Twitter
+                                    <a href="/inicio">
+                                        Salir de Modo Administracion
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="{{ route('users.index') }}">
-                                        Usuarios
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('catastrofes.index') }}">
-                                        Catastrofes
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('medidas.index') }}">
-                                        Medidas
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{route('organizaciones.index')}}">
-                                        Organizaciones
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('rol.index') }}">
-                                        Roles del Sistema
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('historial.index') }}">
-                                        Panel de Historial
-                                    </a>
-                                </li>
-                                
                             </ul>
-                        </div>
+                            <li>
+                                <a href="/administrador">
+                                    Medidas Criticas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="twitter">
+                                    Twitter
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('users.index') }}">
+                                    Usuarios
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('catastrofes.index') }}">
+                                    Catastrofes
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('medidas.index') }}">
+                                    Medidas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('organizaciones.index')}}">
+                                    Organizaciones
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('rol.index') }}">
+                                    Roles del Sistema
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('historial.index') }}">
+                                    Panel de Historial
+                                </a>
+                            </li>
+                            
+                        </ul>
                     </div>
                 </div>
-                @yield('content')
             </div>
-		</div>
+            @yield('content')
+        </div>
+	</div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
