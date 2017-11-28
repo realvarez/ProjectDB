@@ -19,9 +19,8 @@
               <td>{{ $item->id }}</td>
               <td>{{ $item->nombre }}</td>
               <td class="text-center">
-                {{-- {{$item->miembros->count}} --}}
+                 {{ $item->miembros->count() }}
               </td>
-
               <td class="text-center">
                 <a href="{{route('organizaciones.show',$item->id)}}" class="btn btn-primary btn-sm" role="button">
                   Ver Miembros
