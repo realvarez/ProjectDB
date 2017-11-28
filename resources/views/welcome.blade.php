@@ -13,7 +13,9 @@
 			<p class="lead">Ayuda Informado</p>
 			<p class="text-justify">Informate acerca de las ultimas catastrofes ocurrentes Chile y participa en las diferentes tipos de medidas paleativas de las Organizaciones participantes</p>
 
+			@guest
 			<a href="{{ route('login') }}" class="btn btn-lg btn-block btn-outline-secondary mt-5" role="button">¡Ingresa Ahora!</a>
+			@endguest
 			<a href="{{ route('inicio') }}" class="btn btn-lg btn-block btn-outline-secondary mt-5" role="button">Revisa Donde Necesitan Ayuda </a>
 
 		</div>
