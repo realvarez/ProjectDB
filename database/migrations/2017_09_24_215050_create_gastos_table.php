@@ -25,10 +25,6 @@ class CreateGastosTable extends Migration
                 ->on('apoyo_economicos')
                 ->onDelete('cascade');
 
-            $table->foreign('comuna_id')
-                ->references('id')
-                ->on('comunas')
-                ->onDelete('cascade');
         });
     }
 
