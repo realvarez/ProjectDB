@@ -47,7 +47,7 @@
                         <td class="text-center">
                           <a href="{{route('medidas.show',$item->id)}}" class="btn btn-primary btn-sm" role="button">Ver Medida</a>
 
-                          <a href="{{route('medidas.update',$item->id)}}" class="btn btn-blockwarning  btn-sm" role="button">Editar</a>
+                          <a href="{{route('medidas.update',$item->id)}}" class="btn btn-success btn-sm" role="button">Editar</a>
 
                           <a href="{{route('medidas.destroy',$item->id)}}" class="btn btn-danger btn-sm" role="button">Eliminar</a>
                         </td>
@@ -58,6 +58,6 @@
         </div>
       </div>
     </div>
-  
+
 </section>
 @stop
