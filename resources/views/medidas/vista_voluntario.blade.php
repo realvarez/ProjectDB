@@ -38,19 +38,21 @@
 
   <div class="col-md-8 bg-light border border-light">
       <h4>Comentarios</h4>
+      @foreach($comentario as $c)
       <div class="">
           <div class="card">
             <div class="card-header">
-              Nombre Usuario
+              {{$comentario->usuario->nombre}}
             </div>
             <div class="card-body">
               <blockquote class="blockquote mb-0">
-                <p>comentario</p>
-                <p>fecha de publicacion</p>
+                <p>{{$comentario->comentario}}</p>
+                <p>{{$c->created_at}}</p>
               </blockquote>
             </div>
           </div>
       </div>
+      @endforeach
       <div class="mt-3">
         <form role="form" method="POST" action="{{route('comentario.store',$voluntario->medida->id)}}">
      {{ csrf_field() }}

@@ -67,36 +67,7 @@
 
   <a href="/catastrofes" class="btn-primary">Volver</a>
 
-  <div class="row d-flex justify-content-center">
 
-    <div class="col-md-8 bg-light border border-light">
-        <h4>Comentarios</h4>
-        <div class="">
-            <div class="card">
-              <div class="card-header">
-                Nombre Usuario
-              </div>
-              <div class="card-body">
-                <blockquote class="blockquote mb-0">
-                  <p>comentario</p>
-                  <p>fecha de publicacion</p>
-                </blockquote>
-              </div>
-            </div>
-        </div>
-        <div class="mt-3">
-          <form class="" action="index.html" method="post">
-            <div class="form-group">
-              <label for="comentario">Ingresa tu Comentario</label>
-              <textarea class="form-control" id="comentario" name="comentario" rows="3"></textarea>
-            </div>
-            <button type="submit" id="submit" name="submit" class="btn btn-success">Comentar</button>
-          </form>
-
-        </div>
-    </div>
-
-  </div>
 
 </section>
 @stop
