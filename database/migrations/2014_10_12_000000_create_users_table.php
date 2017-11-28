@@ -23,17 +23,17 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('direccion');
-            $table->integer('rol_id')->default(1);
+            $table->integer('rol_id')->default(2);
             $table->integer('estado')->default(1);
             $table->rememberToken();
             $table->timestamps();
 
-            
+
             $table->foreign('comuna_id')
                 ->references('id')
                 ->on('comunas')
                 ->onDelete('cascade');
-                
+
             $table->foreign('rol_id')
                 ->references('id')
                 ->on('rols')

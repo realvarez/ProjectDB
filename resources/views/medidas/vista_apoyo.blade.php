@@ -2,25 +2,15 @@
 @section('content')
 
 
-<section class="container-fluid border border-primary p-3 mb-2 bg-light text-dark w-50">
+<section class="container-fluid ">
   <a href="{{route('medidas.busqueda',$apoyo->medida->catastrove_id)}}" class="btn btn-info mb-3">Volver</a>
-  <div class="row">
-    <div class="col-md-12">
+  <div class="row m-3 d-flex justify-content-center">
+    <div class="col-md-5 card border border-primary">
       <h3>Apoyo Economico</h3>
-    </div>
-    <div class="col-md-12">
       <h4>Meta del Evento:</h4>
       <p>{{$apoyo->metaMinima}}</p>
-    </div>
-    <div class="col-md-12">
       <h4>Dinero recolectado:</h4>
       <p>{{$apoyo->actual}}</p>
-    </div>
-    <div class="col-md-12">
-      <h4>Descripcion:</h4>
-      <p>{{$apoyo->medida->descripcion}}</p>
-    </div>
-    <div class="col-md-6">
       <h4>Datos Eventos:</h4>
       <p>Banco: {{$apoyo->bancoCuenta}}</p>
       <p>Tipo de Cuenta: {{$apoyo->TipoCuenta}}</p>
@@ -68,6 +58,7 @@
     </div>
 
   </div>
+</div>
 
   <div class="row d-flex justify-content-center">
 

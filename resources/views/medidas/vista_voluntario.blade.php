@@ -4,7 +4,7 @@
 
 <section class="container-fluid ">
   <a href="{{route('medidas.busqueda',$voluntario->medida->catastrove_id)}}" class="btn btn-info mb-3">Volver</a>
-  <div class="row d-flex justify-content-start ">
+  <div class="row d-flex justify-content-center">
     <div class=" col-md-6 bg-light card my-3 mx-2  border border-primary">
       <h3>Solicitud De Voluntarios</h2>
       <p>Meta Volntarios: {{$voluntario->metaVoluntarios}}</p>
@@ -23,14 +23,7 @@
 
     </div>
 
-    <div class="col-md-5">
-      <div class="">
-
-      </div>
-      <h4>Imagen </h4>
-
-    </div>
-
+  
 
 </div>
 

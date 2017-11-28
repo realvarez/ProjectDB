@@ -139,7 +139,19 @@ class VoluntariosController extends Controller
          $voluntario=Voluntariado::find($id);
 
         $voluntario->delete();
+        $user=Auth::user();
+        if($user->rol_id==1){
+
+            
         return redirect()->route('medidas.index');
+        }
+
+
+        else{
+
+            return redirect()->route('organizacion.medidas');
+
+        }
     }
 
     public function selectAjax(Request $request)
