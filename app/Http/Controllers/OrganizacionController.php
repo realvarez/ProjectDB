@@ -92,8 +92,8 @@ class OrganizacionController extends Controller
     public function participa($id){
 
         $organizacion = Organization::find($id);
-        if ($organizacion->miembros->where('user_id',Auth::id())){
-            
+
+        if ($organizacion->miembros->where('user_id',Auth::id()) == NULL){
             return redirect()->route('organizaciones.show',$id);
         }
 
