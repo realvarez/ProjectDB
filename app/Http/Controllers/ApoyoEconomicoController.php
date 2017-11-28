@@ -91,7 +91,7 @@ class ApoyoEconomicoController extends Controller
             'tabla' => 'Apoyo_economicos',
             'estado_antiguo' => '',
             'estado_nuevo' => $request->titulo,
-        ])
+        ]);
         
         
         $apoyo->medida()->create($medida);
@@ -154,7 +154,7 @@ class ApoyoEconomicoController extends Controller
             'tabla' => 'Apoyo_economicos',
             'estado_antiguo' => $apoyo->titulo,
             'estado_nuevo' => '',
-        ])
+        ]);
         $apoyo->delete();
           $user=Auth::user();
         if($user->rol_id==1){

@@ -94,7 +94,13 @@ class CatastrovesController extends Controller
         //Redireccion
 
         
-
+        $log = new App\Historia::create([
+            'user_id' =>  Auth::id(),
+            'tipo_cambio' => 'Insert',
+            'tabla' => 'Catastrofe',
+            'estado_antiguo' => '',
+            'estado_nuevo' => $catastrofe->titulo,
+        ]);
         return  redirect()->route('catastrofes.index');
         
 
@@ -140,9 +146,18 @@ class CatastrovesController extends Controller
     {
         $catastrofe=Catastrove::find($id);
 
+        $log = new App\Historia::create([
+            'user_id' =>  Auth::id(),
+            'tipo_cambio' => 'Update',
+            'tabla' => 'Catastrofe',
+            'estado_antiguo' => $catastrofe->titulo,
+            'estado_nuevo' => $request->titulo,
+        ]);
+
         $catastrofe->descripcion=$request->descripcion;
         $catastrofe->titulo=$request->titulo;
         $catastrofe->save();
+
 
         return redirect()->route('catastrofes.index');
 
@@ -158,6 +173,13 @@ class CatastrovesController extends Controller
     {
         $catastrofe=Catastrove::find($id);
 
+        $log = new App\Historia::create([
+            'user_id' =>  Auth::id(),
+            'tipo_cambio' => 'Delete',
+            'tabla' => 'Catastrofe',
+            'estado_antiguo' => $catastrofe->titulo,
+            'estado_nuevo' => '',
+        ]);
         $catastrofe->delete();
 
         
