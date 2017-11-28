@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 use App\Medida;
 use App\Catastrove;
 use App\Tipo_catastrove;
@@ -199,6 +200,9 @@ class MedidasController extends Controller
         $medida=Medida::find($id);
 
         $medida->estado=1;
+        $user=Auth::user();
+
+        $medida->admin_id=$user->id;
 
         $medida->save();
 
