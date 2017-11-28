@@ -34,9 +34,9 @@
 </div>
 
 
-<div class="row">
+<div class="row d-flex justify-content-center">
 
-  <div class="col-md-8">
+  <div class="col-md-8 bg-light border border-light">
       <h4>Comentarios</h4>
       <div class="">
           <div class="card">
@@ -45,11 +45,21 @@
             </div>
             <div class="card-body">
               <blockquote class="blockquote mb-0">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <p>comentario</p>
                 <p>fecha de publicacion</p>
               </blockquote>
             </div>
           </div>
+      </div>
+      <div class="mt-3">
+        <form class="" action="index.html" method="post">
+          <div class="form-group">
+            <label for="comentario">Ingresa tu Comentario</label>
+            <textarea class="form-control" id="comentario" name="comentario" rows="3"></textarea>
+          </div>
+          <button type="submit" id="submit" name="submit" class="btn btn-success">Comentar</button>
+        </form>
+
       </div>
   </div>
 
