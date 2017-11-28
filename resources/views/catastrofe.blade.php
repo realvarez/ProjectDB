@@ -24,7 +24,7 @@
 
           </div>
              @auth
-                  @if(Auth::User()!=null and Auth::user()->rol_id != 2 and Auth::user()->rol_id!=1) 
+                  @if(Auth::User()!=null and Auth::user()->rol_id != 2 and Auth::user()->rol_id!=1)
                     <a class="btn btn-primary" href="{{route('medidas.crear',$c->id)}}">Agregar Medida</a>
                     @endif
             @endauth
@@ -70,7 +70,7 @@
                   @endif
                   <!-- <p class="card-text">{{$m->descripcion}}</p> -->
                   <div class="d-flex justify-content-between">
-                    <p>sInicio: {{$m->fecha_inicio}}</p>
+                    <p>Inicio: {{$m->fecha_inicio}}</p>
                     <p>Termino: {{$m->fecha_termino }}</p>
                   </div>
                   <!-- <div class="d-flex justify-content-between">
