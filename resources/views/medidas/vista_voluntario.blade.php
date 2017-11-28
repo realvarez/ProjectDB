@@ -36,8 +36,21 @@
 
 <div class="row">
 
-  <div class="col-md-12">
+  <div class="col-md-8">
       <h4>Comentarios</h4>
+      <div class="">
+          <div class="card">
+            <div class="card-header">
+              Nombre Usuario
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <p>fecha de publicacion</p>
+              </blockquote>
+            </div>
+          </div>
+      </div>
   </div>
 
 </div>
