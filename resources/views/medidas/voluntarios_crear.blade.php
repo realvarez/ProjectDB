@@ -65,7 +65,7 @@
 
 
 
-  <a href="/catastrofes" class="btn-primary">Volver</a>
+  
 
 
 

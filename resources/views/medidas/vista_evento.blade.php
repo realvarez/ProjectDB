@@ -2,6 +2,7 @@
 @section('content')
 
 <section class="container-fluid ">
+  <a href="{{route('medidas.busqueda',$evento->medida->catastrove_id)}}" class="btn btn-info mb-3">Volver</a>
   <div class="row border border-primary p-3 mb-2 bg-light text-dark w-50">
     <div class="col-md-12">
       <h3>Evento a Beneficio</h3>
