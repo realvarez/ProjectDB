@@ -89,7 +89,7 @@ class CatastrovesController extends Controller
         $catastrofe->save();
 
         //Twitteo de catastrofe
-        $newTwitte = ['status' => $request->titulo." en ".$request->comuna.". Descrip: ".$request->descripcion];
+        $newTwitte = ['status' => "[".$catastrofe->created_at."] ".$catastrofe->Tipo_catastrove->tipo." en ".$catastrofe->comuna->region->nombre.", comuna de: ".$catastrofe->comuna->nombre.". ".$catastrofe->titulo];
         $twitter = Twitter::postTweet($newTwitte);
         //Redireccion
 
