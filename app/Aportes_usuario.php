@@ -4,12 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Aporte_Usuario extends Model
+class Aportes_usuario extends Model
 {
   protected $fillable = [
      'id_usuario',
      'id_aporte',
-
      'cantidad',
      'email',
 
