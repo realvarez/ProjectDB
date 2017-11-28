@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Apoyo_economico;
 use App\Medida;
 use App\Comentario;
+use App\Historia;
 class ApoyoEconomicoController extends Controller
 {
     /**
@@ -85,15 +86,13 @@ class ApoyoEconomicoController extends Controller
 
         );
 
-        $log = new App\Historia::create([
-            'user_id' =>  Auth::id(),
-            'tipo_cambio' => 'Insert',
-            'tabla' => 'Apoyo_economicos',
+        $log = Historia::create([
+            'user_id' => Auth::id(),
+            'tipo_cambio' => 2,
+            'tabla' => 'Apoyo_economico',
             'estado_antiguo' => '',
             'estado_nuevo' => $request->titulo,
         ]);
-        
-        
         $apoyo->medida()->create($medida);
         
         Session::forget('c_id'); 
@@ -147,8 +146,8 @@ class ApoyoEconomicoController extends Controller
     public function destroy($id)
     {
         $apoyo=Apoyo_economico::find($id);
-
-        $log = new App\Historia::create([
+        
+        $log = Historia::create([
             'user_id' =>  Auth::id(),
             'tipo_cambio' => 'Delete',
             'tabla' => 'Apoyo_economicos',

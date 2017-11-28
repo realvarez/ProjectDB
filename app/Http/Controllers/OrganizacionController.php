@@ -7,6 +7,7 @@ use App\Organization;
 use App\Organization_user;
 use App\User;
 use App\Medida;
+use App\Historia;
 class OrganizacionController extends Controller
 {
     
@@ -59,9 +60,18 @@ class OrganizacionController extends Controller
 
         $organi = Organization::create([
             'nombre' =>  $request->nombre,
-            'logo' => $logo->store('organizaciones'),
+            'logo' => $logo->store('public\organizaciones'),
             'descripcion' =>$request->descripcion,
         ]);
+
+        $log = Historia::create([
+            'user_id' => Auth::id(),
+            'tipo_cambio' => 2,
+            'tabla' => 'Organization',
+            'estado_antiguo' => '',
+            'estado_nuevo' => $organi,
+        ]);
+
 
         $new = Organization_user::create([
             'organization_id' => $organi->id,
@@ -69,6 +79,13 @@ class OrganizacionController extends Controller
             'rol' => 4,
         ]);
 
+        $log = Historia::create([
+            'user_id' => Auth::id(),
+            'tipo_cambio' => 2,
+            'tabla' => 'Organization_user',
+            'estado_antiguo' => '',
+            'estado_nuevo' => $new,
+        ]);
 
         return redirect()->route('organizaciones.index'); 
     }
@@ -98,12 +115,20 @@ class OrganizacionController extends Controller
         }
 
 
-
         $new = Organization_user::create([
             'organization_id' => $id,
             'user_id' => Auth::id(),
             'rol' => 3,
         ]);
+
+        $log = Historia::create([
+            'user_id' => Auth::id(),
+            'tipo_cambio' => 2,
+            'tabla' => 'Organization_user',
+            'estado_antiguo' => '',
+            'estado_nuevo' => $new,
+        ]);
+
         return redirect()->route('organizaciones.show',$id);
     }
 

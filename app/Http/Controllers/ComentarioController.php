@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Comentario;
-
+use App\Historia;
 class ComentarioController extends Controller
 {
     /**
@@ -39,8 +39,6 @@ class ComentarioController extends Controller
         $user=Auth::user();
 
         if($user==null){
-
-
             return 'No estas registrado, no puedes comentar';
         }
 
@@ -49,6 +47,14 @@ class ComentarioController extends Controller
         $comentario->medida_id=$id;
         $comentario->user_id=$user->id;
         $comentario->save();
+
+        $log = Historia::create([
+            'user_id' => Auth::id(),
+            'tipo_cambio' => 2,
+            'tabla' => 'Comentario',
+            'estado_antiguo' => '',
+            'estado_nuevo' => $request->comentario,
+        ]);
 
         return redirect()->route('medidas.show',['medidas_id' => $id]);
     }

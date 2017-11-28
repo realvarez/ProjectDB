@@ -25,9 +25,9 @@
                 <a href="{{route('organizaciones.show',$item->id)}}" class="btn btn-primary btn-sm" role="button">
                   Ver Miembros
                 </a>
-                <a href="{{route('organizaciones.destroy',$item->id)}}" class="btn btn-danger btn-sm" role="button">
+                {{-- <a href="{{route('organizaciones.destroy',$item->id)}}" class="btn btn-danger btn-sm" role="button">
                   Eliminar
-                </a>
+                </a> --}}
               </td>
             </tr>
           @endforeach

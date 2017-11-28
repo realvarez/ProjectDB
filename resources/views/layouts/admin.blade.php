@@ -59,7 +59,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="twitter">
+                                <a href="/twitter">
                                     Twitter
                                 </a>
                             </li>

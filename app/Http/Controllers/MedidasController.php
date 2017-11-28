@@ -115,24 +115,18 @@ class MedidasController extends Controller
 
 
         if($medida->MorphMedida_type=='App\Recoleccion'){
-
             $medida->delete();
             return redirect()->route('recoleccion.destroy',['recoleccion' =>$medida->MorphMedida_id]);
         }
         else if($medida->MorphMedida_type=='App\Apoyo_economico'){
-
             $medida->delete();
             return redirect()->route('apoyos.destroy',['apoyos' =>$medida->MorphMedida_id]);
         }
-
           else if($medida->MorphMedida_type=='App\Evento'){
-
             $medida->delete();
             return redirect()->route('eventos.destroy',['eventos' =>$medida->MorphMedida_id]);
         }
-
           else if($medida->MorphMedida_type=='App\Voluntariado'){
-
             $medida->delete();
             return redirect()->route('voluntarios.destroy',['voluntarios' =>$medida->MorphMedida_id]);
         }

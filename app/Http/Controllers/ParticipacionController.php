@@ -8,6 +8,7 @@ use Illuminate\Support\Collection;
 use App\Medida;
 use App\Participa;
 use App\Voluntariado;
+use App\Historia;
 class ParticipacionController extends Controller
 {
     /**

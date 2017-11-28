@@ -24,26 +24,12 @@
 
           </div>
              @auth
-                  @if(Auth::User()!=null and Auth::user()->rol_id != 2 and Auth::user()->rol_id!=1)
+                  @if(Auth::user()->miembro->where('rol',4)->first() != NULL)
                     <a class="btn btn-primary" href="{{route('medidas.crear',$c->id)}}">Agregar Medida</a>
                     @endif
             @endauth
 
         </div>
-        <!-- <div class="col-md-4 d-flex justify-content-center align-items-center">
-
-          <div class="progress2 blue">
-                <span class="progress-left">
-                    <span class="progress-bar"></span>
-                </span>
-                <span class="progress-right">
-                    <span class="progress-bar"></span>
-                </span>
-                <div class="progress-value">90%</div>
-            </div>
-
-        </div>
-      </div> -->
 
     </div>
 

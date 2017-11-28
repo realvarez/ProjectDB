@@ -37,13 +37,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/inicio">Catastrofes</a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
 
                     <a class="nav-link" href="{{route('organizacion.medidas')}}">Medidas</a>
 
                 
 
-                </li>
+                </li> --}}
                  <li class="nav-item">
 
                     <a class="nav-link" href=" {{ route('organizaciones.muestra') }} ">Organizaciones Que nos Ayudan</a>

@@ -16,6 +16,6 @@ class Historia extends Model
     ];
 
     public function persona(){
-    	return $this -> belongsTo('app\User');
+    	return $this -> belongsTo('App\User','user_id');
     }
 }

@@ -16,10 +16,18 @@
         <tbody>
           @foreach($historias as $item)
             <tr>
-              <td>{{ $item->tipo_cambio }}</td>
-              <td href="#">{{-- {{ $item->persona->nombre }} --}}aqui va el nombre</td>
+              <td>
+                @if ($item->tipo_cambio == 1)
+                  Delete
+                @elseif($item->tipo_cambio == 2)
+                  Create
+                @elseif($item->tipo_cambio == 3)
+                  Update
+                @endif
+              </td>
+              <td href="#">{{ $item->persona->nombre }}</td>
               <td>{{ $item->tabla }}</td>
-              <td>{{ $item->fecha_accion }}</td>
+              <td>{{ $item->created_at }}</td>
             </tr>
           @endforeach
         </tbody>

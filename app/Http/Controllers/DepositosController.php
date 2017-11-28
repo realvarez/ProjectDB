@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Deposito;
 use App\Medida;
 use App\Apoyo_economico;
+use App\Historia;
 
 class DepositosController extends Controller
 {
@@ -75,13 +76,26 @@ class DepositosController extends Controller
 
         $medida=Medida::find($id);
         $apoyo=Apoyo_economico::find($medida->MorphMedida_id);
+        $log = Historia::create([
+            'user_id' => Auth::id(),
+            'tipo_cambio' => 3,
+            'tabla' => 'medida',
+            'estado_antiguo' => $medida,
+            'estado_nuevo' => $medida,
+        ]);
 
         $porcentaje=($apoyo->actual*100)/$apoyo->metaMinima;
         $medida->avance=(int)$porcentaje;
         $medida->save();
 
 
-
+        $log = Historia::create([
+            'user_id' => Auth::id(),
+            'tipo_cambio' => 2,
+            'tabla' => 'Deposito',
+            'estado_antiguo' => '',
+            'estado_nuevo' => $deposito,
+        ]);
         return redirect()->route('inicio');
     
     }
@@ -117,7 +131,7 @@ class DepositosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($request);
+
     }
 
     /**

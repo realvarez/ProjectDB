@@ -9,7 +9,7 @@ use App\Evento;
 use App\Medida;
 use App\Comentario;
 use DB;
-
+use App\Historia;
 class EventoController extends Controller
 {
     /**
@@ -86,6 +86,15 @@ class EventoController extends Controller
         );
         
         $evento->medida()->create($medida);
+
+        $log = Historia::create([
+            'user_id' => Auth::id(),
+            'tipo_cambio' => 2,
+            'tabla' => 'Evento',
+            'estado_antiguo' => '',
+            'estado_nuevo' => $medida,
+        ]);
+
         Session::forget('c_id'); 
         return  redirect()->route('medidas.busqueda',$evento->medida->catastrove_id);
         
