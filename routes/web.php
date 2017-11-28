@@ -107,6 +107,10 @@ Route::post('comentario/{medida_id}',
 	['uses' => 'ComentarioController@store',
 	'as' => 'comentario.store']);
 
+Route::get('organizacion/medidas',
+	['uses' =>'OrganizacionController@medidasIndex',
+	'as' => 'organizacion.medidas']);
+
 
 /*Medidas*/
 

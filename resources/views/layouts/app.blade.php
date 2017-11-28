@@ -38,7 +38,7 @@
                     <a class="nav-link" href="/inicio">Catastrofes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="route('')">Medidas</a>
+                    <a class="nav-link" href="{{route('organizacion.medidas')}}">Medidas</a>
                 </li>
 
 
