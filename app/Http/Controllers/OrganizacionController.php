@@ -147,10 +147,11 @@ class OrganizacionController extends Controller
         //
     }
 
-    public function medidasIndex($id){
+    public function medidasIndex(){
 
+        $user=Auth::user();
 
-        $medidas=Medida::where('organization_id',$id)->paginate(4);
+        $medidas=Medida::where('organization_id',1)->paginate(4);
 
         return view('organizacion.medidas',compact('medidas'));
 

@@ -23,8 +23,11 @@
             </div>
 
           </div>
-
-            <a class="btn btn-primary" href="{{route('medidas.crear',$c->id)}}">Agregar Medida</a>
+             @auth
+                  @if(Auth::User()!=null and Auth::user()->rol_id != 2 and Auth::user()->rol_id!=1) 
+                    <a class="btn btn-primary" href="{{route('medidas.crear',$c->id)}}">Agregar Medida</a>
+                    @endif
+            @endauth
 
         </div>
         <!-- <div class="col-md-4 d-flex justify-content-center align-items-center">

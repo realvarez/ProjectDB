@@ -35,7 +35,7 @@
                         @endif
                         </td>
                         <td>
-                          <a href="{{route('medidas.busqueda',$item->catastrofe_id)}}" class="btn btn-primary btn-sm" role="button">Ver Catastrofe</a>
+                          <a href="{{route('medidas.busqueda',$item->catastrove_id)}}" class="btn btn-primary btn-sm" role="button">Ver Catastrofe</a>
                         </td>
                         <td>
                           @if($item->estado == 0)

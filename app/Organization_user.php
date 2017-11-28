@@ -12,7 +12,7 @@ class Organization_user extends Model
     	'rol',
     ];
 
-    public function usuario(){
+    public function user(){
     	return $this ->belongsTo('App\User');
     }
 
