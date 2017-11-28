@@ -19,8 +19,8 @@ class Aporte extends Model
    return $this->belongsTo('App\Recoleccion');
  }
 
- public function aporte_usuario(){
-   return $this->belongsTo('App\Aporte_Usuario');
+ public function aportes_usuario(){
+   return $this->belongsTo('App\Aportes_usuario');
  }
 
 }

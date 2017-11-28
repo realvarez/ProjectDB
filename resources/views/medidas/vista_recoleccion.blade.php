@@ -23,7 +23,8 @@
 
 
   <div class="col-md-5 card border  bt border-primary">
-    <form role="form" method="POST" action="{{route('deposito.create')}}">
+    <form role="form" method="POST" action="{{route('recoleccion.cooperacion',$recoleccion->id)}}">
+     {{ csrf_field() }}
     <h3>Lista De Elementos</h3>
     <table class="table table-striped">
   <thead>
@@ -42,11 +43,12 @@
       <td>{{$aporte->recolectado}}</td>
       <td>{{$aporte->requeridos}}</td>
 
-      <td><input type="number" class="form-control" id="titulo" name="monto" min="1" ></td>
+      <td><input type="number" class="form-control" id="titulo" name="aportes[]" min="1" ></td>
     </tr>
     @endforeach
   </tbody>
 </table>
+<label for="Email">Email</label>
 <input type="email" class="form-control" id="id_medida" name ="email" required placeholder="email">
 <button type="submit" id="submit" name="submit" class="btn btn-success">Enviar</button>
 </form>

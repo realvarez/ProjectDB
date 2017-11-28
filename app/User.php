@@ -77,8 +77,8 @@ public function rnv(){
 
 }
 
-public function Aporte_Usuario(){
-  return $this->belongsTo('App\Aporte_Usuario');
+public function aportes_Usuario(){
+  return $this->belongsTo('App\Aportes_usuario');
 }
 
 
