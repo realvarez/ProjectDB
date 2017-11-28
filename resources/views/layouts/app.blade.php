@@ -37,16 +37,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/inicio">Catastrofes</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="{{ route('medidas.index') }}" id="DropdownMedidas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Medidas</a>
-                    <div class="dropdown-menu" aria-labelledby="DropdownMedidas">
-                        <a class="dropdown-item" href="#">Centros de Acopio</a>
-                        <a class="dropdown-item" href="#">Voluntariados</a>
-                        <a class="dropdown-item" href="#">Evento a Beneficio</a>
-                        <a class="dropdown-item" href="#">Donaciones</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="route('')">Medidas</a>
                 </li>
-                
+
 
             </div>
             <div class="navbar-nav text-center mr-5">
