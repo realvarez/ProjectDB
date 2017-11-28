@@ -7,15 +7,27 @@ use Illuminate\Support\Facades\Session;
 use App\Medida;
 use App\Catastrove;
 use App\Tipo_catastrove;
+use Carbon\Carbon;
 class MedidasController extends Controller
 {
     public function mcrits(){
-        $carbon = new \Carbon\Carbon();
-        $to = $carbon->now();
-        $medidas = Medida::all()
+        
+        $to = Carbon::now();
+        $medidastodas = Medida::all()
             ->where('avance','>',60)
-            ->where('estado',"=",1)
-            ->where(date_diff($to,'fecha_termino',true),'>','2015-07-20 10:00:00');
+            ->where('estado',"=",1);
+        $medidas = collect([]);
+        foreach ($medidastodas as $key) {
+            $fecha = $key->fecha_termino;
+            $fecha = Carbon::createFromFormat('Y-m-d', $key->fecha_termino); 
+            $key->diarestantes = $to->diffInDays($fecha,false);
+            if ($to->diffInDays($fecha,false) < 7) {
+                if ($to->diffInDays($fecha,false) > 0) {
+                    $medidas->push($key);
+                    
+                }
+            }    
+        }
         return view('admin', compact('medidas'));
     }
 

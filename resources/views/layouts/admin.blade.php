@@ -54,7 +54,11 @@
                                         </a>
                                     </li>
                                 </ul>
-  
+                                <li>
+                                    <a href="administrador">
+                                        Medidas Criticas
+                                    </a>
+                                </li>
                                 <li>
                                     <a href="twitter">
                                         Twitter
