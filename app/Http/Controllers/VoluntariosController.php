@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Voluntariado;
 use App\Medida;
 use App\Region;
+use App\Comentario;
 use DB;
 class VoluntariosController extends Controller
 {
@@ -95,10 +96,13 @@ class VoluntariosController extends Controller
     public function show($id)
     {
         $voluntario=Voluntariado::find($id);
+        $comentario=Comentario::where('medida_id',$voluntario->medida->id)->get();
+        
+        //dd($comentario[0]->comentario);
 
         //dd($voluntario->medida[0]);
         
-        return view('medidas.vista_voluntario',compact('voluntario'));
+        return view('medidas.vista_voluntario',compact('voluntario','comentario'));
     }
 
     /**

@@ -249,10 +249,11 @@ insert into gastos("medida_id","descripcion","comuna_id","created_at","updated_a
 /*insert into recoleccions("metaRecoleccion","recoleccionActual","region","comuna_id","direccion","tipoRecoleccion","created_at","updated_at") values
 (1000000,500,'Region Metropolitana',120,'San Juan 456',1,CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
 */
---Depositos
+/*--Depositos
 insert into depositos("user_id","medida_id","rut","cantidad","fechaDeposito","documento","created_at","updated_at")values
 (1,2,123456789,500000,'2000-12-17','cheque',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0)),
 (2,1,324613453,12000,'2017-06-17','cheque',CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0));
+*/
 
 --Eventos
 insert into eventos ("metaDinero","actualDinero","comuna_id", "direccion","created_at","updated_at")values

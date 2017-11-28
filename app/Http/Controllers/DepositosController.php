@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 use App\Deposito;
+use App\Medida;
+use App\Apoyo_economico;
 
 class DepositosController extends Controller
 {
@@ -14,7 +18,7 @@ class DepositosController extends Controller
      */
     public function index()
     {
-        return view('medidas.depositos_vista');
+       
     }
 
     /**
@@ -22,20 +26,10 @@ class DepositosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
         
-        $deposito = new Deposito;
-        $deposito->user_id = 1; //depende del usuario conectado
-        $deposito->medida_id = $request->id;
-        $deposito->rut = 123456789; //depende del usuario conectado
-        $deposito->cantidad = $request->monto;
-        $deposito->fechaDeposito = '2000-01-01';
-        $deposito->documento = "deposito";
-        $deposito->save();
-        
-        return view('welcome');
-    
+         
     }
 
     /**
@@ -44,9 +38,52 @@ class DepositosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
-        //
+
+
+
+        $this->validate($request,[
+            'monto' => 'required|string',
+            'rut' => 'required|string',
+            'email' => 'required|string',
+            'nombre' => 'required|string',
+            'apellido' => 'required|string',
+
+
+            
+        ]);
+
+
+
+        $user=Auth::user();
+        $deposito = new Deposito;
+
+        if($user!=null){
+
+        $deposito->user_id = $user->id; //depende del usuario conectado
+
+        }
+
+        $deposito->medida_id =$id;
+        $deposito->rut = $request->rut; //depende del usuario conectado
+        $deposito->cantidad = $request->monto;
+        $deposito->nombre=$request->nombre;
+        $deposito->apellido=$request->apellido;
+        $deposito->email=$request->email;
+        $deposito->save();
+
+        $medida=Medida::find($id);
+        $apoyo=Apoyo_economico::find($medida->MorphMedida_id);
+
+        $porcentaje=($apoyo->actual*100)/$apoyo->metaMinima;
+        $medida->avance=(int)$porcentaje;
+        $medida->save();
+
+
+
+        return redirect()->route('inicio');
+    
     }
 
     /**

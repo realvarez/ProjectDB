@@ -40,7 +40,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href=" {{ route('organizaciones.muestra') }} ">Organizaciones Que nos Ayudan</a>
                 </li>
-                
+
 
             </div>
             <div class="navbar-nav text-center mr-5">

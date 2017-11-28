@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Comentario;
 
-class ComunasController extends Controller
+class ComentarioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -32,9 +34,23 @@ class ComunasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
+        $user=Auth::user();
 
+        if($user==null){
+
+
+            return 'No estas registrado, no puedes comentar';
+        }
+
+        $comentario= new Comentario;
+        $comentario->comentario=$request->comentario;
+        $comentario->medida_id=$id;
+        $comentario->user_id=$user->id;
+        $comentario->save();
+
+        return redirect()->route('medidas.show',['medidas_id' => $id]);
     }
 
     /**

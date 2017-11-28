@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 use App\Medida;
 use App\Catastrove;
 use App\Tipo_catastrove;
@@ -143,8 +144,12 @@ class MedidasController extends Controller
     {
         $c=Catastrove::find($catastrofe_id);
         //$tipoC=Tipo_catastrove::all();
+        $d=1;
+        $medidas=Medida::where('catastrove_id',$catastrofe_id)
+                        ->where('estado', $d)
+                        ->paginate(4);
 
-        $medidas=Medida::where('catastrove_id',$catastrofe_id)->paginate(4);
+
         //dd($medidas[0]->organization->nombre);
 
         return view('catastrofe',compact('c','medidas'));
@@ -193,10 +198,31 @@ class MedidasController extends Controller
 
 
         $medida=Medida::find($id);
+        $user=Auth::user();
+
+        if($medida->estado==0){
+
 
         $medida->estado=1;
 
+        $medida->admin_id=$user->id;
+
         $medida->save();
+
+
+            
+        }
+        else{
+
+            $medida->estado=0;
+
+            $medida->admin_id=$user->id;
+
+            $medida->save();
+
+
+
+        }
 
         return redirect()->route('medidas.index');
     }

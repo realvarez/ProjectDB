@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 use App\Recoleccion;
 use App\Medida;
 use App\Aporte;
+use App\Aportes_usuario;
+use App\Comentario;
 use DB;
 
 class RecoleccionController extends Controller
@@ -120,10 +123,10 @@ class RecoleccionController extends Controller
     public function show($id)
     {
         $recoleccion=Recoleccion::find($id);
-
+        $comentario=Comentario::where('medida_id',$recoleccion->medida->id)->get();
 
         
-        return view('medidas.vista_recoleccion',compact('recoleccion'));
+        return view('medidas.vista_recoleccion',compact('recoleccion','comentario'));
     }
 
     /**
@@ -161,5 +164,74 @@ class RecoleccionController extends Controller
 
         $recoleccion->delete();
         return redirect()->route('medidas.index');
+    }
+
+    public function crearCooperacion(Request $request, $id){
+
+
+
+        $this->validate($request,[
+
+            
+            'email' => 'required|string',
+        //validar la lista de cosas que trae.
+
+        ]);
+
+
+        $recoleccion=Recoleccion::find($id);
+
+        $aportes=$recoleccion->aporte;
+
+       
+        $user=Auth::user();
+        //dd($aportes);
+        $acumulador=0;
+        foreach($aportes as $a){
+
+
+            $acumulador++;
+        }
+
+
+        $contador=0;
+
+        foreach ($aportes as $a) {
+                        
+            if($request->aportes[$contador]>=0){
+
+                $aporte_usuario=new Aportes_usuario;
+
+                if($user!=null){
+
+                    $aporte_usuario->user_id=$user->id;
+                    
+                }
+
+                $aporte_usuario->cantidad=$request->aportes[$contador];
+                $aporte_usuario->email=$request->email;
+                $aporte_usuario->aporte_id=$a->id;
+                $aporte_usuario->save();
+
+                $a->recolectado=$a->recolectado+$request->aportes[$contador];
+                $a->save();
+
+                if($a->recolectado==$a->requeridos){
+
+                    $medida=$recoleccion->medida;
+                    
+                    $porcentaje=100/$acumulador;
+                    $medida->avance=$medida->avance+((int) $porcentaje);
+                    $medida->save();
+
+                }
+            }
+            $contador++;
+
+
+        }
+        
+        return redirect()->route('inicio');
+
     }
 }

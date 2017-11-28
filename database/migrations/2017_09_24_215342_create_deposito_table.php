@@ -17,7 +17,7 @@ class CreateDepositoTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->nullable();
             $table->integer('medida_id');
-            $table->integer('rut');
+            $table->string('rut');
             $table->string('nombre');
             $table->string('apellido');
             $table->string('email');
@@ -30,7 +30,7 @@ class CreateDepositoTable extends Migration
                 ->onDelete('cascade');
             $table->foreign('medida_id')
                 ->references('id')
-                ->on('apoyo_economicos')
+                ->on('medidas')
                 ->onDelete('cascade');
         });
     }

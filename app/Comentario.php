@@ -12,7 +12,7 @@ class Comentario extends Model
     	'comentario',
     ];
 
-    public function usuario(){
+    public function user(){
 
     	return $this->belongsTo('App\User');
     }

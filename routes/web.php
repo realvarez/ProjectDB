@@ -98,17 +98,24 @@ Route::resource('voluntarios','VoluntariosController',['except' => ['destroy']])
 Route::resource('medidas','MedidasController',['except' =>['destroy']]);
 Route::resource('users','UserController',['except' => ['destroy']]);
 Route::resource('administrador/rol','RolController');
-Route::resource('depositos','DepositosController');
+//Route::resource('depositos','DepositosController',['except' =>['create']]);
 Route::resource('participa','ParticipacionController',['except' =>['create']]);
 
-Route::post('welcome',
-	['uses' => 'DepositosController@create',
-	'as' => 'deposito.create' ]);
+//Route::get('depositos/create/{medida_id}',
+//	['uses' => 'DepositosController@create',
+//	'as' => 'deposito.create' ]);
 
-Route::get('depositos',
-	['uses' => 'DepositosController@index',
-	'as' => 'deposito.index' ]);
+Route::post('depositos/{medida_id}',
+	['uses' => 'DepositosController@store',
+	'as' => 'deposito.store' ]);
 
+Route::post('cooperar/{aportes}',
+	['uses' => 'RecoleccionController@crearCooperacion',
+	'as' =>'recoleccion.cooperacion']);
+
+Route::post('comentario/{medida_id}',
+	['uses' => 'ComentarioController@store',
+	'as' => 'comentario.store']);
 
 
 /*Medidas*/

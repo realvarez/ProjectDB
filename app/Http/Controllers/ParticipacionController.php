@@ -142,6 +142,7 @@ class ParticipacionController extends Controller
             $medida->save();
             $Voluntariado->save();
         }
+     
 
         return redirect()->route('inicio');
 

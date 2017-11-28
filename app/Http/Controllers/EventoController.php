@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Evento;
 use App\Medida;
+use App\Comentario;
 use DB;
 
 class EventoController extends Controller
@@ -99,8 +100,8 @@ class EventoController extends Controller
     public function show($id)
     {
         $evento=Evento::find($id);
-
-        return view('medidas.vista_evento',compact('evento'));
+        $comentario=Comentario::where('medida_id',$evento->medida->id)->get();
+        return view('medidas.vista_evento',compact('evento','comentario'));
     }
 
     /**

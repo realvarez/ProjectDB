@@ -15,22 +15,23 @@ class CreateAportesUsuariosTable extends Migration
     {
         Schema::create('aportes_usuarios', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_usuario')->nuelleable();
-            $table->integer('id_aporte');
+            $table->integer('user_id')->nullable();
+            $table->integer('aporte_id');
             $table->integer('cantidad');
-            $table->string('email')->nuelleable();
+            $table->string('email');
             $table->timestamps();
-        });
-
-        $table->foreign('id_usuario')
+            
+        $table->foreign('user_id')
         ->references('id')
         ->on('users')
         ->onDelete('cascade');
 
-        $table->foreign('id_aporte')
+        $table->foreign('aporte_id')
         ->references('id')
         ->on('aportes')
         ->onDelete('cascade');
+        });
+
     }
 
     /**

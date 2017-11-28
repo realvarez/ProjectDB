@@ -6,9 +6,7 @@ use Illuminate\Http\Request;
 use App\Organization;
 use App\Organization_user;
 use App\User;
-
-
-
+use App\Medida;
 class OrganizacionController extends Controller
 {
     
@@ -147,5 +145,14 @@ class OrganizacionController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function medidasIndex($id){
+
+
+        $medidas=Medida::where('organization_id',$id)->paginate(4);
+
+        return view('organizacion.medidas',compact('medidas'));
+
     }
 }
