@@ -198,13 +198,31 @@ class MedidasController extends Controller
 
 
         $medida=Medida::find($id);
+        $user=Auth::user();
+
+        if($medida->estado==0){
+
 
         $medida->estado=1;
-        $user=Auth::user();
 
         $medida->admin_id=$user->id;
 
         $medida->save();
+
+
+            
+        }
+        else{
+
+            $medida->estado=0;
+
+            $medida->admin_id=$user->id;
+
+            $medida->save();
+
+
+
+        }
 
         return redirect()->route('medidas.index');
     }
