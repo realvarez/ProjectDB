@@ -24,7 +24,7 @@
 
           </div>
              @auth
-                  @if(Auth::User()!=null and Auth::user()->rol_id != 2) 
+                  @if(Auth::User()!=null and Auth::user()->rol_id != 2 and Auth::user()->rol_id!=1) 
                     <a class="btn btn-primary" href="{{route('medidas.crear',$c->id)}}">Agregar Medida</a>
                     @endif
             @endauth
