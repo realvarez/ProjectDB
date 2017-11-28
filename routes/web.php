@@ -78,9 +78,19 @@ Route::get('eventos/delete/{eventos_id}',['uses' =>'EventoController@destroy',
 Route::get('recoleccion/delete/{recoleccion_id}',['uses' =>'RecoleccionController@destroy',
 	'as'  =>'recoleccion.destroy']);
 
+
+Route::get('organizaciones/indexorg',['uses' =>'OrganizacionController@indexOrg',
+	'as'  =>'organizaciones.muestra']);
+
+Route::get('organizaciones/showorg/{organizacion_id}',['uses' =>'OrganizacionController@showorg',
+	'as'  =>'organizaciones.showorg']);
+
+Route::post('organizaciones/participa/{id}',['uses' =>'OrganizacionController@participa',
+	'as'  =>'organizaciones.participa']);
+
+Route::resource('organizaciones','OrganizacionController');
 Route::resource('administrador/historial','HistorialController');
 Route::resource('catastrofes','CatastrovesController',['except' => ['destroy']]);
-Route::resource('organizaciones','OrganizacionController');
 Route::resource('recoleccion','RecoleccionController',['except' => ['destroy']]);
 Route::resource('eventos','EventoController',['except' => ['destroy']]);
 Route::resource('apoyos','ApoyoEconomicoController',['except' => ['destroy']]);

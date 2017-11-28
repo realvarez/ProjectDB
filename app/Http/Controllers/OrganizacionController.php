@@ -5,14 +5,18 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Organization;
 use App\Organization_user;
+use App\User;
 use App\Medida;
 class OrganizacionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
+    public function indexOrg()
+    {
+        $organizacion = Organization::all();
+        
+        return view('organizacion.indexOrg',compact('organizacion'));
+    }
+
     public function index()
     {
         $organizacion = Organization::all();
@@ -22,6 +26,9 @@ class OrganizacionController extends Controller
         // }
         return view('organizacion.index',compact('organizacion'));
     }
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -58,7 +65,7 @@ class OrganizacionController extends Controller
 
         $new = Organization_user::create([
             'organization_id' => $organi->id,
-            'user_id' => Auth::id(),
+            'user_id' => v,
             'rol' => 4,
         ]);
 
@@ -74,9 +81,38 @@ class OrganizacionController extends Controller
      */
     public function show($id)
     {
-        //
+        $organizacion = Organization::find($id);
+        
+        $miembros = Organization_user::all()->where('organization_id',$id);
+        $usuarios = User::all();
+        return view('organizacion.show',compact('organizacion','miembros','usuarios'));
     }
 
+
+    public function participa($id){
+
+        $organizacion = Organization::find($id);
+
+        if ($organizacion->miembros->where('user_id',Auth::id()) == NULL){
+            return redirect()->route('organizaciones.show',$id);
+        }
+
+
+
+        $new = Organization_user::create([
+            'organization_id' => $id,
+            'user_id' => Auth::id(),
+            'rol' => 3,
+        ]);
+        return redirect()->route('organizaciones.show',$id);
+    }
+
+    public function showOrg($id)
+    {
+        $organizacion = Organization::find($id);
+        
+        return view('organizacion.showOrg',compact('organizacion'));
+    }
     /**
      * Show the form for editing the specified resource.
      *
