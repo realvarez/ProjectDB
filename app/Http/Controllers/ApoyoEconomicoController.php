@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Apoyo_economico;
 use App\Medida;
-
+use App\Comentario;
 class ApoyoEconomicoController extends Controller
 {
     /**
@@ -99,8 +99,9 @@ class ApoyoEconomicoController extends Controller
     public function show($id)
     {
         $apoyo=Apoyo_economico::find($id);
-          $comentarios=Comentarios::where('medida_id',$apoyo->medida->id)->get();
-        return view('medidas.vista_apoyo',compact('apoyo,comentarios'));
+          $comentarios=Comentario::where('medida_id',$apoyo->medida->id)->get();
+
+        return view('medidas.vista_apoyo',compact('apoyo','comentarios'));
     }
 
     /**

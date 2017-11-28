@@ -52,7 +52,8 @@
           </div>
       </div>
       <div class="mt-3">
-        <form class="" action="index.html" method="post">
+        <form role="form" method="POST" action="{{route('comentario.store',$voluntario->medida->id)}}">
+     {{ csrf_field() }}
           <div class="form-group">
             <label for="comentario">Ingresa tu Comentario</label>
             <textarea class="form-control" id="comentario" name="comentario" rows="3"></textarea>

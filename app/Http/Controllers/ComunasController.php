@@ -34,7 +34,7 @@ class ComunasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

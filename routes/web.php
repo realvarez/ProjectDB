@@ -103,6 +103,10 @@ Route::post('cooperar/{aportes}',
 	['uses' => 'RecoleccionController@crearCooperacion',
 	'as' =>'recoleccion.cooperacion']);
 
+Route::post('comentario/{medida_id}',
+	['uses' => 'ComentarioController@store',
+	'as' => 'comentario.store']);
+
 
 /*Medidas*/
 
