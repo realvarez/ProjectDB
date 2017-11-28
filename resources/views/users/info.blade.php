@@ -6,7 +6,6 @@
   <div class="col-md-5 border bg-light border-primary">
       <h3>Usuario : {{$usuario->nombre}} {{$usuario->apellido}} </h3>
       <h4>Email: </h4> {{$usuario->email}}
-      <h4>Password:</h4>{{$usuario->password}}
       <h4>Direccion</h4>{{$usuario->direccion}}
       <h4>Comuna:</h4>{{$usuario->comuna->nombre}}
       <h4>Region:</h4>{{$usuario->comuna->region->nombre}}

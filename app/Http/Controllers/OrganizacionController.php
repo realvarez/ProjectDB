@@ -65,7 +65,7 @@ class OrganizacionController extends Controller
 
         $new = Organization_user::create([
             'organization_id' => $organi->id,
-            'user_id' => v,
+            'user_id' => Auth::id(),
             'rol' => 4,
         ]);
 

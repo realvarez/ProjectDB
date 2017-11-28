@@ -37,6 +37,7 @@ class ApoyoEconomicoController extends Controller
      */
     public function store(Request $request)
     {
+
         $value=Session::get('c_id','No existe');
         //dd($value);
             //return 'creo apoyo';
@@ -68,6 +69,7 @@ class ApoyoEconomicoController extends Controller
 
         $apoyo->save();
 
+
         $medida=array(
 
             'catastrove_id' => $value, //Por ahora constante
@@ -82,6 +84,13 @@ class ApoyoEconomicoController extends Controller
 
         );
 
+        $log = new App\Historia::create([
+            'user_id' =>  Auth::id(),
+            'tipo_cambio' => 'Insert',
+            'tabla' => 'Apoyo_economicos',
+            'estado_antiguo' => '',
+            'estado_nuevo' => $request->titulo,
+        ])
         
         
         $apoyo->medida()->create($medida);
@@ -138,7 +147,15 @@ class ApoyoEconomicoController extends Controller
     {
         $apoyo=Apoyo_economico::find($id);
 
+        $log = new App\Historia::create([
+            'user_id' =>  Auth::id(),
+            'tipo_cambio' => 'Delete',
+            'tabla' => 'Apoyo_economicos',
+            'estado_antiguo' => $apoyo->titulo,
+            'estado_nuevo' => '',
+        ])
         $apoyo->delete();
+
         return redirect()->route('medidas.index');
 
     }
